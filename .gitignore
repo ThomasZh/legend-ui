@@ -1,6 +1,8 @@
 
 pidfile
 
+nohup.out
+
 *.pyc
 
 router.pyc
