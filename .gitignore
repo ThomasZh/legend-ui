@@ -5,22 +5,8 @@ nohup.out
 
 *.pyc
 
-router.pyc
-
 foo/*.pyc
-
-foo/comm.pyc
 
 foo/ui/*.pyc
 
-foo/ui/__init__.pyc
-
-foo/ui/ui_amaze.pyc
-
-foo/ui/ui_cn.pyc
-
 log/*.log
-
-log/ctrl.log
-
-
