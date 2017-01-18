@@ -37,3 +37,8 @@ class UicnIndexHandler(tornado.web.RequestHandler):
     def get(self):
         logging.info(self.request)
         self.render('uicn/index.html')
+
+class UicnListHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('uicn/list.html')

@@ -20,6 +20,7 @@ def map():
         (r'/', getattr(ui_cn, 'UicnIndexHandler')),
 
         (r'/uicn', getattr(ui_cn, 'UicnIndexHandler')),
+        (r'/uicn/list', getattr(ui_cn, 'UicnListHandler')),
 
         (r'/amazeui', getattr(ui_amaze, 'AmazeIndexHandler')),
         (r'/amazeui/1', getattr(ui_amaze, 'AmazeIndex1Handler')),
