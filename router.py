@@ -21,6 +21,14 @@ def map():
 
         (r'/uicn', getattr(ui_cn, 'UicnIndexHandler')),
         (r'/uicn/list', getattr(ui_cn, 'UicnListHandler')),
+        (r'/uicn/exp', getattr(ui_cn, 'UicnExpHandler')),
+        (r'/uicn/book', getattr(ui_cn, 'UicnBookHandler')),
+        (r'/uicn/study', getattr(ui_cn, 'UicnStudyHandler')),
+        (r'/uicn/game', getattr(ui_cn, 'UicnGameHandler')),
+        (r'/uicn/peixun', getattr(ui_cn, 'UicnPeixunHandler')),
+        (r'/uicn/topic', getattr(ui_cn, 'UicnTopicHandler')),
+        (r'/uicn/online', getattr(ui_cn, 'UicnOnlineHandler')),
+        (r'/uicn/zhaopin', getattr(ui_cn, 'UicnZhaopinHandler')),
 
         (r'/amazeui', getattr(ui_amaze, 'AmazeIndexHandler')),
         (r'/amazeui/1', getattr(ui_amaze, 'AmazeIndex1Handler')),

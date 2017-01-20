@@ -42,3 +42,43 @@ class UicnListHandler(tornado.web.RequestHandler):
     def get(self):
         logging.info(self.request)
         self.render('uicn/list.html')
+
+class UicnExpHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('uicn/exp.html')
+
+class UicnBookHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('uicn/book.html')
+
+class UicnStudyHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('uicn/study.html')
+
+class UicnGameHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('uicn/game.html')
+
+class UicnPeixunHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('uicn/peixun.html')
+
+class UicnTopicHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('uicn/topic.html')
+
+class UicnOnlineHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('uicn/online.html')
+
+class UicnZhaopinHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('uicn/zhaopin.html')
