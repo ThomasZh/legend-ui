@@ -29,6 +29,13 @@ def map():
         (r'/uicn/topic', getattr(ui_cn, 'UicnTopicHandler')),
         (r'/uicn/online', getattr(ui_cn, 'UicnOnlineHandler')),
         (r'/uicn/zhaopin', getattr(ui_cn, 'UicnZhaopinHandler')),
+        # 注册 登录 找回
+        (r'/auth/login', getattr(ui_cn, 'AuthLoginHandler')),
+        (r'/auth/getpass', getattr(ui_cn, 'AuthGetpassHandler')),
+        (r'/auth/reg', getattr(ui_cn, 'AuthRegHandler')),
+        (r'/auth/findpassbymail', getattr(ui_cn, 'AuthFindpassHandler')),
+        (r'/auth/changepass', getattr(ui_cn, 'AuthChangepassHandler')),
+        (r'/auth/editsuccess', getattr(ui_cn, 'AuthEditsuccessHandler')),
 
         (r'/amazeui', getattr(ui_amaze, 'AmazeIndexHandler')),
         (r'/amazeui/1', getattr(ui_amaze, 'AmazeIndex1Handler')),

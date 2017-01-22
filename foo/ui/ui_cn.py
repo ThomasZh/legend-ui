@@ -82,3 +82,34 @@ class UicnZhaopinHandler(tornado.web.RequestHandler):
     def get(self):
         logging.info(self.request)
         self.render('uicn/zhaopin.html')
+
+# 登录 注册 找回handler
+class AuthLoginHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('auth/login.html')
+
+class AuthGetpassHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('auth/getpass.html')
+
+class AuthRegHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('auth/reg.html')
+
+class AuthFindpassHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('auth/findpassbymail.html')
+
+class AuthChangepassHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('auth/changepass.html')
+
+class AuthEditsuccessHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('auth/editsuccess.html')
