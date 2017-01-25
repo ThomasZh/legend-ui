@@ -29,6 +29,9 @@ def map():
         (r'/uicn/topic', getattr(ui_cn, 'UicnTopicHandler')),
         (r'/uicn/online', getattr(ui_cn, 'UicnOnlineHandler')),
         (r'/uicn/zhaopin', getattr(ui_cn, 'UicnZhaopinHandler')),
+        # 认证页面
+        (r'/uicn/cert', getattr(ui_cn, 'UicnCertHandler')),
+
         # 注册 登录 找回
         (r'/auth/login', getattr(ui_cn, 'AuthLoginHandler')),
         (r'/auth/getpass', getattr(ui_cn, 'AuthGetpassHandler')),
