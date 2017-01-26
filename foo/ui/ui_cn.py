@@ -114,8 +114,24 @@ class AuthEditsuccessHandler(tornado.web.RequestHandler):
         logging.info(self.request)
         self.render('auth/editsuccess.html')
 
+# 个人中心页
+class UicnSelfHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('uicn/i.html')
+
 # 认证页面
 class UicnCertHandler(tornado.web.RequestHandler):
     def get(self):
         logging.info(self.request)
         self.render('uicn/cert.html')
+
+class UicnContentHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('uicn/content.html')
+
+class UicnZhaopinContHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('uicn/zhaopin-cont.html')

@@ -12,25 +12,25 @@
 		<meta name="Keywords" content="小角色123,原创作品,佳作分享,临摹练习,ui设计师,互联网设计师,ui设计,ue 设计,动效设计,界面设计,app界面设计,主体设计,ui分享" />
 		<meta name="Description" content="UI中国,前身为iconfans.com。是专业的界面设计师交流、学习/展示平台.同时也是UI设计师人才流动的集散地,会员均为一线UI设计师,覆盖主流互联网公司.我们希望借助互联网的力量打造国内最专业的UI设计平台,为UI设计师做最好的服务,提高UI设计行业价值!" />
 		<!--CSS START-->
-		<link rel="stylesheet" href="http://s4.ui.cn/css/base.css">
-		<link rel="stylesheet" href="http://s4.ui.cn/fonts/iconfont.css">
-        <link rel="stylesheet" href="http://s4.ui.cn/css/all/min_page.css">
-        <link rel="stylesheet" href="http://s4.ui.cn/css/footer.css">
-        <link rel="stylesheet" href="http://s4.ui.cn/css/contentover.css" >
-		<link rel="stylesheet" href="http://s4.ui.cn/css/user-header2.css?ads">
-		<link rel="stylesheet" href="http://s4.ui.cn/css/all/header.v1.css">
-        <link rel="stylesheet" href="http://s4.ui.cn/css/user-info.css">
-    	<link rel="stylesheet" href="http://s4.ui.cn/css/user-theme.css">
+		<link rel="stylesheet" href="{{ static_url('uicn/css/base.css') }}">
+	  <link rel="stylesheet" href="{{ static_url('uicn/css/iconfont.css') }}">
+	  <link rel="stylesheet" href="{{ static_url('uicn/css/min_page.css') }}">
+	  <link rel="stylesheet" href="{{ static_url('uicn/css/footer.css') }}">
+	  <link rel="stylesheet" href="{{ static_url('uicn/css/contentover.css') }}">
+	  <link rel="stylesheet" href="{{ static_url('uicn/css/user-header2.css') }}">
+	  <link rel="stylesheet" href="{{ static_url('uicn/css/header.css') }}">
+	  <link rel="stylesheet" href="{{ static_url('uicn/css/user-info.css') }}">
+	  <link rel="stylesheet" href="{{ static_url('uicn/css/user-theme.css') }}">
 		<!--CSS END-->
 
 		<!--JS START-->
-		<script type="text/javascript" src="http://s2.ui.cn/js/jquery.js"></script>
-		<script id="ajax">(function(){$.ajaxSetup({beforeSend:function(xhr){xhr.setRequestHeader("RA-Elv","C07B8369627EDE6D4972A4E72141330D")}});$("#ajax").remove();})();</script>		<script type="text/javascript" src="http://s2.ui.cn/js/contentover.js"></script>
-
-		<script type="text/javascript" src="http://s2.ui.cn/js/footer.js"></script>
-		<script type="text/javascript" src="http://s2.ui.cn/js/msgTip.js"></script>
-		<script type="text/javascript" src="http://s2.ui.cn/js/home/header.v1.js"></script>
-		<script type="text/javascript" src="http://s2.ui.cn/js/LazyLoad.js"></script>
+		<script src="{{ static_url('uicn/js/jquery.js') }}"></script>
+	  <script src="{{ static_url('uicn/js/contentover.js') }}"></script>
+	  <script src="{{ static_url('uicn/js/footer.js') }}"></script>
+	  <script src="{{ static_url('uicn/js/msgTip.js') }}"></script>
+	  <script src="{{ static_url('uicn/js/header.js') }}"></script>
+	  <script src="{{ static_url('uicn/js/LazyLoad.js') }}"></script>
+		<script id="ajax">(function(){$.ajaxSetup({beforeSend:function(xhr){xhr.setRequestHeader("RA-Elv","C07B8369627EDE6D4972A4E72141330D")}});$("#ajax").remove();})();</script>
 		<!--JS END-->
 
 	</head>
@@ -433,10 +433,10 @@
 
 <div class="us-footer us-footer-bg1">
     <i class="iconfont icon-ui"><!-- &#xe648; --></i>
-    <p>Powered by © 2008-2015 UI.CN</p>
+    <p>Powered by © 2008-2015</p>
 </div>
 
-<script type="text/javascript" src="http://s2.ui.cn/js/user_public.js"></script>
+<script src="{{ static_url('uicn/js/user_public.js') }}"></script>
 
 <div style="display:none;">
 <script src="http://s6.cnzz.com/stat.php?id=5726673&web_id=5726673" language="JavaScript"></script>
@@ -448,7 +448,7 @@
 </div>
 
 </body></html>
-<script type="text/javascript" src="http://s2.ui.cn/js/user_page.js?v=1485056830"></script>
+<script src="{{ static_url('uicn/js/user_page.js') }}"></script>
 
 
 <script	type="text/javascript">
@@ -460,12 +460,11 @@
 </script>
 
 
-
-<script src="http://s2.ui.cn/js/user_exp.js?v=1485056830"></script>
-<script src="http://s2.ui.cn/js/LazyLoad.js?v=1485056830"></script>
-<script src="/Public/project/js/project.js?v=1485056830"></script>
+<script src="{{ static_url('uicn/js/user_exp.js') }}"></script>
+<script src="{{ static_url('uicn/js/LazyLoad.js') }}"></script>
+<script src="{{ static_url('uicn/js/project.js') }}"></script>
 <!-- 限制评论字数 -->
-<script src="http://s2.ui.cn/js/home/wordlimit.js?v=1485056830"></script>
+<script src="{{ static_url('uicn/js/wordlimit.js') }}"></script>
 <script>
 	$(function(){
 		$(document).on('focus','#ucent_reply', function() {

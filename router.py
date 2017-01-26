@@ -29,6 +29,9 @@ def map():
         (r'/uicn/topic', getattr(ui_cn, 'UicnTopicHandler')),
         (r'/uicn/online', getattr(ui_cn, 'UicnOnlineHandler')),
         (r'/uicn/zhaopin', getattr(ui_cn, 'UicnZhaopinHandler')),
+        # 列表以及内容页
+        (r'/uicn/content', getattr(ui_cn, 'UicnContentHandler')),
+        (r'/uicn/zhaopin/cont', getattr(ui_cn, 'UicnZhaopinContHandler')),
         # 认证页面
         (r'/uicn/cert', getattr(ui_cn, 'UicnCertHandler')),
 
@@ -39,6 +42,8 @@ def map():
         (r'/auth/findpassbymail', getattr(ui_cn, 'AuthFindpassHandler')),
         (r'/auth/changepass', getattr(ui_cn, 'AuthChangepassHandler')),
         (r'/auth/editsuccess', getattr(ui_cn, 'AuthEditsuccessHandler')),
+        #  个人中心页
+        (r'/uicn/self', getattr(ui_cn, 'UicnSelfHandler')),
 
         (r'/amazeui', getattr(ui_amaze, 'AmazeIndexHandler')),
         (r'/amazeui/1', getattr(ui_amaze, 'AmazeIndex1Handler')),
