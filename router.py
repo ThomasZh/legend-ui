@@ -10,6 +10,7 @@ import tornado.web
 from foo import comm
 from foo.ui import ui_amaze
 from foo.ui import ui_cn
+from foo.ui import ui_bootstrapmade
 
 
 def map():
@@ -60,6 +61,16 @@ def map():
         (r'/amazeui/12', getattr(ui_amaze, 'AmazeIndex12Handler')),
         (r'/amazeui/13', getattr(ui_amaze, 'AmazeIndex13Handler')),
         (r'/amazeui/14', getattr(ui_amaze, 'AmazeIndex14Handler')),
+
+        (r'/bootstrapmade/one-page', getattr(ui_bootstrapmade, 'BootstrapmadeOnePageHandler')),
+        (r'/bootstrapmade/butterfly', getattr(ui_bootstrapmade, 'BootstrapmadeButterflyHandler')),
+        (r'/bootstrapmade/coming-soon', getattr(ui_bootstrapmade, 'BootstrapmadeComingSoonHandler')),
+        (r'/bootstrapmade/delicious', getattr(ui_bootstrapmade, 'BootstrapmadeDeliciousHandler')),
+        (r'/bootstrapmade/knight', getattr(ui_bootstrapmade, 'BootstrapmadeKnightHandler')),
+        (r'/bootstrapmade/laura', getattr(ui_bootstrapmade, 'BootstrapmadeLauraHandler')),
+        (r'/bootstrapmade/medilab', getattr(ui_bootstrapmade, 'BootstrapmadeMedilabHandler')),
+        (r'/bootstrapmade/mentor', getattr(ui_bootstrapmade, 'BootstrapmadeMentorHandler')),
+        (r'/bootstrapmade/squad', getattr(ui_bootstrapmade, 'BootstrapmadeSquadHandler')),
 
         # comm
         ('.*', getattr(comm, 'PageNotFoundHandler'))
