@@ -11,6 +11,7 @@ from foo import comm
 from foo.ui import ui_amaze
 from foo.ui import ui_cn
 from foo.ui import ui_bootstrapmade
+from foo.ui import ui_legend
 
 
 def map():
@@ -19,6 +20,15 @@ def map():
 
         # GET: 根据 HTTP header 收集客户端相关信息：是否手机、操作系统、浏览器等信息。
         (r'/', getattr(ui_cn, 'UicnIndexHandler')),
+
+        (r'/legend', getattr(ui_legend, 'LegendIndexHandler')),
+        (r'/legend/article', getattr(ui_legend, 'LegendArticleHandler')),
+        (r'/legend/product', getattr(ui_legend, 'LegendProductHandler')),
+        (r'/legend/moment', getattr(ui_legend, 'LegendMomentHandler')),
+        (r'/legend/moment/add', getattr(ui_legend, 'LegendAddMomentHandler')),
+        (r'/legend/comment/add', getattr(ui_legend, 'LegendAddCommentHandler')),
+        (r'/legend/product/place-order', getattr(ui_legend, 'LegendProductPlaceOrderHandler')),
+        (r'/legend/product/place-order-success', getattr(ui_legend, 'LegendProductPlaceOrderSuccessHandler')),
 
         (r'/uicn', getattr(ui_cn, 'UicnIndexHandler')),
         (r'/uicn/list', getattr(ui_cn, 'UicnListHandler')),

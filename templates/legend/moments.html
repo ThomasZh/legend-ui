@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>moments demo</title>
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta content="telephone=no" name="format-detection" />
+
+  <!-- 引入fontawesome字体 -->
+  <link rel="stylesheet" href="../static/css/font-awesome.min.css" />
+  <!-- 引入YDUI样式 -->
+  <link rel="stylesheet" href="../static/ydui/css/ydui.css">
+  <!-- <link rel="stylesheet" href="../static/ydui/css/demo.css" /> -->
+  <!-- <link rel="stylesheet" href="../static/shuttle/css/animate.css"> -->
+  <!-- <link rel="stylesheet" href="../static/shuttle/css/materialize.min.css"> -->
+
+  <link rel="stylesheet" href="../static/shuttle/css/swipebox.min.css">
+  <link rel="stylesheet" href="../static/shuttle/css/swiper.min.css">
+
+  <!-- <link rel="stylesheet" href="../static/shuttle/css/normalize.css"> -->
+  <!-- <link rel="stylesheet" href="../static/shuttle/css/main.css"> -->
+  <link rel="stylesheet" href="../static/css/legend.css" />
+  <!-- 引入YDUI自适应解决方案类库 -->
+  <script src="../static/ydui/js/ydui.flexible.js"></script>
+  <!-- <script src="../static/shuttle/js/vendor/modernizr-2.7.1.min.js"></script> -->
+
+</head>
+
+<body>
+  <div class="g-flexview">
+
+    <!-- Page Contents -->
+    <div class="g-scrollview">
+
+      <!-- Hero Header -->
+      <div class="hero-header hero-big bg-3 animated fadeindown">
+        <div class="hero-author">
+          <div class="media-top-object">
+            <img src="../static/images/user01.png" alt="" class="media-left avatar">
+            <div class="media-body left-align">
+              <p class="white-text">Luke Noel</p>
+              <span class="white-text small"><em>Freelancer @Envato</em></span>
+              <div class="card-feedback">
+                <div class="card-users white-text">
+                  <i class="fa fa-eye" style="font-size:16px"></i> <span>346</span>
+                  <i class="fa fa-thumbs-o-up accent-text" style="font-size:16px"></i> <span>467</span>
+                  <i class="fa fa-comments-o" style="font-size:16px"></i> <span>205</span>
+                </div>
+                <div class="card-share white-text">
+                  <i class="fa fa-share-alt" style="font-size:16px"></i> <span>Share</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="opacity-overlay-gradient"></div>
+
+        <div class="fixed-action-btn floating-button animated bouncein delay-3 horizontal click-to-toggle">
+          <a href="/legend/moment/add" class="btn-floating btn-large accent-color">
+            <i class="fa fa-plus" style="font-size:20px"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="m-tab demo-small-pitch" data-ydui-tab>
+        <ul class="tab-nav ">
+          <li class="tab-nav-item tab-active ">
+            <a href="javascript:; "></a>Moments</li>
+          <li class="tab-nav-item "><a href="javascript:; ">Articles</a></li>
+          <li class="tab-nav-item "><a href="javascript:; ">Comments</a></li>
+          <li class="tab-nav-item "><a href="javascript:; ">Products</a></li>
+          <li class="tab-nav-item "><a href="javascript:; ">Photos</a></li>
+        </ul>
+
+        <div class="tab-panel">
+          <div class="tab-panel-item tab-active">
+            <div class="card fullscreen">
+              <ul class="m-grids-2">
+                <li class="grids-item b-0">
+                  <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                    <img class="b-0" src="../static/img/1.jpg" alt="image">
+                  </a>
+                </li>
+                <li class="grids-item b-0">
+                  <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                    <img class="b-0" src="../static/img/1.jpg" alt="image">
+                  </a>
+                </li>
+                <li class="grids-item b-0">
+                  <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                    <img class="b-0" src="../static/img/1.jpg" alt="image">
+                  </a>
+                </li>
+                <li class="grids-item b-0">
+                  <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                    <img class="b-0" src="../static/img/1.jpg" alt="image">
+                  </a>
+                </li>
+              </ul>
+              <div class="card-feedback">
+                <div class="card-users">
+                  <i class="fa fa-eye" style="font-size:16px"></i> <span>346</span>
+                  <i class="fa fa-thumbs-o-up accent-text" style="font-size:16px"></i> <span>467</span>
+                  <i class="fa fa-comments-o" style="font-size:16px"></i> <span>205</span>
+                </div>
+                <div class="card-share">
+                  <a href="/legend/moment">
+                    <i class="fa fa-share-alt" style="font-size:16px"></i> <span>查看详情</span>
+                  </a>
+                </div>
+              </div>
+              <div class="card-content m-20">
+                <h5><strong>Like these sweet mornings of spring which I enjoy with my whole heart</strong></h5>
+              </div>
+              <div class="card-author">
+                <div class="media-top-object middle">
+                  <img src="../static/img/user4.jpg" alt="" class="media-left avatar small">
+                  <div class="media-body">
+                    <span class="small">Luke Noel at <a href="#!" class="accent-text">Apple</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card fullscreen">
+              <ul class="m-grids-2">
+                <li class="grids-item b-0">
+                  <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                    <img class="b-0" src="../static/img/1.jpg" alt="image">
+                  </a>
+                </li>
+                <li class="grids-item b-0">
+                  <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                    <img class="b-0" src="../static/img/1.jpg" alt="image">
+                  </a>
+                </li>
+                <li class="grids-item b-0">
+                  <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                    <img class="b-0" src="../static/img/1.jpg" alt="image">
+                  </a>
+                </li>
+              </ul>
+              <div class="card-feedback">
+                <div class="card-users">
+                  <i class="fa fa-eye" style="font-size:16px"></i> <span>346</span>
+                  <i class="fa fa-thumbs-o-up accent-text" style="font-size:16px"></i> <span>467</span>
+                  <i class="fa fa-comments-o" style="font-size:16px"></i> <span>205</span>
+                </div>
+                <div class="card-share">
+                  <a href="/legend/moment">
+                    <i class="fa fa-share-alt" style="font-size:16px"></i> <span>查看详情</span>
+                  </a>
+                </div>
+              </div>
+              <div class="card-content m-20">
+                <h5><strong>Like these sweet mornings of spring which I enjoy with my whole heart</strong></h5>
+              </div>
+              <div class="card-author">
+                <div class="media-top-object middle">
+                  <img src="../static/img/user4.jpg" alt="" class="media-left avatar small">
+                  <div class="media-body">
+                    <span class="small">Luke Noel at <a href="#!" class="accent-text">Apple</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card fullscreen">
+              <ul class="m-grids-2">
+                <li class="grids-item b-0">
+                  <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                    <img class="b-0" src="../static/img/1.jpg" alt="image">
+                  </a>
+                </li>
+                <li class="grids-item b-0">
+                  <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                    <img class="b-0" src="../static/img/1.jpg" alt="image">
+                  </a>
+                </li>
+              </ul>
+              <div class="card-feedback">
+                <div class="card-users">
+                  <i class="fa fa-eye" style="font-size:16px"></i> <span>346</span>
+                  <i class="fa fa-thumbs-o-up accent-text" style="font-size:16px"></i> <span>467</span>
+                  <i class="fa fa-comments-o" style="font-size:16px"></i> <span>205</span>
+                </div>
+                <div class="card-share">
+                  <a href="/legend/moment">
+                    <i class="fa fa-share-alt" style="font-size:16px"></i> <span>查看详情</span>
+                  </a>
+                </div>
+              </div>
+              <div class="card-content m-20">
+                <h5><strong>Like these sweet mornings of spring which I enjoy with my whole heart</strong></h5>
+              </div>
+              <div class="card-author">
+                <div class="media-top-object middle">
+                  <img src="../static/img/user4.jpg" alt="" class="media-left avatar small">
+                  <div class="media-body">
+                    <span class="small">Luke Noel at <a href="#!" class="accent-text">Apple</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel-item">
+            <div class="card fullscreen">
+              <!-- Hero Header -->
+              <div class="hero-header hero-big bg-3 animated fadeindown">
+                <div class="hero-author">
+                  <div class="media-top-object">
+                    <img src="../static/img/user.jpg" alt="" class="media-left avatar">
+                    <div class="media-body left-align">
+                      <p class="white-text">Luke Noel</p>
+                      <span class="white-text small"><em>Like these sweet mornings of spring which I enjoy with my whole heart</em></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="opacity-overlay-gradient"></div>
+              </div>
+              <div class="card-feedback">
+                <div class="card-users">
+                  <i class="fa fa-eye" style="font-size:16px"></i> <span>346</span>
+                  <i class="fa fa-thumbs-o-up accent-text" style="font-size:16px"></i> <span>467</span>
+                  <i class="fa fa-comments-o" style="font-size:16px"></i> <span>205</span>
+                </div>
+                <div class="card-share">
+                  <a href="/legend/article">
+                    <i class="fa fa-share-alt" style="font-size:16px"></i> <span>查看详情</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card fullscreen">
+              <!-- Hero Header -->
+              <div class="hero-header hero-big bg-3 animated fadeindown">
+                <div class="hero-author">
+                  <div class="media-top-object">
+                    <img src="../static/img/user.jpg" alt="" class="media-left avatar">
+                    <div class="media-body left-align">
+                      <p class="white-text">Luke Noel</p>
+                      <span class="white-text small"><em>Like these sweet mornings of spring which I enjoy with my whole heart</em></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="opacity-overlay-gradient"></div>
+              </div>
+              <div class="card-feedback">
+                <div class="card-users">
+                  <i class="fa fa-eye" style="font-size:16px"></i> <span>346</span>
+                  <i class="fa fa-thumbs-o-up accent-text" style="font-size:16px"></i> <span>467</span>
+                  <i class="fa fa-comments-o" style="font-size:16px"></i> <span>205</span>
+                </div>
+                <div class="card-share">
+                  <a href="/legend/article">
+                    <i class="fa fa-share-alt" style="font-size:16px"></i> <span>查看详情</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card fullscreen">
+              <!-- Hero Header -->
+              <div class="hero-header hero-big bg-3 animated fadeindown">
+                <div class="hero-author">
+                  <div class="media-top-object">
+                    <img src="../static/img/user.jpg" alt="" class="media-left avatar">
+                    <div class="media-body left-align">
+                      <p class="white-text">Luke Noel</p>
+                      <span class="white-text small"><em>Like these sweet mornings of spring which I enjoy with my whole heart</em></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="opacity-overlay-gradient"></div>
+              </div>
+              <div class="card-feedback">
+                <div class="card-users">
+                  <i class="fa fa-eye" style="font-size:16px"></i> <span>346</span>
+                  <i class="fa fa-thumbs-o-up accent-text" style="font-size:16px"></i> <span>467</span>
+                  <i class="fa fa-comments-o" style="font-size:16px"></i> <span>205</span>
+                </div>
+                <div class="card-share">
+                  <a href="/legend/article">
+                    <i class="fa fa-share-alt" style="font-size:16px"></i> <span>查看详情</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel-item">
+            <!-- Comments -->
+            <div class="comments grey lighten-4">
+              <h5>205 Comments</h5>
+              <div class="media-top-object animated fadeinright delay-2">
+                <img src="../static/img/user4.jpg" alt="" class="media-left avatar">
+                <div class="media-body">
+                  <span>Luke Noel</span>
+                  <span class="small">Awesome work!!</span>
+                </div>
+              </div>
+
+              <div class="media-top-object animated fadeinright delay-3">
+                <img src="../static/img/user5.jpg" alt="" class="media-left avatar">
+                <div class="media-body">
+                  <span>Luke Noel</span>
+                  <span class="small">You have done a great job there :)</span>
+                </div>
+              </div>
+
+              <div class="media-top-object animated fadeinright delay-4">
+                <img src="../static/img/user6.jpg" alt="" class="media-left avatar">
+                <div class="media-body">
+                  <span>Joel Roksin</span>
+                  <span class="small">Keep going!</span>
+                </div>
+              </div>
+
+              <div class="media-top-object animated fadeinright delay-5">
+                <img src="../static/img/user7.jpg" alt="" class="media-left avatar">
+                <div class="media-body">
+                  <span>Mike White</span>
+                  <span class="small">That's pretty good!</span>
+                </div>
+              </div>
+
+              <div class="media-top-object animated fadeinright delay-6">
+                <img src="../static/img/user8.jpg" alt="" class="media-left avatar">
+                <div class="media-body">
+                  <span>Robb Swan</span>
+                  <span class="small">Love your works! Asalways!</span>
+                </div>
+              </div>
+
+              <div class="controls right-align animated fadeinup delay-2">
+                <button class="filter">查看更多...</button>
+              </div>
+            </div>
+
+            <!-- 使用：样式模块以按钮为例 -->
+            <div class="m-button">
+              <a href="/legend/comment/add" class="btn-block btn-primary primary-color" id="J_Btn">发表评论</a>
+            </div>
+          </div>
+          <div class="tab-panel-item">
+            <article class="m-list list-theme3">
+              <a href="/legend/product" class="list-item">
+                <div class="list-img">
+                  <img src="/static/images/cat-04.jpg" data-url="/static/images/cat-04.jpg">
+                </div>
+                <div class="list-mes">
+                  <h3 class="list-title">标题标题标题标题标题</h3>
+                  <div class="list-mes-item">
+                    <div>
+                      <span class="list-price"><em>¥</em>34.7</span>
+                      <span class="list-del-price">¥45.65</span>
+                    </div>
+                    <div>right</div>
+                  </div>
+                </div>
+              </a>
+              <a href="/legend/product" class="list-item">
+                <div class="list-img">
+                  <img src="/static/images/cat-04.jpg" data-url="/static/images/cat-04.jpg">
+                </div>
+                <div class="list-mes">
+                  <h3 class="list-title">骆驼男装2016夏装男士短袖T恤 圆领衣服 印花男装体恤 半袖打底衫</h3>
+                  <div class="list-mes-item">
+                    <div>
+                      <span class="list-price"><em>¥</em>34.7</span>
+                      <span class="list-del-price">¥45.65</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="/legend/product" class="list-item">
+                <div class="list-img">
+                  <img src="/static/images/cat-04.jpg" data-url="/static/images/cat-04.jpg">
+                </div>
+                <div class="list-mes">
+                  <h3 class="list-title">条纹短袖T恤男士韩版衣服大码潮流男装夏季圆领体恤2016新款半袖</h3>
+                  <div class="list-mes-item">
+                    <div>
+                      <span class="list-price"><em>¥</em>34.7</span>
+                      <span class="list-del-price">¥45.65</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="/legend/product" class="list-item">
+                <div class="list-img">
+                  <img src="/static/images/cat-04.jpg" data-url="/static/images/cat-04.jpg">
+                </div>
+                <div class="list-mes">
+                  <h3 class="list-title">夏季青少年衣服男生潮牌t恤 男士 夏秋学生 日系棉短袖半袖男小衫</h3>
+                  <div class="list-mes-item">
+                    <div>
+                      <span class="list-price"><em>¥</em>34.7</span>
+                      <span class="list-del-price">¥45.65</span>
+                    </div>
+                    <div>right</div>
+                  </div>
+                </div>
+              </a>
+              <a href="/legend/product" class="list-item">
+                <div class="list-img">
+                  <img src="/static/images/cat-04.jpg" data-url="/static/images/cat-04.jpg">
+                </div>
+                <div class="list-mes">
+                  <h3 class="list-title">2016夏装新款时尚潮流短袖T恤男纯棉V领日系青少年韩版夏季上衣服</h3>
+                  <div class="list-mes-item">
+                    <div>
+                      <span class="list-price"><em>¥</em>34.7</span>
+                      <span class="list-del-price">¥45.65</span>
+                    </div>
+                    <div>right</div>
+                  </div>
+                </div>
+              </a>
+              <a href="/legend/product" class="list-item">
+                <div class="list-img">
+                  <img src="/static/images/cat-04.jpg" data-url="/static/images/cat-04.jpg">
+                </div>
+                <div class="list-mes">
+                  <h3 class="list-title">男装衣服男夏t恤 男士短袖t恤圆领夏季潮牌宽松原宿风半截袖男</h3>
+                  <div class="list-mes-item">
+                    <div>
+                      <span class="list-price"><em>¥</em>34.7</span>
+                      <span class="list-del-price">¥45.65</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </article>
+          </div>
+          <div class="tab-panel-item">
+            <ul class="m-grids-2">
+              <li class="grids-item b-0">
+                <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                  <img class="b-0" src="../static/img/1.jpg" alt="image">
+                </a>
+              </li>
+              <li class="grids-item b-0">
+                <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                  <img class="b-0" src="../static/img/1.jpg" alt="image">
+                </a>
+              </li>
+              <li class="grids-item b-0">
+                <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                  <img class="b-0" src="../static/img/1.jpg" alt="image">
+                </a>
+              </li>
+              <li class="grids-item b-0">
+                <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                  <img class="b-0" src="../static/img/1.jpg" alt="image">
+                </a>
+              </li>
+              <li class="grids-item b-0">
+                <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                  <img class="b-0" src="../static/img/1.jpg" alt="image">
+                </a>
+              </li>
+              <li class="grids-item b-0">
+                <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                  <img class="b-0" src="../static/img/1.jpg" alt="image">
+                </a>
+              </li>
+              <li class="grids-item b-0">
+                <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                  <img class="b-0" src="../static/img/1.jpg" alt="image">
+                </a>
+              </li>
+              <li class="grids-item b-0">
+                <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                  <img class="b-0" src="../static/img/1.jpg" alt="image">
+                </a>
+              </li>
+              <li class="grids-item b-0">
+                <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                  <img class="b-0" src="../static/img/1.jpg" alt="image">
+                </a>
+              </li>
+              <li class="grids-item b-0">
+                <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                  <img class="b-0" src="../static/img/1.jpg" alt="image">
+                </a>
+              </li>
+              <li class="grids-item b-0">
+                <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                  <img class="b-0" src="../static/img/1.jpg" alt="image">
+                </a>
+              </li>
+              <li class="grids-item b-0">
+                <a href="../static/img/1.jpg" class="swipebox no-smoothState" title="This is dummy caption.">
+                  <img class="b-0" src="../static/img/1.jpg" alt="image">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      {% module Template("legend/block-footer.html") %}
+
+    </div>
+  </div>
+
+  <!-- 引入jQuery 2.0+ -->
+  <script src="../static/js/jquery-2.2.4.min.js"></script>
+  <!-- 引入YDUI脚本 -->
+  <script src="../static/ydui/js/ydui.js"></script>
+  <!-- <script src="../static/shuttle/js/helper.js"></script> -->
+  <!-- <script src="../static/shuttle/js/vendor/HeadsUp.js"></script> -->
+  <!-- <script src="../static/shuttle/js/vendor/chart.min.js"></script> -->
+  <!-- <script src="../static/shuttle/js/vendor/jquery.mixitup.min.js"></script> -->
+  <!-- <script src="../static/shuttle/js/vendor/jquery.swipebox.min.js"></script> -->
+  <!-- <script src="../static/shuttle/js/vendor/masonry.min.js"></script> -->
+  <!-- <script src="../static/shuttle/js/vendor/swiper.min.js"></script> -->
+  <!-- <script src="../static/shuttle/js/vendor/materialize.min.js"></script> -->
+  <!-- <script src="../static/shuttle/js/main.js"></script> -->
+
+  <script>
+    ! function($) {
+      $('#J_Btn').on('click', function() {
+        /* 使用：js模块以dialog为例 */
+        YDUI.dialog.alert('我有一个小毛驴我从来也不骑！');
+      });
+    }(jQuery);
+  </script>
+</body>
+
+</html>

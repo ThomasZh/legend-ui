@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>footer demo</title>
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta content="telephone=no" name="format-detection" />
+
+  <!-- 引入fontawesome字体 -->
+  <link rel="stylesheet" href="../static/css/font-awesome.min.css" />
+  <!-- 引入YDUI样式 -->
+  <link rel="stylesheet" href="../static/ydui/css/ydui.css">
+  <!-- <link rel="stylesheet" href="../static/ydui/css/demo.css" /> -->
+  <!-- <link rel="stylesheet" href="../static/shuttle/css/animate.css"> -->
+  <!-- <link rel="stylesheet" href="../static/shuttle/css/materialize.min.css"> -->
+  <!-- <link rel="stylesheet" href="../static/shuttle/css/normalize.css"> -->
+  <link rel="stylesheet" href="../static/css/legend.css" />
+
+  <!-- 引入YDUI自适应解决方案类库 -->
+  <script src="../static/ydui/js/ydui.flexible.js"></script>
+
+</head>
+
+<body>
+
+  <div class="g-view">
+
+    <!-- Footer -->
+    <footer class="page-footer primary-color">
+      <div class="section center">
+        <h3 class="heading white-text">Shuttle</h3>
+        <p class="center-align grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        <div class="footer-icons">
+          <i class="fa fa-facebook m-10 white-text"></i>
+          <i class="fa fa-twitter m-10 white-text"></i>
+          <i class="fa fa-pinterest m-10 white-text"></i>
+          <i class="fa fa-instagram m-10 white-text"></i>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container center">
+          <span>Made with <i class="fa fa-heart accent-text"></i> by 7x24hs.com</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- 引入jQuery 2.0+ -->
+  <script src="../static/js/jquery-2.2.4.min.js"></script>
+  <!-- 引入YDUI脚本 -->
+  <script src="../static/ydui/js/ydui.js"></script>
+
+  <script>
+    ! function($) {
+      $('#J_Btn').on('click', function() {
+        /* 使用：js模块以dialog为例 */
+        YDUI.dialog.alert('我有一个小毛驴我从来也不骑！');
+      });
+    }(jQuery);
+  </script>
+</body>
+
+</html>
