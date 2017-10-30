@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% module Template("editor/_css.html") %}
+
+  <style>
+    body {
+      text-align: center;
+    }
+
+    div#editor {
+      width: 81%;
+      margin: auto;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="editor">
+    <form>
+      <textarea id='edit' style="margin-top: 30px;" placeholder="Type some text">
+        <h1>Textarea</h1>
+        <p>The editor can also be initialized on a textarea.</p>
+      </textarea>
+
+      <input type="submit">
+    </form>
+  </div>
+
+  {% module Template("editor/_js.html") %}
+
+  <script>
+      $(function(){
+        $('#edit')
+          .on('froalaEditor.initialized', function (e, editor) {
+            $('#edit').parents('form').on('submit', function () {
+              console.log($('#edit').val());
+              return false;
+            })
+          })
+          .froalaEditor({enter: $.FroalaEditor.ENTER_P, placeholderText: null})
+      });
+  </script>
+</body>
+</html>

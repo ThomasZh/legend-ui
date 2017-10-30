@@ -12,6 +12,9 @@ from foo.ui import ui_amaze
 from foo.ui import ui_cn
 from foo.ui import ui_bootstrapmade
 from foo.ui import ui_legend
+from foo.ui import ui_weui
+from foo.ui import ui_editor
+from foo.ui import ui_blocks
 
 
 def map():
@@ -20,6 +23,71 @@ def map():
 
         # GET: 根据 HTTP header 收集客户端相关信息：是否手机、操作系统、浏览器等信息。
         (r'/', getattr(ui_cn, 'UicnIndexHandler')),
+
+        (r'/ui/weui', getattr(ui_weui, 'WeuiIndexHandler')),
+        (r'/ui/weui/buttons', getattr(ui_weui, 'WeuiButtonsHandler')),
+        (r'/ui/weui/cell', getattr(ui_weui, 'WeuiCellHandler')),
+        (r'/ui/weui/form', getattr(ui_weui, 'WeuiFormHandler')),
+        (r'/ui/weui/flex', getattr(ui_weui, 'WeuiFlexHandler')),
+        (r'/ui/weui/toast', getattr(ui_weui, 'WeuiToastHandler')),
+        (r'/ui/weui/dialog', getattr(ui_weui, 'WeuiDialogHandler')),
+        (r'/ui/weui/progress', getattr(ui_weui, 'WeuiProgressHandler')),
+        (r'/ui/weui/msg', getattr(ui_weui, 'WeuiMsgHandler')),
+        (r'/ui/weui/article', getattr(ui_weui, 'WeuiArticleHandler')),
+        (r'/ui/weui/action-sheet', getattr(ui_weui, 'WeuiActionSheetHandler')),
+        (r'/ui/weui/icons', getattr(ui_weui, 'WeuiIconsHandler')),
+        (r'/ui/weui/panel', getattr(ui_weui, 'WeuiPanelHandler')),
+        (r'/ui/weui/navbar', getattr(ui_weui, 'WeuiNavbarHandler')),
+        (r'/ui/weui/tabbar', getattr(ui_weui, 'WeuiTabbarHandler')),
+        (r'/ui/weui/searchbar', getattr(ui_weui, 'WeuiSearchbarHandler')),
+        (r'/ui/weui/toptip', getattr(ui_weui, 'WeuiToptipHandler')),
+        (r'/ui/weui/loadmore', getattr(ui_weui, 'WeuiLoadmoreHandler')),
+        (r'/ui/weui/slider', getattr(ui_weui, 'WeuiSliderHandler')),
+        (r'/ui/weui/uploader', getattr(ui_weui, 'WeuiUploaderHandler')),
+        (r'/ui/weui/badge', getattr(ui_weui, 'WeuiBadgeHandler')),
+        (r'/ui/weui/footer', getattr(ui_weui, 'WeuiFooterHandler')),
+        (r'/ui/weui/preview', getattr(ui_weui, 'WeuiPreviewHandler')),
+        (r'/ui/weui/gallery', getattr(ui_weui, 'WeuiGalleryHandler')),
+        (r'/ui/weui/ptr', getattr(ui_weui, 'WeuiPtrHandler')),
+        (r'/ui/weui/infinite', getattr(ui_weui, 'WeuiInfiniteHandler')),
+        (r'/ui/weui/picker', getattr(ui_weui, 'WeuiPickerHandler')),
+        (r'/ui/weui/calendar', getattr(ui_weui, 'WeuiCalendarHandler')),
+        (r'/ui/weui/city-picker', getattr(ui_weui, 'WeuiCityPickerHandler')),
+        (r'/ui/weui/datetime-picker', getattr(ui_weui, 'WeuiDatetimePickerHandler')),
+        (r'/ui/weui/swiper', getattr(ui_weui, 'WeuiSwiperHandler')),
+        (r'/ui/weui/noti', getattr(ui_weui, 'WeuiNotiHandler')),
+        (r'/ui/weui/select', getattr(ui_weui, 'WeuiSelectHandler')),
+        (r'/ui/weui/popup', getattr(ui_weui, 'WeuiPopupHandler')),
+        (r'/ui/weui/photo-browser', getattr(ui_weui, 'WeuiPhotoBrowserHandler')),
+
+
+        (r'/ui/editor', getattr(ui_editor, 'EditorIndexHandler')),
+        (r'/ui/editor/popular/full', getattr(ui_editor, 'EditorPopularFullHandler')),
+        (r'/ui/editor/popular/toolbar_inline', getattr(ui_editor, 'EditorPopularToolbarInlineHandler')),
+        (r'/ui/editor/popular/two_instances', getattr(ui_editor, 'EditorPopularTwoInstancesHandler')),
+        (r'/ui/editor/popular/textarea', getattr(ui_editor, 'EditorPopularTextareaHandler')),
+        (r'/ui/editor/popular/full_page', getattr(ui_editor, 'EditorPopularFullPageHandler')),
+        (r'/ui/editor/popular/iframe', getattr(ui_editor, 'EditorPopularIframeHandler')),
+        (r'/ui/editor/popular/disable_edit', getattr(ui_editor, 'EditorPopularDisableEditHandler')),
+        (r'/ui/editor/popular/z_index', getattr(ui_editor, 'EditorPopularZindexHandler')),
+        (r'/ui/editor/popular/init_on_click', getattr(ui_editor, 'EditorPopularInitOnClickHandler')),
+        (r'/ui/editor/popular/toolbar_buttons', getattr(ui_editor, 'EditorPopularToolbarButtonsHandler')),
+        (r'/ui/editor/popular/disable_paragraphs', getattr(ui_editor, 'EditorPopularDisableParagraphsHandler')),
+        (r'/ui/editor/3rd-party/aviary/index', getattr(ui_editor, 'Editor3rdPartyAviaryIndexHandler')),
+
+
+        (r'/ui/blocks', getattr(ui_blocks, 'BlocksIndexHandler')),
+        (r'/ui/blocks/call_to_action', getattr(ui_blocks, 'BlocksCallToActionHandler')),
+        (r'/ui/blocks/contacts', getattr(ui_blocks, 'BlocksContactsHandler')),
+        (r'/ui/blocks/contents', getattr(ui_blocks, 'BlocksContentsHandler')),
+        (r'/ui/blocks/features', getattr(ui_blocks, 'BlocksFeaturesHandler')),
+        (r'/ui/blocks/footers', getattr(ui_blocks, 'BlocksFootersHandler')),
+        (r'/ui/blocks/forms', getattr(ui_blocks, 'BlocksFormsHandler')),
+        (r'/ui/blocks/headers', getattr(ui_blocks, 'BlocksHeadersHandler')),
+        (r'/ui/blocks/pricings', getattr(ui_blocks, 'BlocksPricingsHandler')),
+        (r'/ui/blocks/teams', getattr(ui_blocks, 'BlocksTeamsHandler')),
+        (r'/ui/blocks/testimonials', getattr(ui_blocks, 'BlocksTestimonialsHandler')),
+
 
         (r'/legend', getattr(ui_legend, 'LegendIndexHandler')),
         (r'/legend/article', getattr(ui_legend, 'LegendArticleHandler')),

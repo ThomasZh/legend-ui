@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Froala Design Blocks</title>
+  {% module Template("blocks/_css.html") %}
+
+  <style>
+    #navigator {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    #navigator a {
+      font-size: 14px;
+    }
+
+    #navigator + section {
+      padding: 250px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="fdb-block" style="background-image: url({{ static_url('blocks/imgs/alt_wide_1.svg') }});">
+    <div class="container">
+      <div class="row justify-content-start">
+        <div class="col-8 text-left">
+          <h1>Froala Design Blocks</h1>
+          <p class="text-h3">Over 170 responsive design blocks ready to be used in your web or mobile apps. All blocks are based on the Bootstrap Library, and they are the building blocks for beautiful websites.</p>
+          <p class="mt-5">
+            <a class="btn btn-black" href="https://github.com/froala/design-blocks"><i class="fa fa-github"></i> Github Docs</a>
+            <a class="btn" href="https://froala.com/design-blocks#playground">Official Website</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fdb-block p-2" id="navigator">
+    <div class="container-fluid">
+      <p class="m-0 text-center">
+        <a class="btn btn-empty m-1" href="/ui/blocks/call_to_action">Call to action</a>
+        <a class="btn btn-empty m-1" href="/ui/blocks/contacts">Contacts</a>
+        <a class="btn btn-empty m-1" href="/ui/blocks/contents">Contents</a>
+        <a class="btn btn-empty m-1" href="/ui/blocks/features">Features</a>
+        <a class="btn btn-empty m-1" href="/ui/blocks/footers">Footers</a>
+        <a class="btn btn-empty m-1" href="/ui/blocks/forms">Forms</a>
+        <a class="btn btn-empty m-1" href="/ui/blocks/headers">Headers</a>
+        <a class="btn btn-empty m-1" href="/ui/blocks/pricings">Pricings</a>
+        <a class="btn btn-empty m-1" href="/ui/blocks/teams">Teams</a>
+        <a class="btn btn-empty m-1" href="/ui/blocks/testimonials">Testimonials</a>
+      </p>
+    </div>
+  </section>
+
+  <div id="playground">
+  </div>
+
+  <script>
+      var get = function (url, callback) {
+        var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            var txt = xhr.responseText;
+            txt = txt.split('<body>')[1].split('</body>')[0];
+            callback(txt);
+          }
+        }
+
+        xhr.open("GET", url, false );
+        xhr.send();
+      }
+
+    var chooseBlock = function (e) {
+      e.preventDefault();
+
+      get(this.href, function (resp) {
+        document.querySelector('#playground').innerHTML = resp;
+      })
+    }
+
+    var els = document.querySelectorAll('#navigator a');
+
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+
+      el.addEventListener('click', chooseBlock);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% module Template("editor/_css.html") %}
+
+  <style>
+      body {
+          text-align: center;
+      }
+
+      section {
+          width: 81%;
+          margin: auto;
+          text-align: left;
+      }
+  </style>
+</head>
+
+<body>
+  <section id="editor">
+    <h1>Multiple Editor Instances</h1>
+
+    <p>The first instance should have a higher <a href="https://www.froala.com/wysiwyg-editor/v2.0/docs/options#zIndex" title="zIndex option" target="_blank">zIndex</a> than the second one.</p>
+
+    <div id='edit1' style="margin-top: 30px;">
+      <img class="fr-fir fr-dii" src="../../img/photo1.jpg" alt="Old Clock" width="150"/>
+      <h3>This is the first editor instance</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis diam in odio iaculis blandit. Nunc eu mauris sit amet purus viverra gravida ut a dui.</p>
+    </div>
+
+    <div id='edit' style="margin-top: 30px;">
+      <img class="fr-fir fr-dii" src="../../img/photo1.jpg" alt="Old Clock" width="150"/>
+      <h3>This is the second editor instance</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis diam in odio iaculis blandit. Nunc eu mauris sit amet purus viverra gravida ut a dui.</p>
+    </div>
+
+    <div id='edit3' style="margin-top: 30px;">
+      <img class="fr-fir fr-dii" src="../../img/photo1.jpg" alt="Old Clock" width="150"/>
+      <h3>This is the third editor instance</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis diam in odio iaculis blandit. Nunc eu mauris sit amet purus viverra gravida ut a dui.</p>
+    </div>
+  </section>
+
+  {% module Template("editor/_js.html") %}
+
+  <script>
+    $(function(){
+      $('#edit, #edit1').froalaEditor({});
+
+      $('#edit3').froalaEditor({});
+    });
+  </script>
+</body>
+</html>

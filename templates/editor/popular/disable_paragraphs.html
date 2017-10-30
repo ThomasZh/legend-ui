@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% module Template("editor/_css.html") %}
+
+  <style>
+      body {
+          text-align: center;
+      }
+
+      div#editor {
+          width: 81%;
+          margin: auto;
+          text-align: left;
+      }
+  </style>
+</head>
+
+<body>
+  <div id="editor">
+      <div id='edit' style="margin-top: 30px;">
+        <h1>Disable Paragraphs</h1>
+        <img class="fr-fir fr-dii" src="../../img/photo1.jpg" alt="Old Clock" width="200"/>The way ENTER key behaves can be customized using the <a href="https://www.froala.com/wysiwyg-editor/v2.0/docs/options#enter" title="enter Option" target="_blank">enter</a> option. There are 3 possible options:
+        <ul>
+          <li>P</li>
+          <li>DIV</li>
+          <li>BR</li>
+        </ul>
+        The editor can use <code>BR</code> tags. When ENTER key is hit, a <code>BR</code> tag is inserted.<br/>
+        <table style="width: 100%;">
+          <tr><td style="width: 50%;">asdasd</td><td style="width: 50%;">asdasdasd</td></tr>
+        </table>
+        <br/><a href="http://google.com" title="Aenean sed hendrerit">Aenean sed hendrerit</a> velit. Nullam eu mi dolor. Maecenas et erat risus. Nulla ac auctor diam, non aliquet ante. Fusce ullamcorper, ipsum id tempor lacinia, sem tellus malesuada libero, quis ornare sem massa in orci. Sed dictum dictum tristique. Proin eros turpis, ultricies eu sapien eget, ornare rutrum ipsum. Pellentesque eros nisl, ornare nec ipsum sed, aliquet sollicitudin erat. Nulla tincidunt porta <strong>vehicula.</strong><br/>
+      </div>
+  </div>
+
+  {% module Template("editor/_js.html") %}
+
+  <script>
+    $(function(){
+      $('#edit').froalaEditor({
+        enter: $.FroalaEditor.ENTER_BR
+      })
+    });
+  </script>
+</body>
+</html>

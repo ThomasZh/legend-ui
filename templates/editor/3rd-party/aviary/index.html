@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% module Template("editor/_css.html") %}
+
+    <!-- Code Mirror CSS file. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div#editor {
+            width: 81%;
+            margin: auto;
+            text-align: left;
+        }
+        div#froala-details {
+            text-align: left;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id="editor">
+    <div id="edit" style="margin-top: 30px;">
+        <h1>Aviary integration</h1>
+
+        <img class="fr-fir fr-dii" src="../../../img/photo1.jpg" alt="Old Clock" width="300"/>
+
+        <p>Click on the image then apply rich image editing using the advanced edit button. This will launch the aviary image editor plugin.</p>
+        <p>To integrate the plugin an api key it will be needed but it's easily obtained from</p>
+
+    </div>
+</div>
+<div id="froala-details">
+    <h3>Use Aviary plugin instructions.</h3>
+    <p>To integrate the Aviary plugin on your own domain/website there are 3 simple steps to follow.</p>
+    <p>1. Go to <a href="https://creativesdk.adobe.com/docs/web/#/index.html">Adobe Creative</a> and register for a new account or sign if you already have one.</p>
+    <p>2. Follow the steps to <a href="https://creativesdk.zendesk.com/hc/en-us/articles/216369343-Why-and-how-to-register-my-app-"> register your new app</a>, this will generate an api key that will be used later on.</p>
+    <p>3. You should have your api key by now, so what's left to do is to initialize the Froala Editor and use your own api key.
+        To do this you should pass <code> aviaryKey: 'your api key'</code> to the Froala Editor on init.</p>
+</div>
+
+{% module Template("editor/_js.html") %}
+
+<script>
+  $(function(){
+    $('#edit').froalaEditor({
+    })
+  });
+</script>
+</body>
+</html>
