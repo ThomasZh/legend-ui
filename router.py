@@ -15,6 +15,7 @@ from foo.ui import ui_legend
 from foo.ui import ui_weui
 from foo.ui import ui_editor
 from foo.ui import ui_blocks
+from foo.ui import ui_gentelella
 
 
 def map():
@@ -87,6 +88,28 @@ def map():
         (r'/ui/blocks/pricings', getattr(ui_blocks, 'BlocksPricingsHandler')),
         (r'/ui/blocks/teams', getattr(ui_blocks, 'BlocksTeamsHandler')),
         (r'/ui/blocks/testimonials', getattr(ui_blocks, 'BlocksTestimonialsHandler')),
+
+
+        (r'/ui/gentelella', getattr(ui_gentelella, 'GentelellaIndexHandler')),
+        (r'/ui/gentelella/index2', getattr(ui_gentelella, 'GentelellaIndex2Handler')),
+        (r'/ui/gentelella/index3', getattr(ui_gentelella, 'GentelellaIndex3Handler')),
+        (r'/ui/gentelella/form', getattr(ui_gentelella, 'GentelellaFormHandler')),
+        (r'/ui/gentelella/form_advanced', getattr(ui_gentelella, 'GentelellaFormAdvancedHandler')),
+        (r'/ui/gentelella/form_validation', getattr(ui_gentelella, 'GentelellaFormValidationdHandler')),
+        (r'/ui/gentelella/form_wizards', getattr(ui_gentelella, 'GentelellaFormWizardsdHandler')),
+        (r'/ui/gentelella/form_upload', getattr(ui_gentelella, 'GentelellaFormUploadHandler')),
+        (r'/ui/gentelella/form_buttons', getattr(ui_gentelella, 'GentelellaFormButtonsHandler')),
+        (r'/ui/gentelella/general_elements', getattr(ui_gentelella, 'GentelellaGeneralElementsHandler')),
+        (r'/ui/gentelella/media_gallery', getattr(ui_gentelella, 'GentelellaMediaGalleryHandler')),
+        (r'/ui/gentelella/typography', getattr(ui_gentelella, 'GentelellaTypographyHandler')),
+        (r'/ui/gentelella/icons', getattr(ui_gentelella, 'GentelellaIconsHandler')),
+        (r'/ui/gentelella/glyphicons', getattr(ui_gentelella, 'GentelellaGlyphiconsHandler')),
+        (r'/ui/gentelella/widgets', getattr(ui_gentelella, 'GentelellaWidgetsHandler')),
+        (r'/ui/gentelella/invoice', getattr(ui_gentelella, 'GentelellaInvoiceHandler')),
+        (r'/ui/gentelella/inbox', getattr(ui_gentelella, 'GentelellaInboxHandler')),
+        (r'/ui/gentelella/calendar', getattr(ui_gentelella, 'GentelellaCalendarHandler')),
+        (r'/ui/gentelella/tables', getattr(ui_gentelella, 'GentelellaTablesHandler')),
+        (r'/ui/gentelella/tables_dynamic', getattr(ui_gentelella, 'GentelellaTablesDynamicHandler')),
 
 
         (r'/legend', getattr(ui_legend, 'LegendIndexHandler')),
