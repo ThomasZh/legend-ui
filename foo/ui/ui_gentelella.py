@@ -171,3 +171,136 @@ class GentelellaTablesDynamicHandler(tornado.web.RequestHandler):
     def get(self):
         logging.info(self.request)
         self.render('gentelella/tables_dynamic.html')
+
+
+# /ui/gentelella/chartjs
+class GentelellaChartjsHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/chartjs.html')
+
+
+# /ui/gentelella/chartjs2
+class GentelellaChartjs2Handler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/chartjs2.html')
+
+
+# /ui/gentelella/morisjs
+class GentelellaMorisjsHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/morisjs.html')
+
+
+# /ui/gentelella/echarts
+class GentelellaEchartsHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/echarts.html')
+
+
+# /ui/gentelella/other_charts
+class GentelellaOtherChartsHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/other_charts.html')
+
+
+# /ui/gentelella/fixed_sidebar
+class GentelellaFixedSidebarHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/fixed_sidebar.html')
+
+
+# /ui/gentelella/fixed_footer
+class GentelellaFixedFooterHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/fixed_footer.html')
+
+
+# /ui/gentelella/e_commerce
+class GentelellaEcommerceHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/e_commerce.html')
+
+
+# /ui/gentelella/projects
+class GentelellaProjectsHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/projects.html')
+
+
+# /ui/gentelella/project_detail
+class GentelellaProjectDetailHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/project_detail.html')
+
+
+# /ui/gentelella/contacts
+class GentelellaContactsHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/contacts.html')
+
+
+# /ui/gentelella/profile
+class GentelellaProfileHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/profile.html')
+
+
+# /ui/gentelella/page_403
+class GentelellaPage403Handler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/page_403.html')
+
+
+# /ui/gentelella/page_404
+class GentelellaPage404Handler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/page_404.html')
+
+
+# /ui/gentelella/page_500
+class GentelellaPage500Handler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/page_500.html')
+
+
+# /ui/gentelella/plain_page
+class GentelellaPlainPageHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/plain_page.html')
+
+
+# /ui/gentelella/login
+class GentelellaLoginHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/login.html')
+
+
+# /ui/gentelella/pricing_tables
+class GentelellaPricingTablesHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/pricing_tables.html')
+
+
+# /ui/gentelella/level2
+class GentelellaLevel2Handler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('gentelella/level2.html')
