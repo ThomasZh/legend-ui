@@ -34,6 +34,13 @@ from comm import timestamp_date
 
 
 # /ui/blocks
+class BlocksHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('blocks/index2.html')
+
+
+# /ui/blocks/index
 class BlocksIndexHandler(tornado.web.RequestHandler):
     def get(self):
         logging.info(self.request)

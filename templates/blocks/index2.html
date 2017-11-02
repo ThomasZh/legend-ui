@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Froala Design Blocks</title>
+  {% module Template("blocks/_css.html") %}
+
+  <style>
+    #navigator {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    #navigator a {
+      font-size: 14px;
+    }
+
+    #navigator + section {
+      padding: 250px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="fdb-block" style="background-image: url({{ static_url('blocks/imgs/alt_wide_1.svg') }});">
+    <div class="container">
+      <div class="row justify-content-start">
+        <div class="col-8 text-left">
+          <h1>UI Components</h1>
+          <p class="text-h3">We collected several responsive design packages ready to be used in your web or mobile apps. All packages are based on the html5/css3 Library, and they are the building for beautiful websites.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fdb-block">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 col-lg-5">
+          <h1>Gentelella</h1>
+          <p class="text-h3">Gentelella Admin is a free to use Bootstrap admin template. This template uses the default Bootstrap 3 styles along with a variety of powerful jQuery plugins and tools to create a powerful framework for creating admin panels or back-end dashboards.</p>
+          <p class="mt-5">
+            <a class="btn btn-black" href="https://github.com/puikinsh/gentelella"><i class="fa fa-github"></i> Github Docs</a>
+            <a class="btn btn-round" href="/ui/gentelella">Demo</a>
+          </p>
+        </div>
+        <div class="col-12 col-md-6 ml-md-auto mt-4 mt-md-0">
+          <a href="/ui/gentelella">
+            <img alt="image" class="img-fluid" src="https://camo.githubusercontent.com/0fc2018c171a0d6e721ad421391c006f316eee03/68747470733a2f2f63646e2e636f6c6f726c69622e636f6d2f77702f77702d636f6e74656e742f75706c6f6164732f73697465732f322f67656e74656c656c6c612d61646d696e2d74656d706c6174652d707265766965772e6a7067">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fdb-block">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 mb-4 mb-md-0">
+          <a href="/ui/blocks/index">
+            <img alt="image" class="img-fluid" src="https://cdn0.froala.com/assets/design/blocks/design-blocks-aedc910b1ac11ee2efc1c51de622ab75.jpg">
+          </a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
+          <h1>Froala Design Blocks</h1>
+          <p class="text-h3">Over 170 responsive design blocks ready to be used in your web or mobile apps. All blocks are based on the Bootstrap Library, and they are the building blocks for beautiful websites.</p>
+          <p class="mt-5">
+            <a class="btn btn-black" href="https://github.com/froala/design-blocks"><i class="fa fa-github"></i> Github Docs</a>
+            <a class="btn" href="https://froala.com/design-blocks#playground">Official Website</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fdb-block pb-0">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 col-lg-5">
+          <h1>jQuery WeUI</h1>
+          <p class="text-h3">jQuery WeUI 是专为微信公众账号开发而设计的一个简洁而强大的UI库，包含全部WeUI官方的CSS组件，并且额外提供了大量的拓展组件，丰富的组件库可以极大减少前端开发时间。</p>
+          <p class="mt-5">
+            <a class="btn btn-black" href="https://github.com/lihongxun945/jquery-weui"><i class="fa fa-github"></i> Github Docs</a>
+            <a class="btn" href="http://jqweui.com">Official Website</a>
+          </p>
+        </div>
+        <div class="col-10 col-sm-6 m-auto col-md-4 pt-4 pt-md-0">
+          <a href="/ui/weui">
+            <img alt="image" class="img-fluid br-0" src="http://jqweui.com/screenshot/grid.png">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fdb-block">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 mb-4 mb-md-0">
+          <a href="/ui/editor">
+            <img alt="image" class="img-fluid" src="https://raw.githubusercontent.com/froala/wysiwyg-editor/master/editor.jpg">
+          </a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
+          <h1>Froala Editor</h1>
+          <p class="text-h3">Froala WYSIWYG HTML Editor is one of the most powerful JavaScript rich text editors ever.</p>
+          <p class="mt-5">
+            <a class="btn btn-black" href="https://github.com/froala/wysiwyg-editor"><i class="fa fa-github"></i> Github Docs</a>
+            <a class="btn" href="https://www.froala.com/wysiwyg-editor">Official Website</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="playground">
+  </div>
+
+  <footer class="fdb-block footer-small bg-dark">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-8">
+          <ul class="nav justify-content-center justify-content-md-start">
+            <li class="nav-item">
+              <a class="nav-link active" href="/ui/gentelella">Gentelella</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ui/blocks/index">Froala Design Blocks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ui/weui">Query WeUI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ui/editor">Froala Editor</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-right">
+          &copy; 2017 7x24hs.com All Rights Reserved
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+      var get = function (url, callback) {
+        var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            var txt = xhr.responseText;
+            txt = txt.split('<body>')[1].split('</body>')[0];
+            callback(txt);
+          }
+        }
+
+        xhr.open("GET", url, false );
+        xhr.send();
+      }
+
+    var chooseBlock = function (e) {
+      e.preventDefault();
+
+      get(this.href, function (resp) {
+        document.querySelector('#playground').innerHTML = resp;
+      })
+    }
+
+    var els = document.querySelectorAll('#navigator a');
+
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+
+      el.addEventListener('click', chooseBlock);
+    }
+  </script>
+  
+</body>
+</html>

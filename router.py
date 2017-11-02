@@ -23,7 +23,7 @@ def map():
     config = [
 
         # GET: 根据 HTTP header 收集客户端相关信息：是否手机、操作系统、浏览器等信息。
-        (r'/', getattr(ui_cn, 'UicnIndexHandler')),
+        (r'/', getattr(ui_blocks, 'BlocksHandler')),
 
         (r'/ui/weui', getattr(ui_weui, 'WeuiIndexHandler')),
         (r'/ui/weui/buttons', getattr(ui_weui, 'WeuiButtonsHandler')),
@@ -76,8 +76,8 @@ def map():
         (r'/ui/editor/popular/disable_paragraphs', getattr(ui_editor, 'EditorPopularDisableParagraphsHandler')),
         (r'/ui/editor/3rd-party/aviary/index', getattr(ui_editor, 'Editor3rdPartyAviaryIndexHandler')),
 
-
-        (r'/ui/blocks', getattr(ui_blocks, 'BlocksIndexHandler')),
+        (r'/ui/blocks', getattr(ui_blocks, 'BlocksHandler')),
+        (r'/ui/blocks/index', getattr(ui_blocks, 'BlocksIndexHandler')),
         (r'/ui/blocks/call_to_action', getattr(ui_blocks, 'BlocksCallToActionHandler')),
         (r'/ui/blocks/contacts', getattr(ui_blocks, 'BlocksContactsHandler')),
         (r'/ui/blocks/contents', getattr(ui_blocks, 'BlocksContentsHandler')),
