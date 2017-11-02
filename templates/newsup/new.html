@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NewsUp - News, Magazine and Article Directory Theme</title>
+    <meta name="description" content="NewsUp is a multi-page oriented template perfect for NewsUp - News, Magazine, Blogging and Article Directory.">
+    <meta name="keywords" content="news theme, magazine, blog, article directory, article submission, writer, author, publication, html, bootstrap">
+    <meta name="author" content="Sempy Themes">
+
+    {% module Template("newsup/_css.html") %}
+
+  </head>
+  <body>
+
+	<!--- Wrapper -->
+	<section id="wrapper" class="clearfix">
+
+		<!--- Header -->
+		<header>
+      <!-- social bar -->
+      {% module Template("newsup/_social_bar.html") %}
+      <!-- end social bar -->
+			<!-- Menu bar -->
+      {% module Template("newsup/_menu_bar.html") %}
+      <!-- end Menu bar -->
+		</header>
+		<!--- End Header -->
+
+		<!-- Page Breadcrumb -->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="rst-breadcrumb">
+						<a href="#"><span>Home</span></a>
+						<span>></span>
+						<a href="#"><span>Account</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Page Breadcrumb -->
+
+		<!-- Section Register -->
+		<section id="rst-new-page">
+			<div class="container">
+				<div class="row">
+					<form action="#">
+						<div class="col-sm-8">
+							<div class="rst-section-title rst-section-title-box">
+								<h4>Add New</h4>
+							</div> <!-- end section title -->
+							<div class="rst-newscontent">
+								<div class="row">
+									<div class="col-sm-6">
+										<input class="rst-pageinput" type="text" placeholder="Your title here" />
+									</div>
+									<div class="col-xs-12">
+										<textarea class="rst-pageinput" name="content" id="content" cols="30" rows="10"></textarea>
+
+										<p class="rst-grouptitle">Additional media</p>
+
+									</div>
+									<div class="col-sm-6 col-xs-12">
+										<span class="input-group-btn">
+											<span class="input-group-text"></span>
+											<span class="btn btn-primary btn-file">
+												<img src="{{ static_url('newsup/images/icon/addmedia.png') }}" alt="" /><input type="file" multiple class="rst-pageinput"/>
+											</span>
+										</span>
+									</div>
+									<div class="col-sm-6 col-xs-12">
+										<span class="input-group-btn">
+											<span class="input-group-text"></span>
+											<span class="btn btn-primary btn-file">
+												<img src="{{ static_url('newsup/images/icon/addmedia.png') }}" alt="" /><input type="file" multiple class="rst-pageinput"/>
+											</span>
+										</span>
+									</div>
+									<div class="col-xs-12">
+										<p class="rst-grouptitle">Tags</p>
+									</div>
+									<div class="col-sm-6">
+										<input data-role="tagsinput" class="rst-pageinput" type="text" value="Sport,Hockey"/>
+									</div>
+									<div class="col-sm-6">
+										<p class="rst-tagstext">Nulla volutpat magna at varius cursus.</p>
+									</div>
+									<div class="col-xs-12">
+										<input class="rst-pagebutton" type="submit" value="Publish"/>
+										<input class="rst-pagebutton" type="submit" value="Preview"/>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="rst-section-title rst-section-title-box">
+								<h4>Share</h4>
+								<div class="rst-shortmenu">
+									<a href="#"><i class="fa fa-angle-down"></i></a>
+								</div>
+							</div> <!-- end section title -->
+							<div class="rst-share-fb">
+								<input type="checkbox" class="styled"/>
+								<span>on Facebook</span>
+								<div class="clear"></div>
+							</div>
+							<div class="rst-share-tw">
+								<input type="checkbox" class="styled"/>
+								<span>on Twitter</span>
+								<div class="clear"></div>
+							</div>
+							<div class="clear"></div>
+							<div class="rst-section-title rst-section-title-box">
+								<h4>Choose Category</h4>
+								<div class="rst-shortmenu">
+									<a href="#"><i class="fa fa-angle-down"></i></a>
+								</div>
+							</div> <!-- end section title -->
+							<div class="rst-new-cat">
+								<ul>
+									<li><input type="checkbox" class="styled" /><span>Sport</span></li>
+									<li><input type="checkbox" class="styled" /><span>Life</span></li>
+									<li><input type="checkbox" class="styled" /><span>Football</span></li>
+									<li><input type="checkbox" class="styled" /><span>Personal</span></li>
+									<li><input type="checkbox" class="styled" /><span>Hockey</span></li>
+									<li><input type="checkbox" class="styled" /><span>Employment</span></li>
+									<li><input type="checkbox" class="styled" /><span>Tennis</span></li>
+									<li><input type="checkbox" class="styled" /><span>Happiness</span></li>
+									<li><input type="checkbox" class="styled" /><span>Basketball</span></li>
+									<li><input type="checkbox" class="styled" /><span>Hobbies</span></li>
+									<li><input type="checkbox" class="styled" /><span>Baseball</span></li>
+									<li><input type="checkbox" class="styled" /><span>Lifestyle</span></li>
+									<li><input type="checkbox" class="styled" /><span>Golf</span></li>
+									<li><input type="checkbox" class="styled" /><span>Pets</span></li>
+									<li><input type="checkbox" class="styled" /><span>Swimming</span></li>
+									<li><input type="checkbox" class="styled" /><span>Suffering</span></li>
+								</ul>
+							</div>
+							<div class="rst-previewimg">
+								<div class="rst-section-title rst-section-title-box">
+									<h4>Preview Image</h4>
+									<div class="rst-shortmenu">
+										<a href="#"><i class="fa fa-angle-down"></i></a>
+									</div>
+								</div> <!-- end section title -->
+								<input class="rst-pagebutton" type="submit" value="Select"/>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<!-- End Section Register -->
+
+    <!--- Footer -->
+    {% module Template("newsup/_footer.html") %}
+    <!--- End Footer -->
+
+	</section><!--- End Wrapper -->
+
+  {% module Template("newsup/_js.html") %}
+
+  </body>
+</html>

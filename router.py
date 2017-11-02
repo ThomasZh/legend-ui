@@ -16,6 +16,7 @@ from foo.ui import ui_weui
 from foo.ui import ui_editor
 from foo.ui import ui_blocks
 from foo.ui import ui_gentelella
+from foo.ui import ui_newsup
 
 
 def map():
@@ -129,6 +130,18 @@ def map():
         (r'/ui/gentelella/login', getattr(ui_gentelella, 'GentelellaLoginHandler')),
         (r'/ui/gentelella/pricing_tables', getattr(ui_gentelella, 'GentelellaPricingTablesHandler')),
         (r'/ui/gentelella/level2', getattr(ui_gentelella, 'GentelellaLevel2Handler')),
+
+
+        (r'/ui/newsup/index', getattr(ui_newsup, 'NewsupIndexHandler')),
+        (r'/ui/newsup/author', getattr(ui_newsup, 'NewsupAuthorHandler')),
+        (r'/ui/newsup/media', getattr(ui_newsup, 'NewsupMediaHandler')),
+        (r'/ui/newsup/shortcodes', getattr(ui_newsup, 'NewsupShortcodesHandler')),
+        (r'/ui/newsup/contact', getattr(ui_newsup, 'NewsupContactHandler')),
+        (r'/ui/newsup/account', getattr(ui_newsup, 'NewsupAccountHandler')),
+        (r'/ui/newsup/item-detail', getattr(ui_newsup, 'NewsupItemDetailHandler')),
+        (r'/ui/newsup/new', getattr(ui_newsup, 'NewsupNewHandler')),
+        (r'/ui/newsup/register', getattr(ui_newsup, 'NewsupRegisterHandler')),
+        (r'/ui/newsup/category', getattr(ui_newsup, 'NewsupCategoryHandler')),
 
 
         (r'/legend', getattr(ui_legend, 'LegendIndexHandler')),

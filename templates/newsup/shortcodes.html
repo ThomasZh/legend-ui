@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NewsUp - News, Magazine and Article Directory Theme</title>
+    <meta name="description" content="NewsUp is a multi-page oriented template perfect for NewsUp - News, Magazine, Blogging and Article Directory.">
+    <meta name="keywords" content="news theme, magazine, blog, article directory, article submission, writer, author, publication, html, bootstrap">
+    <meta name="author" content="Sempy Themes">
+
+    {% module Template("newsup/_css.html") %}
+
+  </head>
+  <body>
+
+	<!--- Wrapper -->
+	<section id="wrapper" class="clearfix">
+
+		<!--- Header -->
+		<header>
+      <!-- social bar -->
+      {% module Template("newsup/_social_bar.html") %}
+      <!-- end social bar -->
+			<!-- Menu bar -->
+      {% module Template("newsup/_menu_bar.html") %}
+      <!-- end Menu bar -->
+		</header>
+		<!--- End Header -->
+
+		<!-- Page Breadcrumb -->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="rst-breadcrumb">
+						<a href="#"><span>Home</span></a>
+						<span>></span>
+						<a href="#"><span>Shortcodes</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Page Breadcrumb -->
+
+		<!-- Category Page Content -->
+		<section id="rst-itemcontent">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 rst-item-content">
+
+						<!-- Shortcodes -->
+						<div class="rst-section-title rst-section-title-box ">
+							<h4>Shortcodes</h4>
+						</div>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec eros at leo condimentum semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu auctor mauris. Aenean vestibulum aliquam orci sed ullamcorper. Sed vitae dolor in ipsum elementum scelerisque. Praesent vulputate maximus nunc eget mollis. Suspendisse potenti. Morbi id diam mattis, vulputate lectus sit amet, mattis ligula.</p>
+						<!-- End Shortcodes -->
+
+						<!-- Columns -->
+						<div class="rst-section-title rst-section-title-box ">
+							<h4>Columns</h4>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-6">
+								<h5>1/2</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor urna eget lectus ultrices, sed euismod nulla congue. Aliquam aliquet malesuada nulla, a malesuada orci ornare eget. Aliquam et mollis diam.</p>
+							</div>
+							<div class="col-sm-6">
+								<h5>1/2</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor urna eget lectus ultrices, sed euismod nulla congue. Aliquam aliquet malesuada nulla, a malesuada orci ornare eget. Aliquam et mollis diam.</p>
+							</div>
+							<div class="col-sm-4">
+								<h5>1/3</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor urna eget lectus ultrices, sed euismod nulla congue. </p>
+							</div>
+							<div class="col-sm-4">
+								<h5>1/3</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor urna eget lectus ultrices, sed euismod nulla congue.</p>
+							</div>
+							<div class="col-sm-4">
+								<h5>1/3</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor urna eget lectus ultrices, sed euismod nulla congue.</p>
+							</div>
+							<div class="col-sm-3">
+								<h5>1/4</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor urna eget lectus ultrices, sed </p>
+							</div>
+							<div class="col-sm-3">
+								<h5>1/4</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor urna eget lectus ultrices, sed </p>
+							</div>
+							<div class="col-sm-3">
+								<h5>1/4</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor urna eget lectus ultrices, sed </p>
+							</div>
+							<div class="col-sm-3">
+								<h5>1/4</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor urna eget lectus ultrices, sed </p>
+							</div>
+						</div>
+						<!-- End Columns -->
+
+						<!-- Accordion -->
+						<div class="rst-section-title rst-section-title-box ">
+							<h4>Accordion</h4>
+						</div>
+
+						<div class="panel-group" id="accordion-1" role="tablist" aria-multiselectable="true">
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingOne">
+								  <h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									  name 1
+									</a>
+								  </h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+								  <div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ligula fringilla, volutpat augue eget, condimentum libero. Nulla ligula velit, pulvinar in dictum a, venenatis eu sem. Donec vitae magna neque. Quisque tristique ipsum et malesuada porta.
+								  </div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingTwo">
+								  <h4 class="panel-title">
+									<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									  name 2
+									</a>
+								  </h4>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+								  <div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ligula fringilla, volutpat augue eget, condimentum libero. Nulla ligula velit, pulvinar in dictum a, venenatis eu sem. Donec vitae magna neque. Quisque tristique ipsum et malesuada porta.
+								  </div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingThree">
+								  <h4 class="panel-title">
+									<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									  name 3
+									</a>
+								  </h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+								  <div class="panel-body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ligula fringilla, volutpat augue eget, condimentum libero. Nulla ligula velit, pulvinar in dictum a, venenatis eu sem. Donec vitae magna neque. Quisque tristique ipsum et malesuada porta.
+								  </div>
+								</div>
+							</div>
+						</div>
+						<!-- End Accordion -->
+
+						<!-- Alerts -->
+						<div class="rst-section-title rst-section-title-box ">
+							<h4>Alerts</h4>
+						</div>
+
+						<div class="alert alert-success alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-close"></i></button>
+							Aenean dapibus facilisis urna lacinia.
+						</div>
+						<div class="alert alert-danger alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-close"></i></button>
+							Aenean dapibus facilisis urna lacinia.
+						</div>
+						<div class="alert alert-warning alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-close"></i></button>
+							Aenean dapibus facilisis urna lacinia.
+						</div>
+						<div class="alert alert-info alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-close"></i></button>
+							Aenean dapibus facilisis urna lacinia.
+						</div>
+						<!-- End Alerts -->
+
+						<!-- Tabs -->
+						<div class="rst-section-title rst-section-title-box ">
+							<h4>Tabs</h4>
+						</div>
+
+						<div role="tabpanel">
+
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#tabs1-1" role="tab" data-toggle="tab">Name1</a></li>
+								<li role="presentation"><a href="#tabs1-2" role="tab" data-toggle="tab">Name2</a></li>
+								<li role="presentation"><a href="#tabs1-3" role="tab" data-toggle="tab">Name3</a></li>
+							</ul>
+
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="tabs1-1">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ligula fringilla, volutpat augue eget, condimentum libero. Nulla ligula velit, pulvinar in dictum a, venenatis eu sem. Donec vitae magna neque</p>
+								</div>
+								<div role="tabpanel" class="tab-pane " id="tabs1-2">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ligula fringilla, volutpat augue eget, condimentum libero. Nulla ligula velit, pulvinar in dictum a, venenatis eu sem. Donec vitae magna neque</p>
+								</div>
+								<div role="tabpanel" class="tab-pane " id="tabs1-3">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ligula fringilla, volutpat augue eget, condimentum libero. Nulla ligula velit, pulvinar in dictum a, venenatis eu sem. Donec vitae magna neque</p>
+								</div>
+							</div>
+
+						</div>
+						<!-- End Tabs -->
+
+						<!-- Buttons -->
+						<div class="rst-section-title rst-section-title-box ">
+							<h4>Buttons</h4>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-12 rst-shortcodesbtn">
+								<button class="rst-pagebutton rst-pagebutton1" type="button">Button1</button>
+								<button class="rst-pagebutton rst-pagebutton1" type="button">Button1</button>
+								<button class="rst-pagebutton rst-pagebutton1" type="button">Button1</button>
+								<button class="rst-pagebutton rst-pagebutton2" type="button">Button2</button>
+								<button class="rst-pagebutton rst-pagebutton2" type="button">Button2</button>
+								<button class="rst-pagebutton rst-pagebutton2" type="button">Button2</button>
+							</div>
+						</div>
+						<!-- End Buttons -->
+
+						<!-- Tables -->
+						<div class="rst-section-title rst-section-title-box ">
+							<h4>Tables</h4>
+						</div>
+
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Column one</th>
+									<th>Column two</th>
+									<th>Column three</th>
+									<th>Column four</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Name 1</td>
+									<td>Name 2</td>
+									<td>Name 3</td>
+									<td>Name 4</td>
+								</tr>
+								<tr>
+									<td>Name 1</td>
+									<td>Name 2</td>
+									<td>Name 3</td>
+									<td>Name 4</td>
+								</tr>
+								<tr>
+									<td>Name 1</td>
+									<td>Name 2</td>
+									<td>Name 3</td>
+									<td>Name 4</td>
+								</tr>
+								<tr>
+									<td>Name 1</td>
+									<td>Name 2</td>
+									<td>Name 3</td>
+									<td>Name 4</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- End Tables -->
+
+						<!-- Lists -->
+						<div class="rst-section-title rst-section-title-box ">
+							<h4>Lists</h4>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-6 rst-shortcodeslist">
+								<ol>
+									<li>Lorem ipsum dolor sit amet, consectetur</li>
+									<li>Cras vestibulum ligula fringilla, volut</li>
+									<li>Nulla ligula velit, pulvinar in dictum </li>
+									<li>Quisque tristique ipsum et malesuada porta. ipsum et malesuada porta. </li>
+									<li>Phasellus sem arcu, vulputate ut mauris et,</li>
+								</ol>
+							</div>
+							<div class="col-sm-6 rst-shortcodeslist">
+								<ul>
+									<li>Lorem ipsum dolor sit amet, consectetur </li>
+									<li>Cras vestibulum ligula fringilla, volu</li>
+									<li>Nulla ligula velit, pulvinar in dictum a, </li>
+									<li>Quisque tristique ipsum et malesuada porta. ipsum et malesuada porta.</li>
+									<li>Phasellus sem arcu, vulputate ut mauris et,</li>
+								</ul>
+							</div>
+						</div>
+						<!-- End Lists -->
+					</div>
+					<div class="col-sm-4">
+						<aside class="widget widget_social">
+							<h3>Social</h3>
+							<a href="#" target="_blank">
+								<i class="fa fa-facebook"></i>
+								<b>15,000</b>
+								<span>Fans</span>
+							</a>
+							<a href="#" target="_blank">
+								<i class="fa fa-twitter"></i>
+								<b>30,000</b>
+								<span>Followers</span>
+							</a>
+							<a href="#" target="_blank">
+								<i class="fa fa-rss"></i>
+								<b>9,000</b>
+								<span>Subscribers</span>
+							</a>
+						</aside>
+						<!-- end widget social -->
+
+						<aside class="widget widget_popular">
+							<ul>
+								<li>
+									<a href="#">Popular</a>
+									<ul>
+										<li>
+											<article>
+												<div class="rst-postpic">
+													<a href="#"><img src="{{ static_url('newsup/images/slider/category/pol01.jpg') }}" alt="" /></a>
+												</div>
+												<div class="rst-postinfo">
+													<h6><a href="#">Lorem ipsum dolor sit amet consectetur.</a></h6>
+													<time><i class="fa fa-clock-o"></i>12 sep, 2015</time>
+												</div>
+											</article>
+										</li>
+										<li>
+											<article>
+												<div class="rst-postpic">
+													<a href="#"><img src="{{ static_url('newsup/images/slider/category/pol02.jpg') }}" alt="" /></a>
+												</div>
+												<div class="rst-postinfo">
+													<h6><a href="#">Lorem ipsum dolor sit amet consectetur.</a></h6>
+													<time><i class="fa fa-clock-o"></i>12 sep, 2015</time>
+												</div>
+											</article>
+										</li>
+										<li>
+											<article>
+												<div class="rst-postpic">
+													<a href="#"><img src="{{ static_url('newsup/images/slider/category/pol03.jpg') }}" alt="" /></a>
+												</div>
+												<div class="rst-postinfo">
+													<h6><a href="#">Lorem ipsum dolor sit amet consectetur.</a></h6>
+													<time><i class="fa fa-clock-o"></i>12 sep, 2015</time>
+												</div>
+											</article>
+										</li>
+										<li>
+											<article>
+												<div class="rst-postpic">
+													<a href="#"><img src="{{ static_url('newsup/images/slider/category/pol04.jpg') }}" alt="" /></a>
+												</div>
+												<div class="rst-postinfo">
+													<h6><a href="#">Lorem ipsum dolor sit amet consectetur.</a></h6>
+													<time><i class="fa fa-clock-o"></i>12 sep, 2015</time>
+												</div>
+											</article>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Latest</a>
+									<ul>
+										<li>
+											<article>
+												<div class="rst-postpic">
+													<a href="#"><img src="{{ static_url('newsup/images/slider/category/pol02.jpg') }}" alt="" /></a>
+												</div>
+												<div class="rst-postinfo">
+													<h6><a href="#">Lorem ipsum dolor sit amet consectetur.</a></h6>
+													<time><i class="fa fa-clock-o"></i>12 sep, 2015</time>
+												</div>
+											</article>
+										</li>
+										<li>
+											<article>
+												<div class="rst-postpic">
+													<a href="#"><img src="{{ static_url('newsup/images/slider/category/pol03.jpg') }}" alt="" /></a>
+												</div>
+												<div class="rst-postinfo">
+													<h6><a href="#">Lorem ipsum dolor sit amet consectetur.</a></h6>
+													<time><i class="fa fa-clock-o"></i>12 sep, 2015</time>
+												</div>
+											</article>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</aside>
+						<!-- end widget popular -->
+
+						<aside class="widget widget_adv">
+							<h3>Advertisement</h3>
+							<a href="#"><img src="{{ static_url('newsup/images/ad01.png') }}" alt="" /></a>
+							<a href="#"><img src="{{ static_url('newsup/images/ad01.png') }}" alt="" /></a>
+							<a href="#"><img src="{{ static_url('newsup/images/ad01.png') }}" alt="" /></a>
+							<a href="#"><img src="{{ static_url('newsup/images/ad01.png') }}" alt="" /></a>
+							<div class="clear"></div>
+						</aside>
+						<!-- end widget adv -->
+
+						<aside class="widget widget_video">
+							<h3>Video</h3>
+							<a href="#"><img src="images/cat-09.jpg" alt="" /></a>
+						</aside>
+						<!-- end widget adv -->
+
+						<aside class="widget widget_newsletter">
+							<h3>Newsletter</h3>
+							<form action="#">
+								<input class="rst-pageinput" type="text" value="Email and hit enter" onblur="if (this.value == '') {this.value = 'Email and hit enter';}" onclick=" if (this.value == 'Email and hit enter') {this.value = '';}" />
+								<input class="rst-pagebutton" type="submit" value="Subscribe"/>
+							</form>
+						</aside>
+						<!-- end widget newsletter -->
+
+					</div>
+					<!-- End Content Sidebar -->
+				</div>
+			</div>
+		</section>
+		<!-- End Category Page Content -->
+
+    <!--- Footer -->
+    {% module Template("newsup/_footer.html") %}
+    <!--- End Footer -->
+
+	</section><!--- End Wrapper -->
+
+  {% module Template("newsup/_js.html") %}
+
+  </body>
+</html>

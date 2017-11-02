@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NewsUp - News, Magazine and Article Directory Theme</title>
+    <meta name="description" content="NewsUp is a multi-page oriented template perfect for NewsUp - News, Magazine, Blogging and Article Directory.">
+    <meta name="keywords" content="news theme, magazine, blog, article directory, article submission, writer, author, publication, html, bootstrap">
+    <meta name="author" content="Sempy Themes">
+
+    {% module Template("newsup/_css.html") %}
+
+  </head>
+  <body>
+
+	<!--- Wrapper -->
+	<section id="wrapper" class="clearfix">
+
+		<!--- Header -->
+		<header>
+      <!-- social bar -->
+      {% module Template("newsup/_social_bar.html") %}
+      <!-- end social bar -->
+			<!-- Menu bar -->
+      {% module Template("newsup/_menu_bar.html") %}
+      <!-- end Menu bar -->
+		</header>
+		<!--- End Header -->
+
+		<!-- Page Breadcrumb -->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="rst-breadcrumb">
+						<a href="#"><span>Home</span></a>
+						<span>></span>
+						<a href="#"><span>Register</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Page Breadcrumb -->
+
+		<!-- Section Register -->
+		<section id="rst-account-page">
+			<div class="container">
+				<div class="row">
+					<form action="#">
+						<div class="col-sm-8">
+							<div class="rst-section-title rst-section-title-box">
+								<h4>Account Setting</h4>
+							</div> <!-- end section title -->
+							<div class="rst-accsetting">
+								<div class="rst-account-setting">
+									<div class="rst-setting">
+										<span>Name</span>
+										<input class="rst-pageinput" type="text" placeholder="John" />
+									</div>
+									<div class="rst-setting">
+										<span>Subname</span>
+										<input class="rst-pageinput" type="text" placeholder="Doe" />
+									</div>
+									<div class="rst-setting">
+										<span>Specialization</span>
+										<input class="rst-pageinput" type="text" placeholder="Reporter, Blogger" />
+									</div>
+									<div class="rst-setting">
+										<span>Phone</span>
+										<input class="rst-pageinput" type="text" placeholder="+48 122 33 66" />
+									</div>
+									<div class="rst-setting">
+										<span>Email</span>
+										<input class="rst-pageinput" type="email" placeholder="john@gmail.com" />
+									</div>
+									<div class="rst-setting">
+										<span>Password</span>
+										<input class="rst-pageinput" type="password" placeholder="••••••••" />
+									</div>
+									<div class="rst-setting">
+										<span>Repeat password</span>
+										<input class="rst-pageinput" type="password" placeholder="••••••••" />
+									</div>
+									<input class="rst-pagebutton" type="submit" value="SAVE CHANGES"/>
+									<input class="rst-pagebutton" type="submit" value="DO NOT SAVE"/>
+								</div>
+								<div class="rst-account-img">
+									<img src="{{ static_url('newsup/images/account.jpg') }}" alt="" />
+									<input class="rst-pagebutton" type="submit" value="CHANGE"/>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="rst-section-title rst-section-title-box">
+								<h4>Social</h4>
+							</div> <!-- end section title -->
+							<div class="rst-account-socials">
+								<div class="rst-acc-social">
+									<i class="fa fa-facebook"></i>
+									<a href="#"><i class="fa fa-times"></i></a>
+								</div>
+								<div class="rst-acc-social">
+									<i class="fa fa-twitter"></i>
+									<a href="#">ADD</a>
+								</div>
+								<div class="rst-acc-social">
+									<i class="fa fa-dribbble"></i>
+									<a href="#"><i class="fa fa-times"></i></a>
+								</div>
+								<div class="rst-acc-social">
+									<i class="fa fa-behance"></i>
+									<a href="#">ADD</a>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<!-- End Section Register -->
+
+    <!--- Footer -->
+    {% module Template("newsup/_footer.html") %}
+    <!--- End Footer -->
+
+	</section><!--- End Wrapper -->
+
+  {% module Template("newsup/_js.html") %}
+
+  </body>
+</html>

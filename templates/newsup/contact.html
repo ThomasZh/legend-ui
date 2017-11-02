@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   	<!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NewsUp - News, Magazine and Article Directory Theme</title>
+    <meta name="description" content="NewsUp is a multi-page oriented template perfect for NewsUp - News, Magazine, Blogging and Article Directory.">
+    <meta name="keywords" content="news theme, magazine, blog, article directory, article submission, writer, author, publication, html, bootstrap">
+    <meta name="author" content="Sempy Themes">
+
+    {% module Template("newsup/_css.html") %}
+
+  </head>
+  <body>
+
+	<!--- Wrapper -->
+	<section id="wrapper" class="clearfix">
+
+		<!--- Header -->
+		<header>
+      <!-- social bar -->
+      {% module Template("newsup/_social_bar.html") %}
+      <!-- end social bar -->
+			<!-- Menu bar -->
+      {% module Template("newsup/_menu_bar.html") %}
+      <!-- end Menu bar -->
+		</header>
+		<!--- End Header -->
+
+		<!-- Page Breadcrumb -->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="rst-breadcrumb">
+						<a href="#"><span>Home</span></a>
+						<span>></span>
+						<a href="#"><span>Contact</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Page Breadcrumb -->
+
+		<!-- Map Iframe -->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6467.466850022434!2d-78.8675914!3d35.8555396!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acee5f65864487%3A0xcaf7ee7f7aad5c85!2sKit+Creek+Rd%2C+Morrisville%2C+NC%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1433984656429"
+						width="100%"
+						height="370"
+						frameborder="0"
+						style="border:0">
+					</iframe>
+				</div>
+			</div>
+		</div>
+		<!-- End Map Iframe -->
+
+		<!-- Category Page Content -->
+		<section id="rst-catcontent">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8">
+						<!-- Author zone -->
+						<div class="rst-section-title rst-section-title-box">
+							<h4>Get in Touch</h4>
+						</div>
+
+						<div class="rst-getintouch-form">
+							<form method="post" action="submit.php" name="sentMessage" id="contactForm" novalidate >
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<input class="rst-pageinput" type="text" placeholder="Name" name="name" id="name" data-validation-required-message="Please enter your name."/> <!-- required data-validation-required-message="Please enter your name." -->
+											<p class="help-block text-danger"></p>
+										</div>
+										<div class="form-group">
+											<input class="rst-pageinput" type="email" placeholder="Email" name="email" id="email" data-validation-required-message="Please enter your email." /> <!-- required data-validation-required-message="Please enter your email." -->
+											<p class="help-block text-danger"></p>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<input class="rst-pageinput" type="text" placeholder="Company" name="company" id="company" data-validation-required-message="Please enter your company." /><!-- required data-validation-required-message="Please enter your company." -->
+											<p class="help-block text-danger"></p>
+										</div>
+										<div class="form-group">
+											<input class="rst-pageinput" type="text" placeholder="Phone" name="phone" id="phone" data-validation-required-message="Please enter your phone." /> <!-- required data-validation-required-message="Please enter your phone." -->
+											<p class="help-block text-danger"></p>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="form-group">
+											<textarea class="rst-pageinput" cols="30" rows="10" placeholder="Add your comment" name="message" id="message" data-validation-required-message="Please enter your message."></textarea> <!-- required data-validation-required-message="Please enter your message." -->
+											<p class="help-block text-danger"></p>
+											<div id="success"></div>
+										</div>
+										<input class="rst-pagebutton" type="submit" value="SEND"/>
+									</div>
+								</div>
+							</form>
+						</div>
+
+					</div>
+					<div class="col-sm-4">
+						<aside class="widget widget_social">
+							<h3>Social</h3>
+							<a href="#" target="_blank">
+								<i class="fa fa-facebook"></i>
+								<b>15,000</b>
+								<span>Fans</span>
+							</a>
+							<a href="#" target="_blank">
+								<i class="fa fa-twitter"></i>
+								<b>30,000</b>
+								<span>Followers</span>
+							</a>
+							<a href="#" target="_blank">
+								<i class="fa fa-rss"></i>
+								<b>9,000</b>
+								<span>Subscribers</span>
+							</a>
+						</aside>
+						<!-- end widget social -->
+
+						<aside class="widget widget_contactus">
+							<h3>Contact Us</h3>
+							<ul>
+								<li><a href="#"><span><i class="fa fa-location-arrow"></i> USA, Street 15, Manhattan, New York</span></a></li>
+								<li><a href="tel:+48 122 33 66"><span><i class="fa fa-mobile"></i> +48 122 33 66</span></a></li>
+								<li><a href="mailto:support@gmail.com"><span><i class="fa fa-paper-plane"></i> support@gmail.com</span></a></li>
+							</ul>
+						</aside>
+
+					</div>
+					<!-- End Content Sidebar -->
+				</div>
+			</div>
+		</section>
+		<!-- End Category Page Content -->
+
+		<!-- Section Latest Comments -->
+		<section id="rst-latestcomments">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="rst-section-title rst-section-title-box">
+							<h4>Latest Comment</h4>
+						</div> <!-- end section title -->
+						<div class="row commentlist owl-carousel">
+							<div class="col-sm-12 comment">
+								<div class="comment-avatar">
+									<img src="{{ static_url('newsup/images/slider/category/hm01.jpg') }}" alt="" />
+								</div>
+								<div class="comment-data">
+									<a href="#" class="comment-author">John Doe</a>
+									<span class="comment-time"><i class="fa fa-clock-o"></i>20 minute ago</span>
+									<p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+								</div>
+							</div>
+							<div class="col-sm-12 comment">
+								<div class="comment-avatar">
+									<img src="{{ static_url('newsup/images/slider/category/hm02.jpg') }}" alt="" />
+								</div>
+								<div class="comment-data">
+									<a href="#" class="comment-author">John Doe</a>
+									<span class="comment-time"><i class="fa fa-clock-o"></i>20 minute ago</span>
+									<p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+								</div>
+							</div>
+							<div class="col-sm-12 comment">
+								<div class="comment-avatar">
+									<img src="{{ static_url('newsup/images/slider/category/hm03.jpg') }}" alt="" />
+								</div>
+								<div class="comment-data">
+									<a href="#" class="comment-author">John Doe</a>
+									<span class="comment-time"><i class="fa fa-clock-o"></i>20 minute ago</span>
+									<p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+								</div>
+							</div>
+							<div class="col-sm-12 comment">
+								<div class="comment-avatar">
+									<img src="{{ static_url('newsup/images/slider/category/hm02.jpg') }}" alt="" />
+								</div>
+								<div class="comment-data">
+									<a href="#" class="comment-author">John Doe</a>
+									<span class="comment-time"><i class="fa fa-clock-o"></i>20 minute ago</span>
+									<p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+								</div>
+							</div>
+							<div class="col-sm-12 comment">
+								<div class="comment-avatar">
+									<img src="{{ static_url('newsup/images/slider/category/hm01.jpg') }}" alt="" />
+								</div>
+								<div class="comment-data">
+									<a href="#" class="comment-author">John Doe</a>
+									<span class="comment-time"><i class="fa fa-clock-o"></i>20 minute ago</span>
+									<p class="comment-body">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Section Latest Comments -->
+
+    <!--- Footer -->
+    {% module Template("newsup/_footer.html") %}
+    <!--- End Footer -->
+
+	</section><!--- End Wrapper -->
+
+  {% module Template("newsup/_js.html") %}
+
+  </body>
+</html>

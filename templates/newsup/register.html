@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NewsUp - News, Magazine and Article Directory Theme</title>
+    <meta name="description" content="NewsUp is a multi-page oriented template perfect for NewsUp - News, Magazine, Blogging and Article Directory.">
+    <meta name="keywords" content="news theme, magazine, blog, article directory, article submission, writer, author, publication, html, bootstrap">
+    <meta name="author" content="Sempy Themes">
+
+    {% module Template("newsup/_css.html") %}
+
+  </head>
+  <body>
+
+	<!--- Wrapper -->
+	<section id="wrapper" class="clearfix">
+
+		<!--- Header -->
+		<header>
+      <!-- social bar -->
+      {% module Template("newsup/_social_bar.html") %}
+      <!-- end social bar -->
+			<!-- Menu bar -->
+      {% module Template("newsup/_menu_bar.html") %}
+      <!-- end Menu bar -->
+		</header>
+		<!--- End Header -->
+
+		<!-- Page Breadcrumb -->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="rst-breadcrumb">
+						<a href="#"><span>Home</span></a>
+						<span>></span>
+						<a href="#"><span>Register</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Page Breadcrumb -->
+
+		<!-- Section Register -->
+		<section id="rst-register-page">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8">
+						<form action="#">
+							<div class="rst-section-title rst-section-title-box">
+								<h4>New User</h4>
+							</div> <!-- end section title -->
+							<div class="row">
+								<div class="col-sm-6">
+									<input class="rst-pageinput" type="text" placeholder="Artem" />
+									<input class="rst-pageinput" type="password" placeholder="Password" />
+								</div>
+								<div class="col-sm-6">
+									<input class="rst-pageinput" type="text" placeholder="Subname" />
+									<input class="rst-pageinput" type="password" placeholder="Repeat password" />
+								</div>
+								<div class="col-xs-12">
+									<input class="rst-pagebutton" type="submit" value="SEND"/>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-sm-4">
+						<form action="#">
+							<div class="rst-section-title rst-section-title-box">
+								<h4>Login</h4>
+							</div> <!-- end section title -->
+							<input class="rst-pageinput" type="text" placeholder="Login" />
+							<input class="rst-pageinput" type="password" placeholder="Password" />
+							<input class="rst-pagebutton" type="submit" value="LOGIN"/>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Section Register -->
+
+    <!--- Footer -->
+    {% module Template("newsup/_footer.html") %}
+    <!--- End Footer -->
+
+	</section><!--- End Wrapper -->
+
+  {% module Template("newsup/_js.html") %}
+
+  </body>
+</html>
