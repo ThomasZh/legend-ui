@@ -9,6 +9,11 @@
 
     <title>Gentelella Alela! | </title>
     {% module Template("gentelella/_css.html") %}
+    <!-- JQVMap -->
+    <link href="{{ static_url('gentelella/vendors/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet"/>
+
+    <!-- Custom Theme Style -->
+    <link href="{{ static_url('gentelella/css/custom.min.css') }}" rel="stylesheet">
 
   </head>
 
@@ -207,6 +212,18 @@
     </div>
 
     {% module Template("gentelella/_js.html") %}
+    <!-- jQuery Sparklines -->
+    <script src="{{ static_url('gentelella/vendors/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
+    <!-- JQVMap -->
+    <script src="{{ static_url('gentelella/vendors/jqvmap/dist/jquery.vmap.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/jqvmap/dist/maps/jquery.vmap.usa.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
+    <!-- easy-pie-chart -->
+    <script src="{{ static_url('gentelella/vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{{ static_url('gentelella/js/custom.min.js') }}"></script>
 
   </body>
 </html>

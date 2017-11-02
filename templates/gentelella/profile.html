@@ -9,6 +9,11 @@
 
     <title>Gentelella Alela! | </title>
     {% module Template("gentelella/_css.html") %}
+    <!-- bootstrap-daterangepicker -->
+    <link href="{{ static_url('gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{{ static_url('gentelella/css/custom.min.css') }}" rel="stylesheet">
 
   </head>
 
@@ -92,7 +97,7 @@
                       <div class="profile_img">
                         <div id="crop-avatar">
                           <!-- Current avatar -->
-                          <img class="img-responsive avatar-view" src="images/picture.jpg" alt="Avatar" title="Change the avatar">
+                          <img class="img-responsive avatar-view" src="{{ static_url('gentelella/images/picture.jpg') }}" alt="Avatar" title="Change the avatar">
                         </div>
                       </div>
                       <h3>Samuel Doe</h3>
@@ -177,7 +182,7 @@
                             <!-- start recent activity -->
                             <ul class="messages">
                               <li>
-                                <img src="images/img.jpg" class="avatar" alt="Avatar">
+                                <img src="{{ static_url('gentelella/images/img.jpg') }}" class="avatar" alt="Avatar">
                                 <div class="message_date">
                                   <h3 class="date text-info">24</h3>
                                   <p class="month">May</p>
@@ -193,7 +198,7 @@
                                 </div>
                               </li>
                               <li>
-                                <img src="images/img.jpg" class="avatar" alt="Avatar">
+                                <img src="{{ static_url('gentelella/images/img.jpg') }}" class="avatar" alt="Avatar">
                                 <div class="message_date">
                                   <h3 class="date text-error">21</h3>
                                   <p class="month">May</p>
@@ -209,7 +214,7 @@
                                 </div>
                               </li>
                               <li>
-                                <img src="images/img.jpg" class="avatar" alt="Avatar">
+                                <img src="{{ static_url('gentelella/images/img.jpg') }}" class="avatar" alt="Avatar">
                                 <div class="message_date">
                                   <h3 class="date text-info">24</h3>
                                   <p class="month">May</p>
@@ -225,7 +230,7 @@
                                 </div>
                               </li>
                               <li>
-                                <img src="images/img.jpg" class="avatar" alt="Avatar">
+                                <img src="{{ static_url('gentelella/images/img.jpg') }}" class="avatar" alt="Avatar">
                                 <div class="message_date">
                                   <h3 class="date text-error">21</h3>
                                   <p class="month">May</p>
@@ -330,6 +335,17 @@
     </div>
 
     {% module Template("gentelella/_js.html") %}
+    <!-- morris.js -->
+    <script src="{{ static_url('gentelella/vendors/raphael/raphael.min.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/morris.js/morris.min.js') }}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{{ static_url('gentelella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{ static_url('gentelella/vendors/moment/min/moment.min.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{{ static_url('gentelella/js/custom.min.js') }}"></script>
 
   </body>
 </html>

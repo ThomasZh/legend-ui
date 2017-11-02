@@ -10,6 +10,9 @@
     <title>Gentelella Alela! | </title>
     {% module Template("gentelella/_css.html") %}
 
+    <!-- Custom Theme Style -->
+    <link href="{{ static_url('gentelella/css/custom.min.css') }}" rel="stylesheet">
+
   </head>
 
   <body class="nav-md">
@@ -505,6 +508,11 @@
     </div>
 
     {% module Template("gentelella/_js.html") %}
+    <!-- iCheck -->
+    <script src="{{ static_url('gentelella/vendors/iCheck/icheck.min.js') }}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{{ static_url('gentelella/js/custom.min.js') }}"></script>
 
   </body>
 </html>

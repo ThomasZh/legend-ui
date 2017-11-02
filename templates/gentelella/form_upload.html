@@ -10,6 +10,10 @@
 
     <title>Gentelella Alela! | </title>
     {% module Template("gentelella/_css.html") %}
+    <!-- Dropzone.js -->
+    <link href="{{ static_url('gentelella/vendors/dropzone/dist/min/dropzone.min.css') }}" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="{{ static_url('gentelella/css/custom.min.css') }}" rel="stylesheet">
 
   </head>
 
@@ -110,6 +114,10 @@
     </div>
 
     {% module Template("gentelella/_js.html") %}
+    <!-- Dropzone.js -->
+    <script src="{{ static_url('gentelella/vendors/dropzone/dist/min/dropzone.min.js') }}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{{ static_url('gentelella/js/custom.min.js') }}"></script>
 
   </body>
 </html>

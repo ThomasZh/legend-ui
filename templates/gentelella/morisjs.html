@@ -10,6 +10,9 @@
     <title>Moris JS Chart Examples | Gentelella Alela! by Colorlib</title>
     {% module Template("gentelella/_css.html") %}
 
+    <!-- Custom Theme Style -->
+    <link href="{{ static_url('gentelella/css/custom.min.css') }}" rel="stylesheet">
+
   </head>
 
   <body class="nav-md">
@@ -252,6 +255,12 @@
     </div>
 
     {% module Template("gentelella/_js.html") %}
+    <!-- morris.js -->
+    <script src="{{ static_url('gentelella/vendors/raphael/raphael.min.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/morris.js/morris.min.js') }}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{{ static_url('gentelella/js/custom.min.js') }}"></script>
 
   </body>
 </html>

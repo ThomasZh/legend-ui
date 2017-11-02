@@ -9,6 +9,17 @@
 
     <title>Gentelella Alela! | </title>
     {% module Template("gentelella/_css.html") %}
+
+    <!-- bootstrap-progressbar -->
+    <link href="{{ static_url('gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="{{ static_url('gentelella/vendors/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="{{ static_url('gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{{ static_url('gentelella/css/custom.min.css') }}" rel="stylesheet">
+
   </head>
 
   <body class="nav-md">
@@ -508,6 +519,40 @@
     </div>
 
     {% module Template("gentelella/_js.html") %}
-    
+    <!-- Chart.js -->
+    <script src="{{ static_url('gentelella/vendors/Chart.js/dist/Chart.min.js') }}"></script>
+    <!-- jQuery Sparklines -->
+    <script src="{{ static_url('gentelella/vendors/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
+    <!-- gauge.js -->
+    <script src="{{ static_url('gentelella/vendors/gauge.js/dist/gauge.min.js') }}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{{ static_url('gentelella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ static_url('gentelella/vendors/iCheck/icheck.min.js') }}"></script>
+    <!-- Skycons -->
+    <script src="{{ static_url('gentelella/vendors/skycons/skycons.js') }}"></script>
+    <!-- Flot -->
+    <script src="{{ static_url('gentelella/vendors/Flot/jquery.flot.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/Flot/jquery.flot.pie.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/Flot/jquery.flot.time.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/Flot/jquery.flot.stack.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/Flot/jquery.flot.resize.js') }}"></script>
+    <!-- Flot plugins -->
+    <script src="{{ static_url('gentelella/vendors/flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/flot-spline/js/jquery.flot.spline.min.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/flot.curvedlines/curvedLines.js') }}"></script>
+    <!-- DateJS -->
+    <script src="{{ static_url('gentelella/vendors/DateJS/build/date.js') }}"></script>
+    <!-- JQVMap -->
+    <script src="{{ static_url('gentelella/vendors/jqvmap/dist/jquery.vmap.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{ static_url('gentelella/vendors/moment/min/moment.min.js') }}"></script>
+    <script src="{{ static_url('gentelella/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{{ static_url('gentelella/js/custom.min.js') }}"></script>
+
   </body>
 </html>

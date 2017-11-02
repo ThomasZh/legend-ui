@@ -9,6 +9,11 @@
 
     <title>Gentelella Alela! | </title>
     {% module Template("gentelella/_css.html") %}
+    <!-- bootstrap-progressbar -->
+    <link href="{{ static_url('gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{{ static_url('gentelella/css/custom.min.css') }}" rel="stylesheet">
 
   </head>
 
@@ -330,7 +335,7 @@
                                   </a>
                                 </li>
                                 <li>
-                                  <img src="images/user.png" alt="..." class="img-circle profile_img">
+                                  <img src="{{ static_url('gentelella/images/user.png') }}" alt="..." class="img-circle profile_img">
                                 </li>
                                 <li>
                                   <a>
@@ -663,6 +668,17 @@
     </div>
 
     {% module Template("gentelella/_js.html") %}
+    <!-- Chart.js -->
+    <script src="{{ static_url('gentelella/vendors/Chart.js/dist/Chart.min.js') }}"></script>
+    <!-- jQuery Sparklines -->
+    <script src="{{ static_url('gentelella/vendors/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
+    <!-- easy-pie-chart -->
+    <script src="{{ static_url('gentelella/vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{{ static_url('gentelella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{{ static_url('gentelella/js/custom.min.js') }}"></script>
 
   </body>
 </html>
