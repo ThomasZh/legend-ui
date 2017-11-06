@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+  <meta charset="utf-8" />
+  <title>Musik | Web Application</title>
+  {% module Template("musik/_css.html") %}
+
+</head>
+<body class="">
+  <section class="vbox">
+    <!-- .header -->
+    {% module Template("musik/_header.html") %}
+    <!-- /.header -->
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        {% module Template("musik/_aside.html") %}
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable wrapper w-f bg-white-only">
+              <p class="h4">Contents...</p>
+            </section>
+            <footer class="footer bg-light">
+              <p>This is a footer</p>
+            </footer>
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  {% module Template("musik/_js.html") %}
+
+</body>
+</html>

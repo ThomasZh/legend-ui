@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class=" ">
+<head>
+  <meta charset="utf-8" />
+  <title>Musik | Web Application</title>
+  {% module Template("musik/_css.html") %}
+
+</head>
+<body class="container">
+  <section class="vbox">
+    <!-- .header -->
+    {% module Template("musik/_header.html") %}
+    <!-- /.header -->
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        {% module Template("musik/_aside.html") %}
+        <!-- /.aside -->
+        <section id="content">
+          <section class="wrapper">
+          <div class="m-b">
+            <span class="h3 font-thin"><i class="i i-arrow-left3"></i> Boxed Layout</span>
+          </div>
+          <section class="panel panel-default">
+            <header class="panel-heading">
+              GDP per capita average annual growth rate
+            </header>
+            <div class="table-responsive" id="growthrate">
+            </div>
+          </section>
+        </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  {% module Template("musik/_js.html") %}
+
+</body>
+</html>

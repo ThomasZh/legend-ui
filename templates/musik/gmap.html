@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+  <meta charset="utf-8" />
+  <title>Musik | Web Application</title>
+  {% module Template("musik/_css.html") %}
+
+</head>
+<body class="">
+  <section class="vbox">
+    <!-- .header -->
+    {% module Template("musik/_header.html") %}
+    <!-- /.header -->
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        {% module Template("musik/_aside.html") %}
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox bg-light">
+            <section>
+              <section class="hbox stretch">
+                <section id="gmap_geocoding" style="min-height:240px;">
+                </section>
+                <aside class="wrapper aside-lg">
+                  <p class="text-lg font-thin">Google Maps</p>
+                  <form method="post" id="geocoding_form" class="m-t-sm">
+                    <div class="input-group">
+                        <input type="text" id="address" name="address" class="input-sm form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                          <button class="btn btn-sm btn-default" type="submit">Go!</button>
+                        </span>
+                    </div>
+                  </form>
+                  <a id="start_travel" class="btn btn-default btn-rounded btn-sm m-t m-b">Start</a>
+                  <ul id="instructions" class="list-unstyled fa-ul"></ul>
+                </aside>
+              </section>
+            </section>
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  {% module Template("musik/_js.html") %}
+  <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <script src="{{ static_url('musik/js/maps/gmaps.js') }}"></script>
+  <script src="{{ static_url('musik/js/maps/demo.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<nav class="navbar navbar-home">
+  <div class="container">
+    <!-- Navbar Brand -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#matblog-navbar-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="matblog-navbar-1">
+      <ul class="nav navbar-nav">
+        <li class="active has-sub-menu">
+          <a href="/ui/mateblog/index">HOME <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <span class="sub-trigger"></span>
+          <ul class="sub-menu">
+            <li><a href="/ui/mateblog/home-2">BLOG MASONRY</a></li>
+            <li><a href="/ui/mateblog/home-3">BLOG LIST</a></li>
+            <li><a href="/ui/mateblog/home-4">BLOG GRID</a></li>
+            <li><a href="/ui/mateblog/home-5">BLOG FEATURED</a></li>
+          </ul>
+        </li>
+        <li class="has-sub-menu">
+          <a href="/ui/mateblog/home-2#">PAGES <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <span class="sub-trigger"></span>
+          <ul class="sub-menu">
+            <li><a href="/ui/mateblog/single-left-sidebar">SINGLE LEFT SIDEBAR</a></li>
+            <li><a href="/ui/mateblog/single">SINGLE RIGHT SIDEBAR</a></li>
+          </ul>
+        </li>
+        <li><a href="/ui/mateblog/about">ABOUT</a></li>
+        <li><a href="/ui/mateblog/contact">CONTACT</a></li>
+      </ul>
+
+      <form action="/ui/mateblog/home-2#" method="get" class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Enter Keyword">
+        <button type="submit" class="btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </form>
+      <ul class="navbar-social social-solid inline-list navbar-right">
+        <li><a href="/ui/mateblog/home-2#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="/ui/mateblog/home-2#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="/ui/mateblog/home-2#"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="/ui/mateblog/home-2#"><i class="fa fa-pinterest-p"></i></a></li>
+        <li><a href="/ui/mateblog/home-2#"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+    <div class="nav-logo-default">
+      <a href="/ui/mateblog/index"><img src="{{ static_url('mateblog/images/18.png') }}" alt="image" class="img-responsive"></a>
+    </div>
+    <!-- /.nav-logo-default -->
+    <div class="nav-logo-default-small">
+      <a href="/ui/mateblog/index"><img src="{{ static_url('mateblog/images/19.png') }}" alt="image" class="img-responsive"></a>
+    </div>
+    <!-- /.nav-logo-default-small -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>

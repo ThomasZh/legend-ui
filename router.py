@@ -17,6 +17,9 @@ from foo.ui import ui_editor
 from foo.ui import ui_blocks
 from foo.ui import ui_gentelella
 from foo.ui import ui_newsup
+from foo.ui import ui_musik
+from foo.ui import ui_myplay
+from foo.ui import ui_mateblog
 
 
 def map():
@@ -231,6 +234,70 @@ def map():
         (r'/ui/newsup/new', getattr(ui_newsup, 'NewsupNewHandler')),
         (r'/ui/newsup/register', getattr(ui_newsup, 'NewsupRegisterHandler')),
         (r'/ui/newsup/category', getattr(ui_newsup, 'NewsupCategoryHandler')),
+
+
+        (r'/ui/musik/index', getattr(ui_musik, 'MusikIndexHandler')),
+        (r'/ui/musik/genres', getattr(ui_musik, 'MusikGenresHandler')),
+        (r'/ui/musik/events', getattr(ui_musik, 'MusikEventsHandler')),
+        (r'/ui/musik/listen', getattr(ui_musik, 'MusikListenHandler')),
+        (r'/ui/musik/video', getattr(ui_musik, 'MusikVideoHandler')),
+        (r'/ui/musik/video-detail', getattr(ui_musik, 'MusikVideoDetailHandler')),
+        (r'/ui/musik/layout-color', getattr(ui_musik, 'MusikLayoutColorHandler')),
+        (r'/ui/musik/layout-boxed', getattr(ui_musik, 'MusikLayoutBoxedHandler')),
+        (r'/ui/musik/layout-fluid', getattr(ui_musik, 'MusikLayoutFluidHandler')),
+        (r'/ui/musik/buttons', getattr(ui_musik, 'MusikButtonsHandler')),
+        (r'/ui/musik/icons', getattr(ui_musik, 'MusikIconsHandler')),
+        (r'/ui/musik/grid', getattr(ui_musik, 'MusikGridHandler')),
+        (r'/ui/musik/widgets', getattr(ui_musik, 'MusikWidgetsHandler')),
+        (r'/ui/musik/components', getattr(ui_musik, 'MusikComponentsHandler')),
+        (r'/ui/musik/list', getattr(ui_musik, 'MusikListHandler')),
+        (r'/ui/musik/table-static', getattr(ui_musik, 'MusikTableStaticHandler')),
+        (r'/ui/musik/table-datatable', getattr(ui_musik, 'MusikTableDatatableHandler')),
+        (r'/ui/musik/form-elements', getattr(ui_musik, 'MusikFormElementsHandler')),
+        (r'/ui/musik/form-validation', getattr(ui_musik, 'MusikFormValidationHandler')),
+        (r'/ui/musik/form-wizard', getattr(ui_musik, 'MusikFormWizardHandler')),
+        (r'/ui/musik/chart', getattr(ui_musik, 'MusikChartHandler')),
+        (r'/ui/musik/portlet', getattr(ui_musik, 'MusikPortletHandler')),
+        (r'/ui/musik/timeline', getattr(ui_musik, 'MusikTimelineHandler')),
+        (r'/ui/musik/profile', getattr(ui_musik, 'MusikProfileHandler')),
+        (r'/ui/musik/blog', getattr(ui_musik, 'MusikBlogHandler')),
+        (r'/ui/musik/invoice', getattr(ui_musik, 'MusikInvoiceHandler')),
+        (r'/ui/musik/gmap', getattr(ui_musik, 'MusikGmapHandler')),
+        (r'/ui/musik/jvectormap', getattr(ui_musik, 'MusikJvectormapHandler')),
+        (r'/ui/musik/signin', getattr(ui_musik, 'MusikSigninHandler')),
+        (r'/ui/musik/signup', getattr(ui_musik, 'MusikSignupHandler')),
+        (r'/ui/musik/404', getattr(ui_musik, 'Musik404Handler')),
+        (r'/ui/musik/docs', getattr(ui_musik, 'MusikDocsHandler')),
+        (r'/ui/musik/modal-lockme', getattr(ui_musik, 'MusikModalLockmeHandler')),
+
+
+        (r'/ui/myplay/index', getattr(ui_myplay, 'MyplayIndexHandler')),
+        (r'/ui/myplay/shows', getattr(ui_myplay, 'MyplayShowsHandler')),
+        (r'/ui/myplay/history', getattr(ui_myplay, 'MyplayHistoryHandler')),
+        (r'/ui/myplay/movies', getattr(ui_myplay, 'MyplayMoviesHandler')),
+        (r'/ui/myplay/sports', getattr(ui_myplay, 'MyplaySportsHandler')),
+        (r'/ui/myplay/news', getattr(ui_myplay, 'MyplayNewsHandler')),
+        (r'/ui/myplay/upload', getattr(ui_myplay, 'MyplayUploadHandler')),
+        (r'/ui/myplay/about', getattr(ui_myplay, 'MyplayAboutHandler')),
+        (r'/ui/myplay/press', getattr(ui_myplay, 'MyplayPressHandler')),
+        (r'/ui/myplay/copyright', getattr(ui_myplay, 'MyplayCopyrightHandler')),
+        (r'/ui/myplay/creators', getattr(ui_myplay, 'MyplayCreatorsHandler')),
+        (r'/ui/myplay/developers', getattr(ui_myplay, 'MyplayDevelopersHandler')),
+        (r'/ui/myplay/terms', getattr(ui_myplay, 'MyplayTermsHandler')),
+        (r'/ui/myplay/privacy', getattr(ui_myplay, 'MyplayPrivacyHandler')),
+        (r'/ui/myplay/try', getattr(ui_myplay, 'MyplayTryHandler')),
+        (r'/ui/myplay/single', getattr(ui_myplay, 'MyplaySingleHandler')),
+
+
+        (r'/ui/mateblog/index', getattr(ui_mateblog, 'MateblogIndexHandler')),
+        (r'/ui/mateblog/home-2', getattr(ui_mateblog, 'MateblogHome2Handler')),
+        (r'/ui/mateblog/home-3', getattr(ui_mateblog, 'MateblogHome3Handler')),
+        (r'/ui/mateblog/home-4', getattr(ui_mateblog, 'MateblogHome4Handler')),
+        (r'/ui/mateblog/home-5', getattr(ui_mateblog, 'MateblogHome5Handler')),
+        (r'/ui/mateblog/single-left-sidebar', getattr(ui_mateblog, 'MateblogSingleLeftSidebarHandler')),
+        (r'/ui/mateblog/single', getattr(ui_mateblog, 'MateblogSingleHandler')),
+        (r'/ui/mateblog/about', getattr(ui_mateblog, 'MateblogAboutHandler')),
+        (r'/ui/mateblog/contact', getattr(ui_mateblog, 'MateblogContactHandler')),
 
 
         (r'/legend', getattr(ui_legend, 'LegendIndexHandler')),
