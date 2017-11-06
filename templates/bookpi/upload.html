@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+  <meta charset="utf-8" />
+  <title>Bookpi | Web Application</title>
+  {% module Template("bookpi/_css.html") %}
+
+</head>
+<body class="">
+  <section class="vbox">
+    <!-- .header -->
+    {% module Template("bookpi/_header.html") %}
+    <!-- /.header -->
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        {% module Template("bookpi/_aside.html") %}
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+          <section class="w-f-md">
+            <section class="hbox stretch bg-black dker">
+              <!-- side content -->
+              <aside class="col-sm-5 no-padder" id="sidebar">
+                <section class="vbox animated fadeInUp">
+                  <section class="scrollable">
+                    <div class="m-t-n-xxs item pos-rlt">
+                      <div class="top text-right">
+                      </div>
+                      <div class="bottom gd bg-info wrapper-lg">
+                        <span class="pull-right text-sm">101,400 <br>Followers</span>
+                        <span class="h2 font-thin">Soph Ashe</span>
+                      </div>
+                      <img class="img-full" src="{{ static_url('bookpi/images/m43.jpg') }}" alt="...">
+                    </div>
+                  </section>
+                </section>
+              </aside>
+              <!-- / side content -->
+              <section class="col-sm-4 no-padder bg">
+                <section class="vbox">
+                  <section class="scrollable hover">
+                    <ul class="list-group list-group-lg no-bg auto m-b-none m-t-n-xxs">
+                      <li class="list-group-item clearfix">
+                        <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                          <i class="icon-clock text"></i>
+                          <i class="icon-control-pause text-active"></i>
+                        </a>
+                        <a href="#" class="pull-left thumb-sm m-r">
+                          <img src="{{ static_url('bookpi/images/m0.jpg') }}" alt="...">
+                        </a>
+                        <a class="clear" href="#">
+                          <span class="block text-ellipsis">《彷徨》</span>
+                          <small class="text-muted">by 周树人</small>
+                        </a>
+                      </li>
+                      <li class="list-group-item clearfix">
+                        <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                          <i class="icon-clock text"></i>
+                          <i class="icon-control-pause text-active"></i>
+                        </a>
+                        <a href="#" class="pull-left thumb-sm m-r">
+                          <img src="{{ static_url('bookpi/images/a1.png') }}" alt="...">
+                        </a>
+                        <a class="clear" href="#">
+                          <span class="block text-ellipsis">《舒克和贝塔》</span>
+                          <small class="text-muted">by 郑渊洁</small>
+                        </a>
+                      </li>
+                      <li class="list-group-item clearfix">
+                        <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                          <i class="icon-clock text"></i>
+                          <i class="icon-control-pause text-active"></i>
+                        </a>
+                        <a href="#" class="pull-left thumb-sm m-r">
+                          <img src="{{ static_url('bookpi/images/a2.png') }}" alt="...">
+                        </a>
+                        <a class="clear" href="#">
+                          <span class="block text-ellipsis">《我与地坛》</span>
+                          <small class="text-muted">by 史铁生</small>
+                        </a>
+                      </li>
+                      <li class="list-group-item clearfix">
+                        <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                          <i class="icon-clock text"></i>
+                          <i class="icon-control-pause text-active"></i>
+                        </a>
+                        <a href="#" class="pull-left thumb-sm m-r">
+                          <img src="{{ static_url('bookpi/images/a3.png') }}" alt="...">
+                        </a>
+                        <a class="clear" href="#">
+                          <span class="block text-ellipsis">《巴黎圣母院》</span>
+                          <small class="text-muted">by 维克多·雨果</small>
+                        </a>
+                      </li>
+                      <li class="list-group-item clearfix">
+                        <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                          <i class="icon-clock text"></i>
+                          <i class="icon-control-pause text-active"></i>
+                        </a>
+                        <a href="#" class="pull-left thumb-sm m-r">
+                          <img src="{{ static_url('bookpi/images/a4.png') }}" alt="...">
+                        </a>
+                        <a class="clear" href="#">
+                          <span class="block text-ellipsis">《射雕英雄传》</span>
+                          <small class="text-muted">by 金庸</small>
+                        </a>
+                      </li>
+                      <li class="list-group-item clearfix">
+                        <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                          <i class="icon-clock text"></i>
+                          <i class="icon-control-pause text-active"></i>
+                        </a>
+                        <a href="#" class="pull-left thumb-sm m-r">
+                          <img src="{{ static_url('bookpi/images/a8.png') }}" alt="...">
+                        </a>
+                        <a class="clear" href="#">
+                          <span class="block text-ellipsis">《呐喊》</span>
+                          <small class="text-muted">by 鲁迅</small>
+                        </a>
+                      </li>
+                      <li class="list-group-item clearfix">
+                        <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                          <i class="icon-clock text"></i>
+                          <i class="icon-control-pause text-active"></i>
+                        </a>
+                        <a href="#" class="pull-left thumb-sm m-r">
+                          <img src="{{ static_url('bookpi/images/a9.png') }}" alt="...">
+                        </a>
+                        <a class="clear" href="#">
+                          <span class="block text-ellipsis">《沉默的大多数》</span>
+                          <small class="text-muted">by 王小波</small>
+                        </a>
+                      </li>
+                      <li class="list-group-item clearfix">
+                        <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+                          <i class="icon-clock text"></i>
+                          <i class="icon-control-pause text-active"></i>
+                        </a>
+                        <a href="#" class="pull-left thumb-sm m-r">
+                          <img src="{{ static_url('bookpi/images/a10.png') }}" alt="...">
+                        </a>
+                        <a class="clear" href="#">
+                          <span class="block text-ellipsis">《飞鸟集》</span>
+                          <small class="text-muted">by 列夫·托尔斯泰</small>
+                        </a>
+                      </li>
+                    </ul>
+                  </section>
+                </section>
+              </section>
+            </section>
+          </section>
+        </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  {% module Template("bookpi/_js.html") %}
+
+</body>
+</html>

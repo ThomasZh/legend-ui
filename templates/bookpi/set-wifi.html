@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+  <meta charset="utf-8" />
+  <title>Bookpi | Web Application</title>
+  {% module Template("bookpi/_css.html") %}
+
+</head>
+<body class="">
+  <section class="vbox">
+    <!-- .header -->
+    {% module Template("bookpi/_header.html") %}
+    <!-- /.header -->
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        {% module Template("bookpi/_aside.html") %}
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable padder">
+              <div class="m-b-md">
+                <h3 class="m-b-none">WIFI连接</h3>
+              </div>
+              <section class="panel panel-default">
+                <header class="panel-heading font-bold">
+                  wifi信息
+                </header>
+                <div class="panel-body">
+                  <form class="form-horizontal" method="get">
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">附近wifi列表</label>
+                      <div class="col-sm-10">
+                        <select name="account" class="form-control m-b">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                          <option>option 4</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">选择连接方式</label>
+                      <div class="col-sm-10">
+                        <select name="account" class="form-control m-b">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                          <option>option 4</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">wifi密码</label>
+                      <div class="col-sm-10">
+                        <input type="password" name="password" class="form-control">
+                      </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                      <div class="col-sm-4 col-sm-offset-2">
+                        <button type="submit" class="btn btn-success">连接</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </section>
+            </section>
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  {% module Template("bookpi/_js.html") %}
+
+  <!-- datepicker -->
+  <script src="{{ static_url('bookpi/js/datepicker/bootstrap-datepicker.js') }}"></script>
+  <!-- slider -->
+  <script src="{{ static_url('bookpi/js/slider/bootstrap-slider.js') }}"></script>
+  <!-- file input -->
+  <script src="{{ static_url('bookpi/js/file-input/bootstrap-filestyle.min.js') }}"></script>
+
+</body>
+</html>

@@ -18,6 +18,7 @@ from foo.ui import ui_blocks
 from foo.ui import ui_gentelella
 from foo.ui import ui_newsup
 from foo.ui import ui_musik
+from foo.ui import ui_bookpi
 from foo.ui import ui_myplay
 from foo.ui import ui_mateblog
 
@@ -269,6 +270,15 @@ def map():
         (r'/ui/musik/404', getattr(ui_musik, 'Musik404Handler')),
         (r'/ui/musik/docs', getattr(ui_musik, 'MusikDocsHandler')),
         (r'/ui/musik/modal-lockme', getattr(ui_musik, 'MusikModalLockmeHandler')),
+
+
+        (r'/ui/bookpi/index', getattr(ui_bookpi, 'BookpiIndexHandler')),
+        (r'/ui/bookpi/upload', getattr(ui_bookpi, 'BookpiUploadHandler')),
+        (r'/ui/bookpi/download', getattr(ui_bookpi, 'BookpiDownloadHandler')),
+        (r'/ui/bookpi/hot', getattr(ui_bookpi, 'BookpiHotHandler')),
+        (r'/ui/bookpi/category', getattr(ui_bookpi, 'BookpiCategoryHandler')),
+        (r'/ui/bookpi/new-books', getattr(ui_bookpi, 'BookpiNewBookslHandler')),
+        (r'/ui/bookpi/set-wifi', getattr(ui_bookpi, 'BookpiSetWifiHandler')),
 
 
         (r'/ui/myplay/index', getattr(ui_myplay, 'MyplayIndexHandler')),
