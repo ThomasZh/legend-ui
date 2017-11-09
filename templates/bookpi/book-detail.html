@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+  <meta charset="utf-8" />
+  <title>Bookpi | Web Application</title>
+  {% module Template("bookpi/_css.html") %}
+
+</head>
+<body class="">
+  <section class="vbox">
+    <!-- .header -->
+    {% module Template("bookpi/_header.html") %}
+    <!-- /.header -->
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        {% module Template("bookpi/_aside.html") %}
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable">
+              <section class="hbox stretch">
+                <aside class="aside-lg bg-light lter b-r">
+                  <section class="vbox">
+                    <section class="scrollable">
+                      <div class="wrapper">
+                        <div class="row">
+                          <div class="col-xs-6">
+                            <img src="{{ static_url('bookpi/images/p1.jpg') }}" alt="" class="r r-2x img-full">
+                          </div>
+                          <div class="col-xs-6 text-left">
+                            <h4>卖火柴的小女孩</h4>
+                            <p>安徒生童话 | <a href="http://www.apple.com">安徒生</a></p>
+                            <p>88积分 <br>
+                              开通VIP<br>
+                              可免费无限下载
+                            </p>
+                            <p>
+                              限时免费下载<br>
+                              剩余3天
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="well bg-light b m-t">
+                          <small class="text-uc text-xs text-muted">本书简介</small>
+                          <p>卖女孩的小火柴</p>
+                          <small class="text-uc text-xs text-muted">安徒生童话集</small>
+                          <p>卖火柴的小女孩》是丹麦著名童话故事作家安徒生的一篇著名的童话故事，发表于1846年。主要讲了一个卖火柴的小女孩在富人合家欢乐，举杯共庆的大年夜冻死在街头的故事。</p>
+                          <div class="line"></div>
+                          <!-- <small class="text-uc text-xs text-muted">connection</small> -->
+                        </div>
+                      </div>
+                    </section>
+                  </section>
+                </aside>
+                <aside class="bg-white">
+                  <section class="vbox">
+                    <header class="header bg-light lt">
+                      <ul class="nav nav-tabs nav-white">
+                        <li class="active"><a href="#activity" data-toggle="tab">书评</a></li>
+                        <!-- <li class=""><a href="#events" data-toggle="tab">Events</a></li>
+                        <li class=""><a href="#interaction" data-toggle="tab">Interaction</a></li> -->
+                      </ul>
+                    </header>
+                    <section class="scrollable">
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="activity">
+                          <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-lg no-border">
+                            <li class="list-group-item">
+                              <a href="#" class="thumb-sm pull-left m-r-sm">
+                                <img src="{{ static_url('bookpi/images/a0.png') }}" class="img-circle">
+                              </a>
+                              <a href="#" class="clear">
+                                <small class="pull-right">3 minuts ago</small>
+                                <strong class="block">清风</strong>
+                                <small>深刻的反应了社会 ... </small>
+                              </a>
+                            </li>
+                            <li class="list-group-item">
+                              <a href="#" class="thumb-sm pull-left m-r-sm">
+                                <img src="{{ static_url('bookpi/images/a5.png') }}" class="img-circle">
+                              </a>
+                              <a href="#" class="clear">
+                                <small class="pull-right">Jun 21</small>
+                                <strong class="block">Yoha Omish</strong>
+                                <small>Morbi nec nunc condimentum...</small>
+                              </a>
+                            </li>
+                            <li class="list-group-item">
+                              <a href="#" class="thumb-sm pull-left m-r-sm">
+                                <img src="{{ static_url('bookpi/images/a6.png') }}" class="img-circle">
+                              </a>
+                              <a href="#" class="clear">
+                                <small class="pull-right">May 10</small>
+                                <strong class="block">Gole Lido</strong>
+                                <small>社会主义好...</small>
+                              </a>
+                            </li>
+                            <li class="list-group-item">
+                              <a href="#" class="thumb-sm pull-left m-r-sm">
+                                <img src="{{ static_url('bookpi/images/a7.png') }}" class="img-circle">
+                              </a>
+                              <a href="#" class="clear">
+                                <small class="pull-right">Jan 2</small>
+                                <strong class="block">Jonthan Snow</strong>
+                                <small>Morbi nec nunc condimentum...</small>
+                              </a>
+                            </li>
+                            <li class="list-group-item" href="#email-content" data-toggle="class:show">
+                              <a href="#" class="thumb-sm pull-left m-r-sm">
+                                <img src="{{ static_url('bookpi/images/a8.png') }}" class="img-circle">
+                              </a>
+                              <a href="#" class="clear">
+                                <small class="pull-right">3 minuts ago</small>
+                                <strong class="block">Drew Wllon</strong>
+                                <small>Vestibulum ullamcorper sodales nisi nec sodales nisi nec sodales nisi nec...</small>
+                              </a>
+                            </li>
+                            <li class="list-group-item">
+                              <a href="#" class="thumb-sm pull-left m-r-sm">
+                                <img src="{{ static_url('bookpi/images/a9.png') }}" class="img-circle">
+                              </a>
+                              <a href="#" class="clear">
+                                <small class="pull-right">1 hour ago</small>
+                                <strong class="block">Jonathan George</strong>
+                                <small>Morbi nec nunc condimentum...</small>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- <div class="tab-pane" id="events">
+                          <div class="text-center wrapper">
+                            <i class="fa fa-spinner fa fa-spin fa fa-large"></i>
+                          </div>
+                        </div>
+                        <div class="tab-pane" id="interaction">
+                          <div class="text-center wrapper">
+                            <i class="fa fa-spinner fa fa-spin fa fa-large"></i>
+                          </div>
+                        </div> -->
+                      </div>
+                    </section>
+                  </section>
+                </aside>
+              </section>
+            </section>
+          </section>
+          <!-- <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a> -->
+        </section>
+      </section>
+    </section>
+  </section>
+
+  {% module Template("bookpi/_js.html") %}
+
+</body>
+</html>

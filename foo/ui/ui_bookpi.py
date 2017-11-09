@@ -75,6 +75,13 @@ class BookpiNewBookslHandler(tornado.web.RequestHandler):
         self.render('bookpi/new-books.html')
 
 
+# /ui/bookpi/book-detail
+class BookpiBookDetailHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('bookpi/book-detail.html')
+
+
 # /ui/bookpi/set-wifi
 class BookpiSetWifiHandler(tornado.web.RequestHandler):
     def get(self):

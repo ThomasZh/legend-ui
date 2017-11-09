@@ -29,11 +29,11 @@
                           <!-- <div class="bottom">
                             <span class="badge bg-info m-l-sm m-b-sm">03:20</span>
                           </div> -->
-                          <a href="#"><img src="{{ static_url('bookpi/images/p1.jpg') }}" alt="" class="r r-2x img-full"></a>
+                          <a href="/ui/bookpi/book-detail"><img src="{{ static_url('bookpi/images/p1.jpg') }}" alt="" class="r r-2x img-full"></a>
                         </div>
                         <div class="padder-v">
-                          <a href="#" class="text-ellipsis">《卖火柴的小女孩》</a>
-                          <a href="#" class="text-ellipsis text-xs text-muted">安徒生</a>
+                          <a href="/ui/bookpi/book-detail" class="text-ellipsis">《卖火柴的小女孩》</a>
+                          <a href="" class="text-ellipsis text-xs text-muted">安徒生</a>
                         </div>
                       </div>
                     </div>
@@ -41,10 +41,10 @@
                       <div class="item">
                         <div class="pos-rlt">
 
-                          <a href="#"><img src="{{ static_url('bookpi/images/p2.jpg') }}" alt="" class="r r-2x img-full"></a>
+                          <a href="/ui/bookpi/book-detail"><img src="{{ static_url('bookpi/images/p2.jpg') }}" alt="" class="r r-2x img-full"></a>
                         </div>
                         <div class="padder-v">
-                          <a href="#" class="text-ellipsis">《潮白河的故事》</a>
+                          <a href="/ui/bookpi/book-detail" class="text-ellipsis">《潮白河的故事》</a>
                           <a href="#" class="text-ellipsis text-xs text-muted">佚名</a>
                         </div>
                       </div>
@@ -54,10 +54,10 @@
                       <div class="item">
                         <div class="pos-rlt">
 
-                          <a href="#"><img src="{{ static_url('bookpi/images/p3.jpg') }}" alt="" class="r r-2x img-full"></a>
+                          <a href="/ui/bookpi/book-detail"><img src="{{ static_url('bookpi/images/p3.jpg') }}" alt="" class="r r-2x img-full"></a>
                         </div>
                         <div class="padder-v">
-                          <a href="#" class="text-ellipsis">《开往春天的地铁》</a>
+                          <a href="/ui/bookpi/book-detail" class="text-ellipsis">《开往春天的地铁》</a>
                           <a href="#" class="text-ellipsis text-xs text-muted">Allen JH</a>
                         </div>
                       </div>
@@ -183,17 +183,18 @@
                       </div>
                     </div>
                   </div>
-                  <ul class="pagination pagination">
-                    <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-                  </ul>
+                  <div class="text-center m-t-lg m-b-lg">
+                    <ul class="pagination pagination-md">
+                      <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+                      <li class="active"><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a href="#">5</a></li>
+                      <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+                    </ul>
+                  </div>
                 </section>
-
               </section>
             </section>
           </section>
@@ -202,7 +203,37 @@
       </section>
     </section>
   </section>
-
   {% module Template("bookpi/_js.html") %}
+  <script>
+      //file 打开文件
+      function openBrowse(){
+        var ie=navigator.appName=="Microsoft Internet Explorer" ? true : false;
+        if(ie){
+          document.getElementById("file").click();
+          document.getElementById("filename").value=document.getElementById("file").value;
+        }
+        else{
+          var a=document.createEvent("MouseEvents");//FF的处理
+          a.initEvent("click", true, true);
+          document.getElementById("file").dispatchEvent(a);
+        }
+      };
+
+      // $('#file').fileupload({
+      //   dataType: 'json',
+      //   done: function(e, data) {
+      //     $.each(data.result.files, function(index, file) {
+      //       $('<p/>').text(file.name + "  " + file.size).appendTo(document.body);
+      //     });
+      //   },
+      //   progressall: function(e, data) {
+      //     var progress = parseInt(data.loaded / data.total * 100, 10);
+      //     $('#progress .bar').css('width', progress + '%');
+      //     if(progress == 100){
+      //       $('#upload-wrap').hide();
+      //     }
+      //   }
+      // });
+  </script>
 </body>
 </html>

@@ -278,6 +278,7 @@ def map():
         (r'/ui/bookpi/hot', getattr(ui_bookpi, 'BookpiHotHandler')),
         (r'/ui/bookpi/category', getattr(ui_bookpi, 'BookpiCategoryHandler')),
         (r'/ui/bookpi/new-books', getattr(ui_bookpi, 'BookpiNewBookslHandler')),
+        (r'/ui/bookpi/book-detail', getattr(ui_bookpi, 'BookpiBookDetailHandler')),
         (r'/ui/bookpi/set-wifi', getattr(ui_bookpi, 'BookpiSetWifiHandler')),
 
 

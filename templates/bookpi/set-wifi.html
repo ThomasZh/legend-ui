@@ -4,7 +4,17 @@
   <meta charset="utf-8" />
   <title>Bookpi | Web Application</title>
   {% module Template("bookpi/_css.html") %}
-
+  <style media="screen">
+    #count-eg{
+      background-color: #4cb6cb;
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      border-radius: 50%;
+      line-height: 40px;
+      color: white;
+    }
+  </style>
 </head>
 <body class="">
   <section class="vbox">
@@ -31,11 +41,11 @@
                     <div class="form-group">
                       <label class="col-sm-2 control-label">附近wifi列表</label>
                       <div class="col-sm-10">
-                        <select name="account" class="form-control m-b">
-                          <option>option 1</option>
-                          <option>option 2</option>
-                          <option>option 3</option>
-                          <option>option 4</option>
+                        <select name="ssid" class="form-control m-b">
+                          <option value="">one</option>
+                          <option value="">two</option>
+                          <option value="">three</option>
+                          <option value="">four</option>
                         </select>
                       </div>
                     </div>
@@ -43,11 +53,11 @@
                     <div class="form-group">
                       <label class="col-sm-2 control-label">选择连接方式</label>
                       <div class="col-sm-10">
-                        <select name="account" class="form-control m-b">
-                          <option>option 1</option>
-                          <option>option 2</option>
-                          <option>option 3</option>
-                          <option>option 4</option>
+                        <select name="ssid-style" class="form-control m-b">
+                          <option value="AP模式" selected="true">AP模式</option>
+                          <option value="WDS-P2P模式">WDS-P2P模式</option>
+                          <option value="WDS-P2MP模式" >WDS-P2MP模式</option>
+                          <option value="WISP">WISP</option>
                         </select>
                       </div>
                     </div>
@@ -55,16 +65,27 @@
                     <div class="form-group">
                       <label class="col-sm-2 control-label">wifi密码</label>
                       <div class="col-sm-10">
-                        <input type="password" name="password" class="form-control">
+                        <input type="password" id="wifi-pwd" name="password" class="form-control">
                       </div>
                     </div>
                     <div class="line line-dashed b-b line-lg pull-in"></div>
                     <div class="form-group">
                       <div class="col-sm-4 col-sm-offset-2">
-                        <button type="submit" class="btn btn-success">连接</button>
+                        <button type="button" id="join-wifi" class="btn btn-success">连接</button>
                       </div>
                     </div>
                   </form>
+                </div>
+              </section>
+              <section class="panel panel-default">
+                <div class="panel-body">
+                  <div class="book-cont-btn" style="text-align:center;">
+                    <p id="time-eg">wifi连接之后，设备将会重启!</p>
+                    <!-- <span id="count-eg" style="display:none;" class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x text-info"></i>
+                    </span> -->
+                    <span id="count-eg" style="display:none;"></span>
+                  </div>
                 </div>
               </section>
             </section>
@@ -83,6 +104,58 @@
   <script src="{{ static_url('bookpi/js/slider/bootstrap-slider.js') }}"></script>
   <!-- file input -->
   <script src="{{ static_url('bookpi/js/file-input/bootstrap-filestyle.min.js') }}"></script>
+  <script type="text/javascript">
+    $(function(){
 
+      // 连接wifi  action
+      $('#join-wifi').on('click',function(){
+
+        var ssid = $('input[name=ssid]:selected').val();
+        var pwd = $('#wifi-pwd').val();
+        if(ssid == "undefined" || pwd == ""){
+          $.alert('请选择wifi并输入密码!');
+        }else{
+          $.ajax({
+            type: "POST",
+            url: "/setup/ajax/join-wifi?ssid="+ ssid +"&pwd="+pwd,
+            dataType: "json",
+            contentType: 'application/json',
+            success: function(data, status, xhr) {
+              console.log(data);
+              time();
+              var wait=60;
+              function time() {
+                if (wait == 0) {
+                $('#time-eg').text("wifi连接之后，设备将会重启!");
+                $('#count-eg').hide();
+                wait = 60;
+                location.href="/";
+                } else {
+                $('#time-eg').text("倒计时");
+                 $('#count-eg').show().text(wait);
+                 wait--;
+                 setTimeout(function() {
+                  time()
+                 },
+                 1000)
+                }
+              }
+              // function local(){
+              //   location.href="/";
+              // }
+              // setTimeout(location.href="/",60000);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+              console.log("XMLHttpRequest.status:" + XMLHttpRequest.status);
+            },
+            complete: function(XMLHttpRequest, textStatus) {
+              // this; // 调用本次AJAX请求时传递的options参数
+            }
+          });
+        }
+
+      })
+    })
+  </script>
 </body>
 </html>
