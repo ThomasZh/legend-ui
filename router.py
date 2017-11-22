@@ -21,6 +21,7 @@ from foo.ui import ui_musik
 from foo.ui import ui_bookpi
 from foo.ui import ui_myplay
 from foo.ui import ui_mateblog
+from foo.ui import ui_cyberlife
 
 
 def map():
@@ -371,6 +372,15 @@ def map():
         (r'/bootstrapmade/medilab', getattr(ui_bootstrapmade, 'BootstrapmadeMedilabHandler')),
         (r'/bootstrapmade/mentor', getattr(ui_bootstrapmade, 'BootstrapmadeMentorHandler')),
         (r'/bootstrapmade/squad', getattr(ui_bootstrapmade, 'BootstrapmadeSquadHandler')),
+
+
+        (r'/ui/cyberlife/index', getattr(ui_cyberlife, 'CyberlifeIndexHandler')),
+        (r'/ui/cyberlife/about', getattr(ui_cyberlife, 'CyberlifeAboutHandler')),
+        (r'/ui/cyberlife/contact', getattr(ui_cyberlife, 'CyberlifeContactHandler')),
+        (r'/ui/cyberlife/single', getattr(ui_cyberlife, 'CyberlifeSingleHandler')),
+        (r'/ui/cyberlife/categories', getattr(ui_cyberlife, 'CyberlifeCategoriesHandler')),
+        (r'/ui/cyberlife/tags', getattr(ui_cyberlife, 'CyberlifeTagsHandler')),
+
 
         # comm
         ('.*', getattr(comm, 'PageNotFoundHandler'))
