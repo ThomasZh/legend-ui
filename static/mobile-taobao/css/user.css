@@ -1,0 +1,148 @@
+
+  .clear:after {
+    content: "";
+    clear: both;
+    height: 0;
+    display: block;
+  }
+  .main header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: #fe4f00;
+    padding: 0.3rem;
+    z-index: 100;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .main header .logo {
+    float: left;
+    height: 1.28rem;
+    width: 1.28rem;
+    margin-left: 0.36rem;
+    background-image: url(../img/icons/tao.png); }
+  .main header .search-index {
+    margin: 0 auto;
+    width: 7rem; }
+  .main header .search-index a {
+      display: inline-block;
+      height: 1.28rem;
+      width: 7rem;
+      padding: 0 0.3rem;
+      line-height: 1.28rem;
+      font-size: 0.64rem;
+      color: #fff;
+      text-align: center;
+  }
+  .main .contain {
+    padding-top: 1.88rem;
+    padding-bottom: 2.1rem;
+    overflow: hidden;
+  }
+  .main .contain .user-base{
+    background-color: #fff;
+  }
+  .main .contain .user-base .user-top-pic{
+    padding: 1rem 0 0 1rem;
+  }
+  .main .contain .user-base .user-top-pic span{
+    display: inline-block;
+    margin: .3rem 0 0 0.5rem;
+    font-size: .8rem;
+  }
+  .main .contain .user-base .user-top-pic i.sex{
+    display: inline-block;
+    width: .8rem;
+    height: .8rem;
+    background-image: url(../img/icons/female.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    vertical-align: text-bottom;
+  }
+  .main .contain .user-base .user-top-pic img{
+    border: 1px solid #eee;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-block;
+    border-radius: 50%;
+  }
+  .main .contain .user-base .user-top-wrap,.main .contain .user-base .user-bottom{
+    display: -webkit-box; /* Safari */
+    display: box;
+    padding: 1rem 0;
+  }
+  .main .contain .user-base .user-top-wrap .item,.main .contain .user-base .user-bottom .item{
+    -webkit-box-flex:1;
+    box-flex:1;
+    text-align: center;
+  }
+  .main .contain .user-base .user-top-wrap .item p{color: #918e8e;}
+  .main .contain .user-base .user-top-wrap i.mark, .main .contain .user-base .user-top-wrap i.chongwu, .main .contain .user-base .user-top-wrap i.message{
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+  }
+  .main .contain .user-base .user-top-wrap i.mark {
+    background-image: url(../img/icons/mark.png);
+  }
+  .main .contain .user-base .user-top-wrap i.chongwu {
+    background-image: url(../img/icons/chongwu.png);
+  }
+  .main .contain .user-base .user-top-wrap i.message {
+    background-image: url(../img/icons/message.png);
+  }
+  .main .contain .user-base .user-bottom{
+    border-top: 1px solid #eee;
+  }
+  .main .contain .user-base .user-bottom .item p{
+    margin-bottom: .3rem;
+    color: #918e8e;
+  }
+  .main .contain section{
+    background-color: #fff;
+    margin-top: 1rem;
+  }
+  .main .contain section .title{
+    padding: .5rem;
+    border-bottom: .01rem solid #eee;
+    font-size: .6rem;
+  }
+  .main .contain section ul {
+    display: -webkit-box;
+    display: box;
+    padding: 1rem 0;
+  }
+  .main .contain section ul li {
+      -webkit-box-flex: 1;
+      box-flex: 1;
+      border-right: 1px solid #f8f8f7;
+      /*background-image: url(../img/icons/s_line.png);*/
+    }
+  .main .contain section ul li:nth-last-child(1){
+    border: none;
+  }
+  .main .contain section ul li div {
+        width: 1rem;
+        height: 1rem;
+        margin: 0 auto;
+        background-image: url(../img/index/items_09.png); }
+  .main .contain section ul li p {
+        padding-top: 0.7rem;
+        color: #918e8e;
+        text-align: center;
+        line-height: 0.4rem; }
+  .main .contain section ul li:nth-child(2) div {
+      background-image: url(../img/index/items_11.png); }
+  .main .contain section ul li:nth-child(3) div {
+      background-image: url(../img/index/items_13.png); }
+  .main .contain section ul li:nth-child(4) div {
+      background-image: url(../img/index/items_15.png); }
+  .main .contain section ul li:nth-child(5) div {
+      background-image: url(../img/index/items_17.jpg); }
+
+/*# sourceMappingURL=index.css.map */

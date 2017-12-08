@@ -22,6 +22,7 @@ from foo.ui import ui_bookpi
 from foo.ui import ui_myplay
 from foo.ui import ui_mateblog
 from foo.ui import ui_cyberlife
+from foo.ui import ui_tbmobile
 
 
 def map():
@@ -311,6 +312,17 @@ def map():
         (r'/ui/mateblog/about', getattr(ui_mateblog, 'MateblogAboutHandler')),
         (r'/ui/mateblog/contact', getattr(ui_mateblog, 'MateblogContactHandler')),
 
+        # mobile-taobao
+        (r'/ui/tbmobile/index', getattr(ui_tbmobile, 'TbmobileIndexHandler')),
+        (r'/ui/tbmobile/news', getattr(ui_tbmobile, 'TbmobileNewsHandler')),
+        (r'/ui/tbmobile/category', getattr(ui_tbmobile, 'TbmobileCategoryHandler')),
+        (r'/ui/tbmobile/goodlist', getattr(ui_tbmobile, 'TbmobileGoodlistHandler')),
+        (r'/ui/tbmobile/detail', getattr(ui_tbmobile, 'TbmobileDetailHandler')),
+        (r'/ui/tbmobile/newsdetail', getattr(ui_tbmobile, 'TbmobileNewsdetailHandler')),
+        (r'/ui/tbmobile/orders', getattr(ui_tbmobile, 'TbmobileOrdersHandler')),
+        (r'/ui/tbmobile/shopcar', getattr(ui_tbmobile, 'TbmobileShopcarHandler')),
+        (r'/ui/tbmobile/search', getattr(ui_tbmobile, 'TbmobileSearchHandler')),
+        (r'/ui/tbmobile/user', getattr(ui_tbmobile, 'TbmobileUserHandler')),
 
         (r'/legend', getattr(ui_legend, 'LegendIndexHandler')),
         (r'/legend/article', getattr(ui_legend, 'LegendArticleHandler')),
