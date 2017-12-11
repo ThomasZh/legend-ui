@@ -323,6 +323,7 @@ def map():
         (r'/ui/tbmobile/shopcar', getattr(ui_tbmobile, 'TbmobileShopcarHandler')),
         (r'/ui/tbmobile/search', getattr(ui_tbmobile, 'TbmobileSearchHandler')),
         (r'/ui/tbmobile/user', getattr(ui_tbmobile, 'TbmobileUserHandler')),
+        (r'/ui/tbmobile/user/bonus', getattr(ui_tbmobile, 'TbmobileUserBonusHandler')),
 
         (r'/legend', getattr(ui_legend, 'LegendIndexHandler')),
         (r'/legend/article', getattr(ui_legend, 'LegendArticleHandler')),

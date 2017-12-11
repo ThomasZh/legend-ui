@@ -101,3 +101,10 @@ class TbmobileUserHandler(tornado.web.RequestHandler):
     def get(self):
         logging.info(self.request)
         self.render('mobile-taobao/user.html')
+
+
+# /ui/mobile-taobao/user
+class TbmobileUserBonusHandler(tornado.web.RequestHandler):
+    def get(self):
+        logging.info(self.request)
+        self.render('mobile-taobao/bonus-points.html')

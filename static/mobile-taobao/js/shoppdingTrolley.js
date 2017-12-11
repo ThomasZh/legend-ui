@@ -50,7 +50,6 @@ localStorage.setItem("shop11",'{"id":"11","count":1}');
 localStorage.setItem("shop16",'{"id":"16","count":1}');
 //获取本地存储，加入购物车数据
 for(var key in localStorage){
-  console.log(key);
     var value=JSON.parse(localStorage.getItem(key)); 
     if(key.indexOf('p')==3){
         var idNum=key.slice(4,key.length)-1;
@@ -90,6 +89,7 @@ function CreateObj(idNum,c){
         unitPrice:shopData[idNum].price,
         goodImgUrl:'img/'+shopData[idNum].src[0],
         count:c,
+        maxNum:10,
         checked:false,
         editonoff:false
     };
@@ -156,9 +156,9 @@ var m=new Vue({
             }
         },
         deleteNum:function(mes){
-            if(mes.count>0){
+            if(mes.count>1){
                 mes.count--;
-            }else if(mes.count==0){
+            }else if(mes.count==1){
                 this.minError();
             }
         },

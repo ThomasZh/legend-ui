@@ -61,7 +61,7 @@
                         <div class='onedit' >
                             <span class='amount-left' v-on:touchend='deleteNum(aMes)'>-</span>
                             <span class='count'>{{! aMes.count}}</span>
-                            <span class='amount-right'v-on:touchend='addNum(aMes)' >+</span>
+                            <span class='amount-right' v-on:touchend='addNum(aMes)' >+</span>
                             <div class='delete' @touchend='deleteGood(index)'>删除</div>
                         </div>
                     </div>
@@ -92,10 +92,38 @@
         <input type="submit" value="结算">
     </div>
    </div>
-  <script type="text/javascript" src="{{ static_url('mobile-taobao/js/shoppdingTrolley.js') }}"></script>
+  <script type="text/javascript">
+  // 商品列表图片
+	var src1 = ["{{ static_url('mobile-taobao/img/clothes/1.jpg') }}",
+						  "{{ static_url('mobile-taobao/img/clothes/2.jpg') }}",
+						  "{{ static_url('mobile-taobao/img/clothes/3.jpg') }}",
+						  "{{ static_url('mobile-taobao/img/clothes/4.jpg') }}",
+						  "{{ static_url('mobile-taobao/img/clothes/5.jpg') }}"
+					 ];
+	var src2 = ["{{ static_url('mobile-taobao/img/clothes/10.jpg') }}",
+	 						 "{{ static_url('mobile-taobao/img/clothes/2.jpg') }}",
+	 						 "{{ static_url('mobile-taobao/img/clothes/3.jpg') }}",
+	 						 "{{ static_url('mobile-taobao/img/clothes/4.jpg') }}",
+	 						 "{{ static_url('mobile-taobao/img/clothes/5.jpg') }}"
+	 					 ];
+	 var src3 = ["{{ static_url('mobile-taobao/img/clothes/37.jpg') }}",
+							 "{{ static_url('mobile-taobao/img/clothes/2.jpg') }}",
+							 "{{ static_url('mobile-taobao/img/clothes/3.jpg') }}",
+							 "{{ static_url('mobile-taobao/img/clothes/4.jpg') }}",
+							 "{{ static_url('mobile-taobao/img/clothes/5.jpg') }}"
+						 ];
+	 var src4 = ["{{ static_url('mobile-taobao/img/clothes/26.jpg') }}",
+ 						   "{{ static_url('mobile-taobao/img/clothes/2.jpg') }}",
+ 						   "{{ static_url('mobile-taobao/img/clothes/3.jpg') }}",
+ 						   "{{ static_url('mobile-taobao/img/clothes/4.jpg') }}",
+ 						   "{{ static_url('mobile-taobao/img/clothes/5.jpg') }}"
+ 					   ];
+
+  </script>
+  <script type="text/javascript" src="{{ static_url('mobile-taobao/data/detail.js') }}"></script>
   <script type="text/javascript" src="{{ static_url('mobile-taobao/js/common.js') }}"></script>
  	<script type="text/javascript" src="{{ static_url('mobile-taobao/js/vue.js') }}"></script>
- 	<script type="text/javascript" src="{{ static_url('mobile-taobao/js/detail.js') }}"></script>
+ 	<script type="text/javascript" src="{{ static_url('mobile-taobao/js/shoppdingTrolley.js') }}"></script>
 
 </body>
 </html>
