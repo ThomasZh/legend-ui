@@ -1,0 +1,32 @@
+<header class="article-header">
+    <a href=" .Permalink ">
+    <h1 class="article-title" itemprop="name">
+         .Title
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime=" .Date " itemprop="datePublished"> .Date.Format .Site.Params.date_format </time>
+            &middot;
+             .WordCount
+            &middot;
+             .ReadingTime
+        </div>
+
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                 range $k, $v := .Params.categories
+                 $url := printf "categories/%s" (. | urlize | lower)
+                <a class="article-category-link" href=" $url | absURL "> . </a>
+            </div>
+
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                 range $k, $v := .Params.tags
+                 $url := printf "tags/%s" (. | urlize | lower)
+                <a class="article-category-link" href=" $url | absURL "> . </a>
+            </div>
+    </div>
+</header>

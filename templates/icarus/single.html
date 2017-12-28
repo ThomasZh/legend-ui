@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Tornado 如何自动生成 Rest API 文档 &middot; 数码生活维基</title>
+    <meta name="generator" content="Hugo 0.31.1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="璟天">
+
+      <meta name="description" content="">
+
+
+    <link rel="canonical" href="http://cyber-life.cn/2017/12/13/tornado-%E5%A6%82%E4%BD%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90-rest-api-%E6%96%87%E6%A1%A3/"/>
+    {% module Template("icarus/_css.html") %}
+
+
+    <meta property="og:title" content="Tornado 如何自动生成 Rest API 文档" />
+<meta property="og:description" content="前一段时间学习使用Golang，使用了beego创建了第一个apiserver，发现beego集成了Swagger。
+Swagger 是一个规范和完整的框架，用于生成、描写叙述、调用和可视化 RESTful 风格的 Web 服务。整体目标是使client和文件系统作为服务器以相同的速度来更新。
+我们使用python开发程序已经有两年多，一时无法切换到Golang，那python下是否有Swagger的插件呢？
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cyber-life.cn/2017/12/13/tornado-%E5%A6%82%E4%BD%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90-rest-api-%E6%96%87%E6%A1%A3/" />
+
+
+
+<meta property="article:published_time" content="2017-12-13T14:49:43&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-13T14:49:43&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Tornado 如何自动生成 Rest API 文档">
+<meta itemprop="description" content="前一段时间学习使用Golang，使用了beego创建了第一个apiserver，发现beego集成了Swagger。
+Swagger 是一个规范和完整的框架，用于生成、描写叙述、调用和可视化 RESTful 风格的 Web 服务。整体目标是使client和文件系统作为服务器以相同的速度来更新。
+我们使用python开发程序已经有两年多，一时无法切换到Golang，那python下是否有Swagger的插件呢？
+
+">
+
+
+<meta itemprop="datePublished" content="2017-12-13T14:49:43&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-13T14:49:43&#43;08:00" />
+<meta itemprop="wordCount" content="134">
+
+
+
+<meta itemprop="keywords" content="python,tornado,swagger,api,doc," />
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Tornado 如何自动生成 Rest API 文档"/>
+<meta name="twitter:description" content="前一段时间学习使用Golang，使用了beego创建了第一个apiserver，发现beego集成了Swagger。
+Swagger 是一个规范和完整的框架，用于生成、描写叙述、调用和可视化 RESTful 风格的 Web 服务。整体目标是使client和文件系统作为服务器以相同的速度来更新。
+我们使用python开发程序已经有两年多，一时无法切换到Golang，那python下是否有Swagger的插件呢？
+
+"/>
+
+
+
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	{% module Template("icarus/_header.html") %}
+
+
+   	<div class="outer">
+
+{% module Template("icarus/_profile.html") %}
+
+
+
+    <section id="main">
+
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+
+
+        <header class="article-header">
+    <a href="http://cyber-life.cn/2017/12/13/tornado-%E5%A6%82%E4%BD%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90-rest-api-%E6%96%87%E6%A1%A3/">
+    <h1 class="article-title" itemprop="name">
+        Tornado 如何自动生成 Rest API 文档
+    </h1>
+    </a>
+    <div class="article-meta">
+
+
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-12-13 14:49:43 &#43;0800 CST" itemprop="datePublished">2017-12-13</time>
+            &middot;
+            134
+            字
+            &middot;
+            1
+            分钟前阅读
+        </div>
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/categories/programming">programming</a>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/python">python</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/tornado">tornado</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/swagger">swagger</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/api">api</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/doc">doc</a>
+
+
+            </div>
+
+
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>前一段时间学习使用Golang，使用了beego创建了第一个apiserver，发现beego集成了Swagger。
+Swagger 是一个规范和完整的框架，用于生成、描写叙述、调用和可视化 RESTful 风格的 Web 服务。整体目标是使client和文件系统作为服务器以相同的速度来更新。
+我们使用python开发程序已经有两年多，一时无法切换到Golang，那python下是否有Swagger的插件呢？</p>
+
+<p></p>
+
+<p>用 tornado swagger 在github上搜索，发现了tornado-swagger</p>
+
+<h3 id="下载">下载</h3>
+
+<pre><code>$ git clone https://github.com/SerenaFeng/tornado-swagger.git
+</code></pre>
+
+<h3 id="安装">安装</h3>
+
+<pre><code>$ sudo python setup.py install
+</code></pre>
+
+<h3 id="程序中引用tornado-swagger">程序中引用tornado-swagger</h3>
+
+<pre><code>from tornado_swagger import swagger
+</code></pre>
+
+<h3 id="在原代码中使用注释-swagger">在原代码中使用注释@swagger</h3>
+
+<pre><code># /api/auth/codes
+class AuthCodeXHR(BaseHandler):
+    @swagger.operation(nickname='post')
+    def post(self):
+        &quot;&quot;&quot;
+            @description: 获取用户认证使用的授权凭证 {code}
+
+            @param body: {&quot;appid&quot;:&quot;bookpi&quot;,\
+                &quot;app_secret&quot;:&quot;HmnNYYXNKH&quot;}
+            @type body: L{json}
+            @in body: body
+            @required body: True
+
+            @rtype: L{Resp}
+            @notes: 后续所有 /api/auth 操作均需要使用通过此 API 获得的 code,\
+                Authorization=&quot;Bearer {code}&quot; 放置在 http.request.headers 中\
+                系统将通过此凭证验证是合法授权的app在使用/api/auth操作 \
+                此凭证 30分钟内有效
+        &quot;&quot;&quot;
+</code></pre>
+
+<h3 id="编写一个新文件swagger-py">编写一个新文件swagger.py</h3>
+
+<pre><code># _*_ coding: utf-8_*_
+
+import tornado.ioloop
+from tornado.web import RequestHandler, HTTPError
+from tornado_swagger import swagger
+
+DEFAULT_REPRESENTATION = &quot;application/json&quot;
+HTTP_BAD_REQUEST = 400
+HTTP_FORBIDDEN = 403
+HTTP_NOT_FOUND = 404
+
+swagger.docs()
+
+def make_app():
+    return swagger.Application([
+        # 获取用户认证使用的授权凭证{code}
+        ('/api/auth/codes', getattr(api_auth, 'AuthCodeXHR')),
+    ])
+
+
+if __name__ == &quot;__main__&quot;:
+    app = make_app()
+    app.listen(7117)
+    tornado.ioloop.IOLoop.current().start()
+</code></pre>
+
+<h3 id="运行">运行</h3>
+
+<pre><code>$ python swagger.py
+</code></pre>
+
+<h3 id="验证">验证</h3>
+
+<pre><code>curl http://localhost:7117/swagger/spec
+</code></pre>
+
+<h3 id="通过浏览器访问">通过浏览器访问</h3>
+
+<p><a href="http://localhost:7117/swagger/spec.html">http://localhost:7117/swagger/spec.html</a></p>
+
+<h3 id="demo-http-docs-domicake-com-swagger-spec-html"><a href="http://docs.domicake.com/swagger/spec.html">Demo</a></h3>
+
+<p>注意要点击【List Operations】菜单才能看到API列表</p>
+
+<h3 id="主要参考资料">主要参考资料：</h3>
+
+<ul>
+<li><a href="https://github.com/SerenaFeng/tornado-swagger">tornado-swagger</a></li>
+</ul>
+
+<!--more-->
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://cyber-life.cn/2017/12/13/tornado-%E5%A6%82%E4%BD%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90-rest-api-%E6%96%87%E6%A1%A3/" data-id="c10c38b4163e69844a0622eface8b3a2" class="article-share-link">
+        <i class="fa fa-share"></i>
+        分享
+    </a>
+
+    <a href="http://cyber-life.cn/2017/12/13/tornado-%E5%A6%82%E4%BD%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90-rest-api-%E6%96%87%E6%A1%A3/#disqus_thread" class="article-comment-link">
+        评论
+    </a>
+
+
+    <script>
+    (function ($) {
+
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+
+<nav id="article-nav">
+
+    <a href="http://cyber-life.cn/2017/12/10/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          上一篇
+      </strong>
+      <div class="article-nav-title">静态网站生成器</div>
+    </a>
+
+
+
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+
+    </div>
+</section>
+
+
+
+    </section>
+
+
+    	<aside id="sidebar">
+        {% module Template("icarus/_sidebar_rencently.html") %}
+        {% module Template("icarus/_sidebar_categories.html") %}
+        {% module Template("icarus/_sidebar_cloud_tags.html") %}
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+
+	</div>
+</div>
+
+{% module Template("icarus/_footer.html") %}
+{% module Template("icarus/_js.html") %}
+
+
+
+</body>
+</html>

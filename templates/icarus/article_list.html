@@ -1,0 +1,2026 @@
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+
+        </a>
+
+        <header class="article-header">
+    <a href="/ui/icarus/single">
+    <h1 class="article-title" itemprop="name">
+        Tornado 如何自动生成 Rest API 文档
+    </h1>
+    </a>
+    <div class="article-meta">
+
+
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-12-13 14:49:43 &#43;0800 CST" itemprop="datePublished">2017-12-13</time>
+            &middot;
+            134
+            字
+            &middot;
+            1
+            分钟前阅读
+        </div>
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/categories/programming">programming</a>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/python">python</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/tornado">tornado</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/swagger">swagger</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/api">api</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/doc">doc</a>
+
+
+            </div>
+
+
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                <p>前一段时间学习使用Golang，使用了beego创建了第一个apiserver，发现beego集成了Swagger。
+Swagger 是一个规范和完整的框架，用于生成、描写叙述、调用和可视化 RESTful 风格的 Web 服务。整体目标是使client和文件系统作为服务器以相同的速度来更新。
+我们使用python开发程序已经有两年多，一时无法切换到Golang，那python下是否有Swagger的插件呢？</p>
+
+<p></p>
+            </p>
+            <p class="article-more-link">
+                <a href="http://cyber-life.cn/2017/12/13/tornado-%E5%A6%82%E4%BD%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90-rest-api-%E6%96%87%E6%A1%A3/">
+                    阅读详情
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://cyber-life.cn/2017/12/13/tornado-%E5%A6%82%E4%BD%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90-rest-api-%E6%96%87%E6%A1%A3/" data-id="c10c38b4163e69844a0622eface8b3a2" class="article-share-link">
+        <i class="fa fa-share"></i>
+        分享
+    </a>
+
+    <a href="http://cyber-life.cn/2017/12/13/tornado-%E5%A6%82%E4%BD%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90-rest-api-%E6%96%87%E6%A1%A3/#disqus_thread" class="article-comment-link">
+        评论
+    </a>
+
+
+    <script>
+    (function ($) {
+
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+
+        </a>
+
+        <header class="article-header">
+    <a href="http://cyber-life.cn/2017/12/10/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8/">
+    <h1 class="article-title" itemprop="name">
+        静态网站生成器
+    </h1>
+    </a>
+    <div class="article-meta">
+
+
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-12-10 22:00:40 &#43;0800 CST" itemprop="datePublished">2017-12-10</time>
+            &middot;
+            15
+            字
+            &middot;
+            1
+            分钟前阅读
+        </div>
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/categories/deploy">deploy</a>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/golang">golang</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/hugo">hugo</a>
+
+
+            </div>
+
+
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                <p>如果追溯到最早的网站形式，那时候的网页都是静态的，即一个内容不变的html文件放在服务器上，人们通过互联网访问浏览的都是这个一成不变的页面。后来，人们发现，需要和网页进行交互，能根据用户的输入动态呈现出相应的内容，这就是动态网站。那，为什么现在又回归使用静态网站呢？</p>
+
+<p></p>
+            </p>
+            <p class="article-more-link">
+                <a href="http://cyber-life.cn/2017/12/10/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8/">
+                    阅读详情
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://cyber-life.cn/2017/12/10/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8/" data-id="6550a09f263da0095a67c3566ff0b2a4" class="article-share-link">
+        <i class="fa fa-share"></i>
+        分享
+    </a>
+
+    <a href="http://cyber-life.cn/2017/12/10/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8/#disqus_thread" class="article-comment-link">
+        评论
+    </a>
+
+
+    <script>
+    (function ($) {
+
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+
+        </a>
+
+        <header class="article-header">
+    <a href="http://cyber-life.cn/2017/12/10/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%AB%99%E7%82%B9/">
+    <h1 class="article-title" itemprop="name">
+        使用hugo搭建个人博客站点
+    </h1>
+    </a>
+    <div class="article-meta">
+
+
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-12-10 19:59:43 &#43;0800 CST" itemprop="datePublished">2017-12-10</time>
+            &middot;
+            86
+            字
+            &middot;
+            1
+            分钟前阅读
+        </div>
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/categories/deploy">deploy</a>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/golang">golang</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/programming">programming</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/theme">theme</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/hugo">hugo</a>
+
+
+            </div>
+
+
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                <p>Hugo是一个强大的静态博客生成器，由spf13使用Golang开发。在性能和生成文章的速度上都不错。目前的版本是0.31.1，依然没有迈出1.0的大版本号。开始用Hugo进行博客写作了。</p>
+
+<p></p>
+            </p>
+            <p class="article-more-link">
+                <a href="http://cyber-life.cn/2017/12/10/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%AB%99%E7%82%B9/">
+                    阅读详情
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://cyber-life.cn/2017/12/10/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%AB%99%E7%82%B9/" data-id="c93169748df32f489dbfef930adc08e9" class="article-share-link">
+        <i class="fa fa-share"></i>
+        分享
+    </a>
+
+    <a href="http://cyber-life.cn/2017/12/10/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%AB%99%E7%82%B9/#disqus_thread" class="article-comment-link">
+        评论
+    </a>
+
+
+    <script>
+    (function ($) {
+
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+
+        </a>
+
+        <header class="article-header">
+    <a href="http://cyber-life.cn/2017/12/10/%E6%80%8E%E6%A0%B7%E5%B0%86%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%E5%88%B0-github-pages-%E5%8D%9A%E5%AE%A2%E4%B8%8A/">
+    <h1 class="article-title" itemprop="name">
+        怎样将域名绑定到 github pages 博客上
+    </h1>
+    </a>
+    <div class="article-meta">
+
+
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-12-10 19:39:57 &#43;0800 CST" itemprop="datePublished">2017-12-10</time>
+            &middot;
+            108
+            字
+            &middot;
+            1
+            分钟前阅读
+        </div>
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/categories/deploy">deploy</a>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/github">github</a>
+
+
+            </div>
+
+
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                <p>我在阿里云上注册了一个新域名： cyber-life.cn，我已经在GitHub Pages上建立了自己的博客： <a href="https://CyberlifeCN.github.io/">https://CyberlifeCN.github.io/</a> 。现在我希望将 cyber-life.cn 映射到 <a href="https://CyberlifeCN.github.io/">https://CyberlifeCN.github.io/</a> 。</p>
+
+<p></p>
+            </p>
+            <p class="article-more-link">
+                <a href="http://cyber-life.cn/2017/12/10/%E6%80%8E%E6%A0%B7%E5%B0%86%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%E5%88%B0-github-pages-%E5%8D%9A%E5%AE%A2%E4%B8%8A/">
+                    阅读详情
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://cyber-life.cn/2017/12/10/%E6%80%8E%E6%A0%B7%E5%B0%86%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%E5%88%B0-github-pages-%E5%8D%9A%E5%AE%A2%E4%B8%8A/" data-id="0232cb32f355bf649d2e648969d45092" class="article-share-link">
+        <i class="fa fa-share"></i>
+        分享
+    </a>
+
+    <a href="http://cyber-life.cn/2017/12/10/%E6%80%8E%E6%A0%B7%E5%B0%86%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%E5%88%B0-github-pages-%E5%8D%9A%E5%AE%A2%E4%B8%8A/#disqus_thread" class="article-comment-link">
+        评论
+    </a>
+
+
+    <script>
+    (function ($) {
+
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+
+        </a>
+
+        <header class="article-header">
+    <a href="http://cyber-life.cn/2017/05/20/markdown-cheat-sheet/">
+    <h1 class="article-title" itemprop="name">
+        Markdown Cheat Sheet
+    </h1>
+    </a>
+    <div class="article-meta">
+
+
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-05-20 12:10:51 &#43;0200 &#43;0200" itemprop="datePublished">2017-05-20</time>
+            &middot;
+            420
+            字
+            &middot;
+            2
+            分钟前阅读
+        </div>
+
+
+
+
+
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/markdown">markdown</a>
+
+
+            </div>
+
+
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                <p>This note demonstrates some of what <a href="http://daringfireball.net/projects/markdown/">Markdown</a> is capable of doing.</p>
+
+<p><em>Note: Feel free to play with this page. Unlike regular notes, this doesn&rsquo;t automatically save itself.</em></p>
+
+<p></p>
+            </p>
+            <p class="article-more-link">
+                <a href="http://cyber-life.cn/2017/05/20/markdown-cheat-sheet/">
+                    阅读详情
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://cyber-life.cn/2017/05/20/markdown-cheat-sheet/" data-id="74a465046a917f5d40c5e9a053394724" class="article-share-link">
+        <i class="fa fa-share"></i>
+        分享
+    </a>
+
+    <a href="http://cyber-life.cn/2017/05/20/markdown-cheat-sheet/#disqus_thread" class="article-comment-link">
+        评论
+    </a>
+
+
+    <script>
+    (function ($) {
+
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+
+        </a>
+
+        <header class="article-header">
+    <a href="http://cyber-life.cn/2017/05/20/using-the-gallery-shortcode/">
+    <h1 class="article-title" itemprop="name">
+        Using the gallery shortcode
+    </h1>
+    </a>
+    <div class="article-meta">
+
+
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-05-20 12:00:23 &#43;0200 &#43;0200" itemprop="datePublished">2017-05-20</time>
+            &middot;
+            33
+            字
+            &middot;
+            1
+            分钟前阅读
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                <p>This way you can easily include a gallery into your page. Copy the code below into your content file and enter the relative paths to your images.</p>
+
+<p></p>
+            </p>
+            <p class="article-more-link">
+                <a href="http://cyber-life.cn/2017/05/20/using-the-gallery-shortcode/">
+                    阅读详情
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://cyber-life.cn/2017/05/20/using-the-gallery-shortcode/" data-id="b5878041fdfd74bbf2f0b2b55108eb61" class="article-share-link">
+        <i class="fa fa-share"></i>
+        分享
+    </a>
+
+    <a href="http://cyber-life.cn/2017/05/20/using-the-gallery-shortcode/#disqus_thread" class="article-comment-link">
+        评论
+    </a>
+
+
+    <script>
+    (function ($) {
+
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+
+        </a>
+
+        <header class="article-header">
+    <a href="http://cyber-life.cn/2017/05/20/formulas-with-mathjax/">
+    <h1 class="article-title" itemprop="name">
+        Formulas with MathJax
+    </h1>
+    </a>
+    <div class="article-meta">
+
+
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-05-20 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2017-05-20</time>
+            &middot;
+            84
+            字
+            &middot;
+            1
+            分钟前阅读
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                <p>Mathematical equations in form of LaTeX or MathML code can be rendered with the support of <a href="https://www.mathjax.org">MathJax</a>. MathML works out of the box. If you&rsquo;re using LaTeX you need to wrap your equation with <code>$$</code> as shown in the following example:</p>
+
+<p></p>
+            </p>
+            <p class="article-more-link">
+                <a href="http://cyber-life.cn/2017/05/20/formulas-with-mathjax/">
+                    阅读详情
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://cyber-life.cn/2017/05/20/formulas-with-mathjax/" data-id="632158e79a9ef41ae7a2b7d46d9476ac" class="article-share-link">
+        <i class="fa fa-share"></i>
+        分享
+    </a>
+
+    <a href="http://cyber-life.cn/2017/05/20/formulas-with-mathjax/#disqus_thread" class="article-comment-link">
+        评论
+    </a>
+
+
+    <script>
+    (function ($) {
+
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+
+        <a href="http://cyber-life.cn/2015/10/02/how-to-add-pages-to-the-menu/" itemprop="url">
+            <img src="http://cyber-life.cn/banners/placeholder.png" class="article-banner">
+
+        </a>
+
+        <header class="article-header">
+    <a href="http://cyber-life.cn/2015/10/02/how-to-add-pages-to-the-menu/">
+    <h1 class="article-title" itemprop="name">
+        How to add pages to the menu
+    </h1>
+    </a>
+    <div class="article-meta">
+
+
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2015-10-02 21:49:20 &#43;0200 &#43;0200" itemprop="datePublished">2015-10-02</time>
+            &middot;
+            23
+            字
+            &middot;
+            1
+            分钟前阅读
+        </div>
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/categories/programming">programming</a>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/golang">golang</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/programming">programming</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/theme">theme</a>
+                &middot;
+
+
+                <a class="article-category-link" href="http://cyber-life.cn/tags/hugo">hugo</a>
+
+
+            </div>
+
+
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                I&rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
+menu = &quot;main&quot;
+            </p>
+            <p class="article-more-link">
+                <a href="http://cyber-life.cn/2015/10/02/how-to-add-pages-to-the-menu/">
+                    阅读详情
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://cyber-life.cn/2015/10/02/how-to-add-pages-to-the-menu/" data-id="7b5009c52e7a9a5159b64169e0ddd8bd" class="article-share-link">
+        <i class="fa fa-share"></i>
+        分享
+    </a>
+
+    <a href="http://cyber-life.cn/2015/10/02/how-to-add-pages-to-the-menu/#disqus_thread" class="article-comment-link">
+        评论
+    </a>
+
+
+    <script>
+    (function ($) {
+
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<article id="post-Take-a-Deep-Breath-and-Just-Be" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-inner">
+
+
+
+<a href="/hexo-theme-icarus/2016/07/12/Take-a-Deep-Breath-and-Just-Be/" itemprop="url">
+ <img src="/hexo-theme-icarus/gallery/salt-lake.jpg" class="article-banner" />
+</a>
+
+
+
+
+
+
+ <header class="article-header">
+
+
+<h1 itemprop="name">
+ <a class="article-title" href="/hexo-theme-icarus/2016/07/12/Take-a-Deep-Breath-and-Just-Be/">Take a Deep Breath and Just Be</a>
+</h1>
+
+
+
+         <div class="article-meta">
+
+<div class="article-date">
+<i class="fa fa-calendar"></i>
+<a href="/hexo-theme-icarus/2016/07/12/Take-a-Deep-Breath-and-Just-Be/">
+ <time datetime="2016-07-12T07:06:55.745Z" itemprop="datePublished">2016-07-12</time>
+</a>
+</div>
+
+
+
+<div class="article-category">
+<i class="fa fa-folder"></i>
+<a class="article-category-link" href="/hexo-theme-icarus/categories/LifeStyle/">LifeStyle</a>
+</div>
+
+
+         </div>
+
+ </header>
+
+
+<div class="article-entry" itemprop="articleBody">
+
+ <p><p>This is Icarus, a free responsive, high resolution and pretty flexible theme for you to use to write about things you love. Make sure to check all the examples out! To download this theme or to check the full feature list, just go here. Feel free to leave a comment there if you digg it!<br></p>
+ <p class="article-more-link">
+     <a href="/hexo-theme-icarus/2016/07/12/Take-a-Deep-Breath-and-Just-Be/#more">Read More</a>
+ </p>
+
+</div>
+<footer class="article-footer">
+ <div class="share-container">
+
+
+
+</div>
+
+<a data-url="http://ppoffice.github.io/hexo-theme-icarus/2016/07/12/Take-a-Deep-Breath-and-Just-Be/" data-id="cj059ewte000e1cu4zvctbszg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+(function ($) {
+// Prevent duplicate binding
+if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+ __SHARE_BUTTON_BINDED__ = true;
+} else {
+ return;
+}
+$('body').on('click', function() {
+ $('.article-share-box.on').removeClass('on');
+}).on('click', '.article-share-link', function(e) {
+ e.stopPropagation();
+
+ var $this = $(this),
+     url = $this.attr('data-url'),
+     encodedUrl = encodeURIComponent(url),
+     id = 'article-share-box-' + $this.attr('data-id'),
+     offset = $this.offset(),
+     box;
+
+ if ($('#' + id).length) {
+     box = $('#' + id);
+
+     if (box.hasClass('on')){
+         box.removeClass('on');
+         return;
+     }
+ } else {
+     var html = [
+         '<div id="' + id + '" class="article-share-box">',
+             '<input class="article-share-input" value="' + url + '">',
+             '<div class="article-share-links">',
+                 '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                 '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                 '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                 '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+             '</div>',
+         '</div>'
+     ].join('');
+
+   box = $(html);
+
+   $('body').append(box);
+ }
+
+ $('.article-share-box.on').hide();
+
+ box.css({
+     top: offset.top + 25,
+     left: offset.left
+ }).addClass('on');
+
+}).on('click', '.article-share-box', function (e) {
+ e.stopPropagation();
+}).on('click', '.article-share-box-input', function () {
+ $(this).select();
+}).on('click', '.article-share-box-link', function (e) {
+ e.preventDefault();
+ e.stopPropagation();
+
+ window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+});
+})(jQuery);
+</script>
+
+
+
+<a href="http://ppoffice.github.io/hexo-theme-icarus/2016/07/12/Take-a-Deep-Breath-and-Just-Be/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://ppoffice.github.io/hexo-theme-icarus/2016/07/12/Take-a-Deep-Breath-and-Just-Be/">Comments</a>
+
+
+</footer>
+</div>
+
+</article>
+
+
+
+<article id="post-Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-inner">
+
+
+
+<a href="/hexo-theme-icarus/2016/07/09/Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It/" itemprop="url">
+ <img src="/hexo-theme-icarus/gallery/shoes.jpg" class="article-banner" />
+</a>
+
+
+
+
+
+
+ <header class="article-header">
+
+
+<h1 itemprop="name">
+ <a class="article-title" href="/hexo-theme-icarus/2016/07/09/Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It/">Being Outside in Fresh Air &amp; How Your Body Loves It</a>
+</h1>
+
+
+
+         <div class="article-meta">
+
+<div class="article-date">
+<i class="fa fa-calendar"></i>
+<a href="/hexo-theme-icarus/2016/07/09/Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It/">
+ <time datetime="2016-07-08T16:00:00.000Z" itemprop="datePublished">2016-07-09</time>
+</a>
+</div>
+
+
+
+<div class="article-category">
+<i class="fa fa-folder"></i>
+<a class="article-category-link" href="/hexo-theme-icarus/categories/LifeStyle/">LifeStyle</a>
+</div>
+
+
+         </div>
+
+ </header>
+
+
+<div class="article-entry" itemprop="articleBody">
+
+ <p><p>Amor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br></p>
+ <p class="article-more-link">
+     <a href="/hexo-theme-icarus/2016/07/09/Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It/#more">Read More</a>
+ </p>
+
+</div>
+<footer class="article-footer">
+ <div class="share-container">
+
+
+
+</div>
+
+<a data-url="http://ppoffice.github.io/hexo-theme-icarus/2016/07/09/Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It/" data-id="cj059ews900011cu4pd5eafg5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+(function ($) {
+// Prevent duplicate binding
+if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+ __SHARE_BUTTON_BINDED__ = true;
+} else {
+ return;
+}
+$('body').on('click', function() {
+ $('.article-share-box.on').removeClass('on');
+}).on('click', '.article-share-link', function(e) {
+ e.stopPropagation();
+
+ var $this = $(this),
+     url = $this.attr('data-url'),
+     encodedUrl = encodeURIComponent(url),
+     id = 'article-share-box-' + $this.attr('data-id'),
+     offset = $this.offset(),
+     box;
+
+ if ($('#' + id).length) {
+     box = $('#' + id);
+
+     if (box.hasClass('on')){
+         box.removeClass('on');
+         return;
+     }
+ } else {
+     var html = [
+         '<div id="' + id + '" class="article-share-box">',
+             '<input class="article-share-input" value="' + url + '">',
+             '<div class="article-share-links">',
+                 '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                 '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                 '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                 '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+             '</div>',
+         '</div>'
+     ].join('');
+
+   box = $(html);
+
+   $('body').append(box);
+ }
+
+ $('.article-share-box.on').hide();
+
+ box.css({
+     top: offset.top + 25,
+     left: offset.left
+ }).addClass('on');
+
+}).on('click', '.article-share-box', function (e) {
+ e.stopPropagation();
+}).on('click', '.article-share-box-input', function () {
+ $(this).select();
+}).on('click', '.article-share-box-link', function (e) {
+ e.preventDefault();
+ e.stopPropagation();
+
+ window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+});
+})(jQuery);
+</script>
+
+
+
+<a href="http://ppoffice.github.io/hexo-theme-icarus/2016/07/09/Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://ppoffice.github.io/hexo-theme-icarus/2016/07/09/Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It/">Comments</a>
+
+
+</footer>
+</div>
+
+</article>
+
+
+
+<article id="post-MathJax-Example" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-inner">
+
+
+
+<a href="/hexo-theme-icarus/2016/07/08/MathJax-Example/" itemprop="url">
+ <img src="/hexo-theme-icarus/gallery/math.jpg" class="article-banner" />
+</a>
+
+
+
+
+
+
+ <header class="article-header">
+
+
+<h1 itemprop="name">
+ <a class="article-title" href="/hexo-theme-icarus/2016/07/08/MathJax-Example/">MathJax Example</a>
+</h1>
+
+
+
+         <div class="article-meta">
+
+<div class="article-date">
+<i class="fa fa-calendar"></i>
+<a href="/hexo-theme-icarus/2016/07/08/MathJax-Example/">
+ <time datetime="2016-07-08T12:07:55.000Z" itemprop="datePublished">2016-07-08</time>
+</a>
+</div>
+
+
+
+<div class="article-category">
+<i class="fa fa-folder"></i>
+<a class="article-category-link" href="/hexo-theme-icarus/categories/Technology/">Technology</a>
+</div>
+
+
+         </div>
+
+ </header>
+
+
+<div class="article-entry" itemprop="articleBody">
+
+ <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mi>f</mi><mrow><mo>(</mo><mi>a</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>i</mi></mrow></mfrac><msub><mo>&#x222E;</mo><mrow><mi>&#x3B3;</mi></mrow></msub><mfrac><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><mrow><mi>z</mi><mo>&#x2212;</mo><mi>a</mi></mrow></mfrac><mi>d</mi><mi>z</mi></mrow></math>
+
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>To enable MathJax support, just set <code>plugins.mathjax = true</code> in your theme <code>_config.yml</code> file.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Plugins</span></div><div class="line"><span class="attr">plugins:</span></div><div class="line">    ...</div><div class="line"><span class="attr">    mathjax:</span> <span class="literal">true</span> <span class="comment"># options: true, false</span></div></pre></td></tr></table></figure></p>
+ <p class="article-more-link">
+     <a href="/hexo-theme-icarus/2016/07/08/MathJax-Example/#more">Read More</a>
+ </p>
+
+</div>
+<footer class="article-footer">
+ <div class="share-container">
+
+
+
+</div>
+
+<a data-url="http://ppoffice.github.io/hexo-theme-icarus/2016/07/08/MathJax-Example/" data-id="cj059ewt8000b1cu4hhcch8ac" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+(function ($) {
+// Prevent duplicate binding
+if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+ __SHARE_BUTTON_BINDED__ = true;
+} else {
+ return;
+}
+$('body').on('click', function() {
+ $('.article-share-box.on').removeClass('on');
+}).on('click', '.article-share-link', function(e) {
+ e.stopPropagation();
+
+ var $this = $(this),
+     url = $this.attr('data-url'),
+     encodedUrl = encodeURIComponent(url),
+     id = 'article-share-box-' + $this.attr('data-id'),
+     offset = $this.offset(),
+     box;
+
+ if ($('#' + id).length) {
+     box = $('#' + id);
+
+     if (box.hasClass('on')){
+         box.removeClass('on');
+         return;
+     }
+ } else {
+     var html = [
+         '<div id="' + id + '" class="article-share-box">',
+             '<input class="article-share-input" value="' + url + '">',
+             '<div class="article-share-links">',
+                 '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                 '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                 '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                 '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+             '</div>',
+         '</div>'
+     ].join('');
+
+   box = $(html);
+
+   $('body').append(box);
+ }
+
+ $('.article-share-box.on').hide();
+
+ box.css({
+     top: offset.top + 25,
+     left: offset.left
+ }).addClass('on');
+
+}).on('click', '.article-share-box', function (e) {
+ e.stopPropagation();
+}).on('click', '.article-share-box-input', function () {
+ $(this).select();
+}).on('click', '.article-share-box-link', function (e) {
+ e.preventDefault();
+ e.stopPropagation();
+
+ window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+});
+})(jQuery);
+</script>
+
+
+
+<a href="http://ppoffice.github.io/hexo-theme-icarus/2016/07/08/MathJax-Example/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://ppoffice.github.io/hexo-theme-icarus/2016/07/08/MathJax-Example/">Comments</a>
+
+
+</footer>
+</div>
+
+</article>
+
+
+
+<article id="post-Gallery-Example" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-inner">
+
+
+ <header class="article-header">
+
+
+<h1 itemprop="name">
+ <a class="article-title" href="/hexo-theme-icarus/2016/07/08/Gallery-Example/">Gallery Example</a>
+</h1>
+
+
+
+         <div class="article-meta">
+
+<div class="article-date">
+<i class="fa fa-calendar"></i>
+<a href="/hexo-theme-icarus/2016/07/08/Gallery-Example/">
+ <time datetime="2016-07-07T16:00:00.000Z" itemprop="datePublished">2016-07-08</time>
+</a>
+</div>
+
+
+
+
+         </div>
+
+ </header>
+
+
+<div class="article-gallery">
+
+<a class="gallery-item" href="https://www.hdwallpapers.net/previews/starry-night-over-corsica-986.jpg" rel="gallery_cj059ewt200091cu4q01m05rb">
+<img src="https://www.hdwallpapers.net/previews/starry-night-over-corsica-986.jpg" itemprop="image" />
+</a>
+
+<a class="gallery-item" href="https://www.hdwallpapers.net/previews/water-plant-close-up-979.jpg" rel="gallery_cj059ewt200091cu4q01m05rb">
+<img src="https://www.hdwallpapers.net/previews/water-plant-close-up-979.jpg" itemprop="image" />
+</a>
+
+<a class="gallery-item" href="https://www.hdwallpapers.net/previews/winter-day-at-yosemite-national-park-971.jpg" rel="gallery_cj059ewt200091cu4q01m05rb">
+<img src="https://www.hdwallpapers.net/previews/winter-day-at-yosemite-national-park-971.jpg" itemprop="image" />
+</a>
+
+<a class="gallery-item" href="https://www.hdwallpapers.net/previews/vatnajokull-national-park-iceland-899.jpg" rel="gallery_cj059ewt200091cu4q01m05rb">
+<img src="https://www.hdwallpapers.net/previews/vatnajokull-national-park-iceland-899.jpg" itemprop="image" />
+</a>
+
+</div>
+
+<div class="article-entry" itemprop="articleBody">
+
+ <p><p>To add a photo gallery placeholder to your post, just add the following lines to your front-matter:<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">photos:</span></div><div class="line"><span class="attr">- https:</span>//www.hdwallpapers.net/previews/starry-night-over-corsica<span class="bullet">-986.</span>jpg</div><div class="line"><span class="attr">- https:</span>//www.hdwallpapers.net/previews/water-plant-close-up<span class="bullet">-979.</span>jpg</div><div class="line"><span class="bullet">-</span> ...</div></pre></td></tr></table></figure></p></p>
+ <p class="article-more-link">
+     <a href="/hexo-theme-icarus/2016/07/08/Gallery-Example/#more">Read More</a>
+ </p>
+
+</div>
+<footer class="article-footer">
+ <div class="share-container">
+
+
+
+</div>
+
+<a data-url="http://ppoffice.github.io/hexo-theme-icarus/2016/07/08/Gallery-Example/" data-id="cj059ewt200091cu4q01m05rb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+(function ($) {
+// Prevent duplicate binding
+if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+ __SHARE_BUTTON_BINDED__ = true;
+} else {
+ return;
+}
+$('body').on('click', function() {
+ $('.article-share-box.on').removeClass('on');
+}).on('click', '.article-share-link', function(e) {
+ e.stopPropagation();
+
+ var $this = $(this),
+     url = $this.attr('data-url'),
+     encodedUrl = encodeURIComponent(url),
+     id = 'article-share-box-' + $this.attr('data-id'),
+     offset = $this.offset(),
+     box;
+
+ if ($('#' + id).length) {
+     box = $('#' + id);
+
+     if (box.hasClass('on')){
+         box.removeClass('on');
+         return;
+     }
+ } else {
+     var html = [
+         '<div id="' + id + '" class="article-share-box">',
+             '<input class="article-share-input" value="' + url + '">',
+             '<div class="article-share-links">',
+                 '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                 '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                 '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                 '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+             '</div>',
+         '</div>'
+     ].join('');
+
+   box = $(html);
+
+   $('body').append(box);
+ }
+
+ $('.article-share-box.on').hide();
+
+ box.css({
+     top: offset.top + 25,
+     left: offset.left
+ }).addClass('on');
+
+}).on('click', '.article-share-box', function (e) {
+ e.stopPropagation();
+}).on('click', '.article-share-box-input', function () {
+ $(this).select();
+}).on('click', '.article-share-box-link', function (e) {
+ e.preventDefault();
+ e.stopPropagation();
+
+ window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+});
+})(jQuery);
+</script>
+
+
+
+<a href="http://ppoffice.github.io/hexo-theme-icarus/2016/07/08/Gallery-Example/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://ppoffice.github.io/hexo-theme-icarus/2016/07/08/Gallery-Example/">Comments</a>
+
+
+</footer>
+</div>
+
+</article>
+
+
+
+<article id="post-Chinese-Test" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-inner">
+
+
+
+<a href="/hexo-theme-icarus/2016/01/31/Chinese-Test/" itemprop="url">
+ <img src="/hexo-theme-icarus/gallery/china-great-wall.jpg" class="article-banner" />
+</a>
+
+
+
+
+
+
+ <header class="article-header">
+
+
+<h1 itemprop="name">
+ <a class="article-title" href="/hexo-theme-icarus/2016/01/31/Chinese-Test/">中文测试</a>
+</h1>
+
+
+
+         <div class="article-meta">
+
+<div class="article-date">
+<i class="fa fa-calendar"></i>
+<a href="/hexo-theme-icarus/2016/01/31/Chinese-Test/">
+ <time datetime="2016-01-31T13:55:37.000Z" itemprop="datePublished">2016-01-31</time>
+</a>
+</div>
+
+
+
+<div class="article-category">
+<i class="fa fa-folder"></i>
+<a class="article-category-link" href="/hexo-theme-icarus/categories/Language-Test/">Language Test</a>
+</div>
+
+
+         </div>
+
+ </header>
+
+
+<div class="article-entry" itemprop="articleBody">
+
+ <p><h2 id="桃花源记"><a href="#桃花源记" class="headerlink" title="桃花源记"></a>桃花源记</h2><h3 id="朝代：魏晋"><a href="#朝代：魏晋" class="headerlink" title="朝代：魏晋"></a>朝代：魏晋</h3><h3 id="作者：陶渊明"><a href="#作者：陶渊明" class="headerlink" title="作者：陶渊明"></a>作者：陶渊明</h3><h3 id="原文："><a href="#原文：" class="headerlink" title="原文："></a>原文：</h3><p>　　晋太元中，武陵人捕鱼为业。缘溪行，忘路之远近。忽逢桃花林，夹岸数百步，中无杂树，芳草鲜美，落英缤纷，渔人甚异之。复前行，欲穷其林。</p>
+<p>　　林尽水源，便得一山，山有小口，仿佛若有光。便舍船，从口入。初极狭，才通人。复行数十步，豁然开朗。土地平旷，屋舍俨然，有良田美池桑竹之属。阡陌交通，鸡犬相闻。其中往来种作，男女衣着，悉如外人。黄发垂髫，并怡然自乐。</p>
+<p>　　见渔人，乃大惊，问所从来。具答之。便要还家，设酒杀鸡作食。村中闻有此人，咸来问讯。自云先世避秦时乱，率妻子邑人来此绝境，不复出焉，遂与外人间隔。问今是何世，乃不知有汉，无论魏晋。此人一一为具言所闻，皆叹惋。余人各复延至其家，皆出酒食。停数日，辞去。此中人语云：“不足为外人道也。”(间隔 一作：隔绝)</p>
+<p>　　既出，得其船，便扶向路，处处志之。及郡下，诣太守，说如此。太守即遣人随其往，寻向所志，遂迷，不复得路。</p>
+<p>　　南阳刘子骥，高尚士也，闻之，欣然规往。未果，寻病终，后遂无问津者。<br></p>
+ <p class="article-more-link">
+     <a href="/hexo-theme-icarus/2016/01/31/Chinese-Test/#more">Read More</a>
+ </p>
+
+</div>
+<footer class="article-footer">
+ <div class="share-container">
+
+
+
+</div>
+
+<a data-url="http://ppoffice.github.io/hexo-theme-icarus/2016/01/31/Chinese-Test/" data-id="cj059ewsw00061cu4wp4cry9v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+(function ($) {
+// Prevent duplicate binding
+if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+ __SHARE_BUTTON_BINDED__ = true;
+} else {
+ return;
+}
+$('body').on('click', function() {
+ $('.article-share-box.on').removeClass('on');
+}).on('click', '.article-share-link', function(e) {
+ e.stopPropagation();
+
+ var $this = $(this),
+     url = $this.attr('data-url'),
+     encodedUrl = encodeURIComponent(url),
+     id = 'article-share-box-' + $this.attr('data-id'),
+     offset = $this.offset(),
+     box;
+
+ if ($('#' + id).length) {
+     box = $('#' + id);
+
+     if (box.hasClass('on')){
+         box.removeClass('on');
+         return;
+     }
+ } else {
+     var html = [
+         '<div id="' + id + '" class="article-share-box">',
+             '<input class="article-share-input" value="' + url + '">',
+             '<div class="article-share-links">',
+                 '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                 '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                 '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                 '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+             '</div>',
+         '</div>'
+     ].join('');
+
+   box = $(html);
+
+   $('body').append(box);
+ }
+
+ $('.article-share-box.on').hide();
+
+ box.css({
+     top: offset.top + 25,
+     left: offset.left
+ }).addClass('on');
+
+}).on('click', '.article-share-box', function (e) {
+ e.stopPropagation();
+}).on('click', '.article-share-box-input', function () {
+ $(this).select();
+}).on('click', '.article-share-box-link', function (e) {
+ e.preventDefault();
+ e.stopPropagation();
+
+ window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+});
+})(jQuery);
+</script>
+
+
+</footer>
+</div>
+
+</article>
+
+
+
+<article id="post-Arabic-Test" class="article article-type-post rtl" itemscope itemprop="blogPost">
+<div class="article-inner">
+
+
+
+<a href="/hexo-theme-icarus/2016/01/30/Arabic-Test/" itemprop="url">
+ <img src="/hexo-theme-icarus/gallery/arabic-pyramid.jpg" class="article-banner" />
+</a>
+
+
+
+
+
+
+ <header class="article-header">
+
+
+<h1 itemprop="name">
+ <a class="article-title" href="/hexo-theme-icarus/2016/01/30/Arabic-Test/">اختبار اللغة العربية</a>
+</h1>
+
+
+
+         <div class="article-meta">
+
+<div class="article-date">
+<i class="fa fa-calendar"></i>
+<a href="/hexo-theme-icarus/2016/01/30/Arabic-Test/">
+ <time datetime="2016-01-30T02:15:01.000Z" itemprop="datePublished">2016-01-30</time>
+</a>
+</div>
+
+
+
+<div class="article-category">
+<i class="fa fa-folder"></i>
+<a class="article-category-link" href="/hexo-theme-icarus/categories/Language-Test/">Language Test</a>
+</div>
+
+
+         </div>
+
+ </header>
+
+
+<div class="article-entry" itemprop="articleBody">
+
+ <p><p>كل تصفح بالفشل التّحول ذات, أعمال اعتداء المتحدة مكن ٣٠. تلك للسيطرة واشتدّت أن, بل انذار العاصمة الخاسرة أما. تحت مع دفّة بالرّغم, وبالرغم وبالتحديد، مع جهة. مسارح يتمكن يتسنّى جهة ان, التي اتفاقية قد كان. فمرّ الوراء ان غير. شيء ما شمال أدوات بالجانب, لكل وشعار اتفاق بـ, بها الإنزال مواقعها في. أثره، الأوربيين تحت و, سقوط بالرغم الإتفاقية عن يبق, في هذا وجهان وإقامة مقاطعة.</p>
+<p>عن أخرى الأجل واشتدّت ضرب, يبق تم دارت جيوب, ٣٠ وبداية ابتدعها الأمريكي أخر. لم كما شرسة غرّة، الأعمال, كل بخطوط وعُرفت الضروري ولم, وسفن واستمرت تلك من. مع حيث وأزيز الأخذ, فاتّبع مقاطعة ويكيبيديا، عن وفي, بـ لها كثيرة المتحدة. قد ضرب وسوء إعلان, ان وتم اعتداء إستيلاء, يكن نقطة معاملة ثم. بحث في بلديهما الصينية, هذه ما حصدت شرسة, ذات أم الشمل والقرى.</p>
+<p>بينما أوراقهم مكن تم, تحت أي وفنلندا بمحاولة شموليةً. بحث عن بلديهما المنتصر, لم شاسعة للجزر كلا. بل مما وتنصيب بمباركة والكوري, هناك الأرض تم قبل. غضون عُقر الجديدة، يبق مع, أثره، واُسدل استعملت تم تلك.</p></p>
+ <p class="article-more-link">
+     <a href="/hexo-theme-icarus/2016/01/30/Arabic-Test/#more">Read More</a>
+ </p>
+
+</div>
+<footer class="article-footer">
+ <div class="share-container">
+
+
+
+</div>
+
+<a data-url="http://ppoffice.github.io/hexo-theme-icarus/2016/01/30/Arabic-Test/" data-id="cj059ewsm00031cu4cj4ki4j1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+(function ($) {
+// Prevent duplicate binding
+if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+ __SHARE_BUTTON_BINDED__ = true;
+} else {
+ return;
+}
+$('body').on('click', function() {
+ $('.article-share-box.on').removeClass('on');
+}).on('click', '.article-share-link', function(e) {
+ e.stopPropagation();
+
+ var $this = $(this),
+     url = $this.attr('data-url'),
+     encodedUrl = encodeURIComponent(url),
+     id = 'article-share-box-' + $this.attr('data-id'),
+     offset = $this.offset(),
+     box;
+
+ if ($('#' + id).length) {
+     box = $('#' + id);
+
+     if (box.hasClass('on')){
+         box.removeClass('on');
+         return;
+     }
+ } else {
+     var html = [
+         '<div id="' + id + '" class="article-share-box">',
+             '<input class="article-share-input" value="' + url + '">',
+             '<div class="article-share-links">',
+                 '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                 '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                 '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                 '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+             '</div>',
+         '</div>'
+     ].join('');
+
+   box = $(html);
+
+   $('body').append(box);
+ }
+
+ $('.article-share-box.on').hide();
+
+ box.css({
+     top: offset.top + 25,
+     left: offset.left
+ }).addClass('on');
+
+}).on('click', '.article-share-box', function (e) {
+ e.stopPropagation();
+}).on('click', '.article-share-box-input', function () {
+ $(this).select();
+}).on('click', '.article-share-box-link', function (e) {
+ e.preventDefault();
+ e.stopPropagation();
+
+ window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+});
+})(jQuery);
+</script>
+
+
+</footer>
+</div>
+
+</article>
+
+
+
+<nav id="page-nav">
+<span class="page-number current">1</span><a class="page-number" href="/hexo-theme-icarus/page/2/">2</a><a class="page-number" href="/hexo-theme-icarus/page/3/">3</a><a class="extend next" rel="next" href="/hexo-theme-icarus/page/2/">Next &raquo;</a>
+</nav>

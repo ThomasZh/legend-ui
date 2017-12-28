@@ -23,6 +23,7 @@ from foo.ui import ui_myplay
 from foo.ui import ui_mateblog
 from foo.ui import ui_cyberlife
 from foo.ui import ui_tbmobile
+from foo.ui import ui_icarus
 
 
 def map():
@@ -393,6 +394,13 @@ def map():
         (r'/ui/cyberlife/single', getattr(ui_cyberlife, 'CyberlifeSingleHandler')),
         (r'/ui/cyberlife/categories', getattr(ui_cyberlife, 'CyberlifeCategoriesHandler')),
         (r'/ui/cyberlife/tags', getattr(ui_cyberlife, 'CyberlifeTagsHandler')),
+
+
+		(r'/ui/icarus', getattr(ui_icarus, 'IcarusIndexHandler')),
+		(r'/ui/icarus/categories/articles', getattr(ui_icarus, 'IcarusCategoryArticlesHandler')),
+		(r'/ui/icarus/categories', getattr(ui_icarus, 'IcarusCategoriesHandler')),
+		(r'/ui/icarus/tags', getattr(ui_icarus, 'IcarusTagsHandler')),
+		(r'/ui/icarus/single', getattr(ui_icarus, 'IcarusSingleHandler')),
 
 
         # comm
